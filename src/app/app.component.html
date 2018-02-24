@@ -1,20 +1,77 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
+<div class="pages">
+    <div data-page="login" class="page layout-dark">
+       <!-- Toolbar has additional "toolbar-bottom" class -->
+       <div class="page-content login-page theme-white">
+          <div class="close"><a href="index.html" class="back" data-force="true"><img src="../assets/img/close.png" alt="close"></a></div>
+          <!-- Views -->
+          <div class="views">
+             <!-- Your main view, should have "view-main" class -->
+             <div class="view view-main">
+                <!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
+                <div class="pages">
+                   <!-- Page, "data-page" contains page name -->
+                   <div data-page="index" class="page">
+                      <!-- Scrollable page content -->
+                      <div class="page-content" id="app-cover">
+                         <div class="app-cover-content">
+                            <div class="margin-bottom-10"><img src="../assets/img/logo.png" alt="Biztrendz" width="60" height="60"/></div>
+                            <div class="text-large margin-bottom-15  font">
+                               Weddings
+                            </div>
+                            <div class="masti-marle-chore-no1">
+                               <div class="row  margin-top-30">
+                                  <div class="col-100">
+                                     <img src="../assets/img/avatar2536.png" alt=""  width="20" class="sign-in-img"/>
+                                     <input type="text" id="email" placeholder="Email"/>
+                                  </div>
+                                  <div class="col-100">
+                                     <img src="../assets/img/key2456.png" alt=""  width="20" class="sign-in-img"/>
+                                     <input type="password" id="passcode" placeholder="Password"/>
+                                  </div>
+                               </div>
+                            </div>
+                            <div class="row  margin-top-30">
+                               <div class="col-100">
+                                  <a href="home.html" class="button button-fill btn1">
+                                     <img src="../../assets/img/mail.png" alt=""  width="20" class="img-icon"/>
+                                     <div class="text-alignment-problems">Login Now
+                                     </div>
+                                  </a>
+                               </div>
+                            </div>
+                            <div class="row offset-top-10 offset-bottom-10">
+                               <div class="col-100">
+                                  <div class="line"></div>
+                                  <span class="or">or</span> 
+                                  <div class="line"></div>
+                               </div>
+                            </div>
+                            <div class="row ">
+                               <div class="col-50"> 
+                                  <a href="sign-up.html" class="button button-fill fb-btn fb-btn-inputino">
+                                  <img src="../assets/img/facebook.png" alt=""  width="20" class="img-icon"/>
+                                  Facebook
+                                  </a>
+                               </div>
+                               <div class="col-50"> 
+                                  <a href="sign-up.html" class="button button-fill btn3">
+                                  <img src="../assets/img/google-plus-symbol.png" alt=""  width="20" class="img-icon"/>
+                                  google+
+                                  </a>
+                               </div>
+                            </div>
+                            <div class="row offset-top-10 margin-top-15">
+                               <div class="col-100"> 
+                                  Want to reset your password
+                                  <a href="remember-password.html" class="login">Click here</a>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
