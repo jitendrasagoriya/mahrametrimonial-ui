@@ -14,20 +14,26 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardService } from './services/auth-guard.service';
 import { HomeComponent } from './component/home/home.component';
 import { HttpModule } from '@angular/http';
+import { HeaderComponent } from './component/header/header.component';
+import { FooterComponent } from './component/footer/footer.component';
+import { ProfileComponent } from './component/profile/profile.component';
+
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuardService] },
-
-  // otherwise redirect to home
-  { path: '**', redirectTo: 'home' }
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService] },
+  { path: '**', component: LoginComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

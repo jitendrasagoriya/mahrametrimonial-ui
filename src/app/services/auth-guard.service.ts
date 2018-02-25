@@ -7,8 +7,9 @@ export class AuthGuardService implements CanActivate {
   constructor(private router: Router) { }
 
     canActivate() {
+        console.log('currentuser ' + localStorage.getItem('currentUser') );
         if (localStorage.getItem('currentUser')) {
-            // logged in so return true
+            console.log('currentuser ' + localStorage.getItem('currentUser') );
             return true;
         }
 

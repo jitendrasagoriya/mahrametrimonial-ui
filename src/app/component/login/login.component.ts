@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
@@ -13,12 +13,20 @@ export class LoginComponent implements OnInit {
     model: any = {};
     loading = false;
     error = '';
+    pageName: any;
 
   constructor( private router: Router,
-        private authenticationService: AuthenticationService) { }
+        private authenticationService: AuthenticationService,
+        private route: ActivatedRoute) { }
 
-  ngOnInit() {
-    // reset login status
+  ngOnInit() {    // reset login status
+
+     this.route
+      .queryParams
+      .subscribe(params => {
+        // Defaults to 0 if no query param provided.
+        this.pageName = params['pagename']  || 'home';
+      });
     this.authenticationService.logout();
   }
 
@@ -26,7 +34,6 @@ export class LoginComponent implements OnInit {
      if (!f.valid) {
 
      } else {
-         console.log('land' + JSON.stringify(f.value));
         this.model.username = f.value.usename;
         this.model.password = f.value.password;
         this.login(f);
@@ -39,7 +46,7 @@ export class LoginComponent implements OnInit {
         .subscribe(result => {
             if (result === true) {
                 console.log(result);
-                this.router.navigate(['/']);
+                this.router.navigate([this.pageName]);
             } else {
                 this.error = 'Username or password is incorrect';
                 this.loading = false;
