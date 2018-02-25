@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from '@angular/http';
+import { Http, Headers, Response, RequestOptions } from '@angular/http';
 
 import 'rxjs/add/operator/map';
 
@@ -15,7 +15,16 @@ export class AuthenticationService {
   }
 
   login(username: string, password: string): Observable<boolean> {
-    return this.http.post('/api/auth', JSON.stringify({ username: username, password: password }))
+
+    // add authorization header with jwt token
+    const headers = new Headers({ 'Authorization':  'Basic ' + btoa(username + ':' + password) });
+    headers.append('Authorization', 'Basic ' + btoa(username + ':' + password));
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+    const options = new RequestOptions({ headers: headers });
+    const data = {};
+
+    return this.http.post('http://localhost:8787/api/auth', data, {headers: headers})
         .map((response: Response) => {
             // login successful if there's a jwt token in the response
             const token = response.json() && response.json().token;

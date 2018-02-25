@@ -16,29 +16,32 @@
                        <div class="app-cover-content">
                           <div class="margin-bottom-10"><img src="../assets/img/logo.png" alt="Biztrendz" width="60" height="60"/></div>
                           <div class="text-large margin-bottom-15  font">
-                             Weddings
+                             Mehra's
                           </div>
-                          <div class="masti-marle-chore-no1">
-                             <div class="row  margin-top-30">
-                                <div class="col-100">
-                                   <img src="../assets/img/avatar2536.png" alt=""  width="20" class="sign-in-img"/>
-                                   <input type="text" id="email" placeholder="Email"/>
-                                </div>
-                                <div class="col-100">
-                                   <img src="../assets/img/key2456.png" alt=""  width="20" class="sign-in-img"/>
-                                   <input type="password" id="passcode" placeholder="Password"/>
-                                </div>
-                             </div>
-                          </div>
-                          <div class="row  margin-top-30">
-                             <div class="col-100">
-                                <a href="home.html" class="button button-fill btn1">
-                                   <img src="../../assets/img/mail.png" alt=""  width="20" class="img-icon"/>
-                                   <div class="text-alignment-problems">Login Now
-                                   </div>
-                                </a>
-                             </div>
-                          </div>
+                          <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+                            <div class="masti-marle-chore-no1">
+                              <div class="row  margin-top-30">
+                                  <div class="col-100">
+                                    <img src="../assets/img/avatar2536.png" alt=""  width="20" class="sign-in-img"/>
+                                    <input type="text" id="email" placeholder="Email" name="usename" ngModel required #username="ngModel" />
+                                  </div>
+                                  <div class="col-100">
+                                    <img src="../assets/img/key2456.png" alt=""  width="20" class="sign-in-img"/>
+                                    <input type="password" id="passcode" placeholder="Password" name="password" required ngModel #password="ngModel"/>
+                                  </div>
+                              </div>                              
+                            </div>
+                            <div class="row  margin-top-30">
+                              <div class="col-100">
+                                  <a href="javascript:void(0)" class="button button-fill btn1" > 
+                                    <img src="../../assets/img/mail.png" alt=""  width="20" class="img-icon"/>                                    
+                                      <div class="text-alignment-problems" >
+                                        <button style="background-color: Transparent;color: whitesmoke" >  LOGIN NOW </button>
+                                      </div>                                  
+                                  </a>
+                              </div>
+                            </div>
+                        </form>
                           <div class="row offset-top-10 offset-bottom-10">
                              <div class="col-100">
                                 <div class="line"></div>
