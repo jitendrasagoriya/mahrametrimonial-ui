@@ -1,3 +1,4 @@
+import { GlobalService } from './../global/global.service';
 import { Person } from './../model/person';
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
@@ -10,9 +11,12 @@ import { Router } from '@angular/router';
 @Injectable()
 export class PersonService {
 
+  public url: string;
+
   constructor(private http: Http,
-    private authenticationService: AuthenticationService,
-     private router: Router ) { }
+     private authenticationService: AuthenticationService,
+     private router: Router,
+     private globalService: GlobalService ) { }
 
     getPersons(): Observable<Person[]> {
       // add authorization header with jwt token
@@ -20,7 +24,7 @@ export class PersonService {
       const options = new RequestOptions({ headers: headers });
 
       // get users from api
-      return this.http.get('http://localhost:8787/api/person/', options)
+      return this.http.get(this.url + 'person/', options)
           .map((response: Response) => response.json())
           .catch((response: Response) => Observable.throw(this.errorHandler(response)));
   }

@@ -1,3 +1,4 @@
+import { GlobalService } from './../global/global.service';
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
@@ -8,10 +9,17 @@ import 'rxjs/add/operator/map';
 export class AuthenticationService {
 
   public token: string;
+  public url: string;
 
-  constructor(private http: Http) {
+  constructor(private http: Http,
+    private globalService: GlobalService) {
         const currentUser = JSON.parse(localStorage.getItem('currentUser'));
         this.token = currentUser && currentUser.token;
+        if (this.globalService.isLocal) {
+            this.url = this.globalService.hostLocal;
+        } else {
+            this.url = this.globalService.hostRemote;
+        }
   }
 
   login(username: string, password: string): Observable<boolean> {
@@ -24,7 +32,11 @@ export class AuthenticationService {
     const options = new RequestOptions({ headers: headers });
     const data = {};
 
-    return this.http.post('http://localhost:8787/api/auth', data, {headers: headers})
+    console.log(this.globalService.isLocal);
+    console.log(this.globalService.hostLocal);
+    console.log(this.globalService.hostRemote);
+
+    return this.http.post(this.url + 'auth', data, {headers: headers})
         .map((response: Response) => {
             // login successful if there's a jwt token in the response
             const token = response.json() && response.json().token;

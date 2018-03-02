@@ -20,6 +20,7 @@ import { FooterComponent } from './component/footer/footer.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { SearchComponent } from './component/search/search.component';
 import { GlobalService } from './global/global.service';
+import { EditProfileComponent } from './component/edit-profile/edit-profile.component';
 
 
 const appRoutes: Routes = [
@@ -27,6 +28,7 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [AuthGuardService] },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService] },
   { path: 'search', component: SearchComponent, canActivate: [AuthGuardService] },
+  { path: 'edit', component: EditProfileComponent, canActivate: [AuthGuardService] },
   { path: '**', component: LoginComponent }
 ];
 
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     ProfileComponent,
-    SearchComponent
+    SearchComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,
