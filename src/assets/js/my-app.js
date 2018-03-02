@@ -5,7 +5,7 @@
 /*===============================================*/
 var myApp = new Framework7({
 	material: true,
-	swipePanel: 'left',
+	swipePanel: 'right',
 	cache: false,
 	cacheDuration: 0,
 	modalTitle: 'Weddings',
@@ -33,7 +33,7 @@ $$(document).on('pageInit', function(e) {
 	/* Photo Browser 
 	================================*/
 	var myPhotoBrowserDark = myApp.photoBrowser({
-		photos: ['img/photos/gal-1.jpg', 'img/photos/gal-2.jpg', 'img/photos/gal-3.jpg', 'img/photos/gal-4.jpg', 'img/photos/gal-5.jpg', 'img/photos/gal-6.jpg', ],
+		photos: ['../assets/img/photos/gal-1.jpg', '../assets/img/photos/gal-2.jpg', '../assets/img/photos/gal-3.jpg', '../assets/img/photos/gal-4.jpg', '../assets/img/photos/gal-5.jpg', '../assets/img/photos/gal-6.jpg', ],
 		theme: 'light'
 	});
 	$$('.pb-standalone-dark').on('click', function() {
