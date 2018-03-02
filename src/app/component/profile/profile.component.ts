@@ -1,3 +1,6 @@
+import { FamilyMember } from './../../model/familyMembers';
+import { Profile } from './../../model/profile';
+import { ProfileService } from './../../services/profile.service';
 import { Person } from './../../model/person';
 import { PersonService } from './../../services/person.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,14 +14,29 @@ import { Router } from '@angular/router';
 export class ProfileComponent implements OnInit {
 
    person: Person;
+   father: FamilyMember;
+   mother: FamilyMember;
+   sibilings: FamilyMember[] = [];
 
   constructor(private router: Router,
-    private personService: PersonService) { }
+    private personService: PersonService,
+    private profileService: ProfileService) { }
 
   ngOnInit() {
-     this.personService.getPerson().subscribe((person1: Person) => {
-       console.log(person1);
-       this.person = person1;
+     this.profileService.getProfile().subscribe((profile: Profile) => {
+       console.log(profile);
+       this.person = profile.person;
+
+       profile.familyMembers.forEach(member => {
+          if (member.relation === 'FATHER') {
+            this.father = member;
+          } else if (member.relation === 'MOTHER') {
+            this.mother = member;
+          } else {
+            this.sibilings.push(member);
+          }
+       });
+
      });
   }
 

@@ -20,8 +20,9 @@ export class PersonService {
       const options = new RequestOptions({ headers: headers });
 
       // get users from api
-      return this.http.get('/api/person/', options)
-          .map((response: Response) => response.json());
+      return this.http.get('http://localhost:8787/api/person/', options)
+          .map((response: Response) => response.json())
+          .catch((response: Response) => Observable.throw(this.errorHandler(response)));
   }
 
   getPerson(): Observable<Person> {
@@ -38,7 +39,7 @@ export class PersonService {
   errorHandler(response: Response): void {
    const exception = response.json();
     if (exception.error === 'Unauthorized') {
-      this.router.navigate(['login'], { queryParams: { pagename: 'profile' } });
+      this.router.navigate(['login'], { queryParams: { pagename: 'search' } });
     }
   }
 

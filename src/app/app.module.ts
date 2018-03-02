@@ -1,3 +1,4 @@
+import { ProfileService } from './services/profile.service';
 import { AuthenticationService } from './services/authentication.service';
 import { PersonService } from './services/person.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,12 +18,15 @@ import { HttpModule } from '@angular/http';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { ProfileComponent } from './component/profile/profile.component';
+import { SearchComponent } from './component/search/search.component';
+import { GlobalService } from './global/global.service';
 
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuardService] },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService] },
+  { path: 'search', component: SearchComponent, canActivate: [AuthGuardService] },
   { path: '**', component: LoginComponent }
 ];
 
@@ -33,7 +37,8 @@ const appRoutes: Routes = [
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    ProfileComponent
+    ProfileComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +53,9 @@ const appRoutes: Routes = [
       PersonService,
       AuthGuardService,
       AuthenticationService,
-      PersonService
+      PersonService,
+      ProfileService,
+      GlobalService
   ],
   bootstrap: [AppComponent]
 })

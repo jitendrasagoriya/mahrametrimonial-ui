@@ -1,3 +1,4 @@
+<ng-template #loading>Loading User Data...</ng-template>
  <!-- Status bar overlay for fullscreen mode-->
  <div class="statusbar-overlay"></div>
  <!-- Panels overlay-->
@@ -6,7 +7,7 @@
 
  <app-footer></app-footer>
  <!-- Views -->
- <div class="views">
+ <div class="views" >
     <!-- Your main view, should have "view-main" class -->
     <div class="view view-main">
        <!-- Main Container Start -->
@@ -32,31 +33,32 @@
 							 <a href="#" class="open-slider-modal">
 							 <span class="text-accepton-image"><img src="../assets/img/photo-camera.png" width="20" height="20"><label class="label-text-accept-single">4</label></span>
 							 </a>
-							 <div style="background-image:url(../assets/img/img2i.jpg)" valign="bottom" class="card-header color-white no-border">Shirley (ID-XRFT2548)</div>
+							 <div style="background-image:url(../assets/img/img2i.jpg)" valign="bottom" class="card-header color-white no-border">{{person.fName}} {{person.lName }}  (ID-{{person.userName}})</div>
 						  </div>
 						  <div class="buttons-row tabs-manage-contro">
 							 <!-- Link to 1st tab, active -->
 							 <a href="#tab1" id='#tab1' class="tab-link active button button-tab-one sj-state-tabs-active">About</a>
 							 <!-- Link to 2nd tab -->
 							 <a href="#tab2" id='#tab1' class="tab-link button button-tab-two sj-state-tabs-active">Family</a>
-							 <!-- Link to 3rd tab -->
+							 <!-- Link to 3rd tab 
 							 <a href="#tab3" id='#tab1' class="tab-link button button-tab-three sj-state-tabs-active">Matches</a>
-						  </div>
+						  		-->
+							</div>
 					   </div>
 					   <!-- Tabs, tabs wrapper -->
 					   <div class="tabs">
 						  <!-- Tab 1, active by default -->
 						  <div id="tab1" class="tab active">
 							 <div class="content-block">
-								<p><strong>Shirley Dave - Last Online Today</strong></p>
+								<p><strong>{{person.userName}} - Last Online Today</strong></p>
 								<div class="columns-oney color-card-greyish">
 								   <p>25 Years 5'7"</p>
-								   <p>Christian</p>
-								   <p>American</p>
-								   <p>United States (FL)</p>
-								   <p>Fashion Designer</p>
-								   <p>$25k-$50K</p>
-								   <p>MBA/PGDM</p>
+								   <p>{{person.gotra}}</p>
+								   <p>{{person.city}}</p>
+								   <p> Indian</p>
+								   <p>{{person?.desgination }}</p>
+								   <p> {{person?.income}}</p>
+								   <p>{{person?.qualification}}</p>
 								</div>
 								<p><strong>About Me</strong></p>
 								<div class="color-card-greyish">
@@ -64,58 +66,69 @@
 								</div>
 								<p><strong>Appeareance</strong></p>
 								<div class="color-card-greyish">
-								   <p>Slim, Fair, 50 Kg</p>
+								   <p>{{person?.bodyType | lowercase }}, {{person?.complexion  | lowercase}}, {{person?.weight}}, Kg</p>
 								</div>
 								<p><strong>Career</strong></p>
 								<div class="color-card-greyish">
-								   <p>Employed As - Professor / Lecturar</p>
-								   <p>Income - $25k-$50K</p>
+								   <p>Employed As - {{person?.desgination }} in {{person?.companyName }}</p>
+								   <p>Income - {{person?.income}}</p>
 								</div>
 								<p><strong>Education</strong></p>
 								<div class="color-card-greyish">
-								   <p>Post Graduate - M Tech / Harvard</p>
+								   <p>{{person?.qualification}} - {{person?.nameOfCollage}} </p>
 								</div>
 								<p><strong>Lyfestyle</strong></p>
 								<div class="color-card-greyish">
-								   <p>Vegeterian, Non Drinker, Non Smoker</p>
-								   <p>Cooking, Playing Music Instruments</p>
+								   <p>{{person?.eatingHabit}}, {{person?.somke}},{{person?.drink}}</p>
+								   <p>{{person?.hobbies}}</p>
 								   <p>No Smoking, No Drinking</p>
 								</div>
+								<!--
 								<p><i class="flaticon-bookmark"></i> Open to pets</p>
 								<p><i class="flaticon-bookmark"></i> Her profile is managed by parents</p>
+								-->
 							 </div>
 						  </div>
 						  <!-- Tab 2 -->
 						  <div id="tab2" class="tab">
 							 <div class="content-block">
+																
+								<p><strong>Father Information </strong></p>
 								<div class="color-card-greyish">
-								   <p>My sister is a simple and innocent girl. she doesn't like formality. her father is a retired police officer and her mother is a housewife. her hobbies are dancing, gardening and driving. she wants to go abroad. intrested in USA , canada .</p>
+								   <p>Father Name - {{father?.name}}</p>
+								   <p>Father Occupation - {{father?.occupation}}</p>
+								   <p>Father Incomes - {{father?.salary}}</p>								  
 								</div>
-								<p><strong>Appeareance</strong></p>
+
+								<p><strong>Mother Information </strong></p>
+								<div class="color-card-greyish">								   
+								   <p>Mother Name - {{mother?.name}}</p>								   
+								   <p>Mother Occupation - {{mother?.occupation}}</p>
+ 								   <p>Mother Incomes - {{mother?.salary}}</p>
+								  
+								</div>
+								<p><strong>Sibiling </strong></p>
 								<div class="color-card-greyish">
-								   <p>Slim, Fair, 50 Kg</p>
+									<p>Number Of Brother - {{person?.noOfBrother}}</p>
+									<p>Number Of Sister - {{person?.noOfSisters}}</p>									
 								</div>
-								<p><strong>Career</strong></p>
+								<p><strong>Mother/Father Gotra</strong></p>
 								<div class="color-card-greyish">
-								   <p>Employed As - Professor / Lecturar</p>
-								   <p>Income - 7-10 Lacs / Year</p>
+									<p>Father Gotra - {{father?.gotra}}</p>
+									<p>Mother Gotra - {{mother?.gotra}}</p>
 								</div>
-								<p><strong>Education</strong></p>
+								<p><strong>family Gotra</strong></p>
 								<div class="color-card-greyish">
-								   <p>Post Graduate - M Tech / IIT Roorkee</p>
+									<p>Father family Gotra - {{father?.gotraSave}}</p>
+									<p>Mother family Gotra - {{mother?.gotraSave}}</p>
 								</div>
-								<p><strong>Lyfestyle</strong></p>
-								<div class="color-card-greyish">
-								   <p>Vegeterian, Non Drinker, Non Smoker</p>
-								   <p>Cooking, Playing Music Instruments</p>
-								   <p>Amritdhari - No, Cuts hair - Yes</p>
-								</div>
-								<p><i class="flaticon-shapes"></i> Open to pets</p>
-								<p><i class="flaticon-shapes"></i> Her profile is managed by parents</p>
 							 </div>
 						  </div>
 						  <!-- Tab 3 -->
-						  <div id="tab3" class="tab">
+						  
+						  <!--
+
+							<div id="tab3" class="tab">
 							 <div class="content-block">
 								<div class="footer-flex-sj ">
 								   <div class="flexy-3-sj">
@@ -147,6 +160,9 @@
 								</div>
 							 </div>
 						  </div>
+
+						  -->
+
 					   </div>
 					   <div class="footer-sj-manage-all-in-set">
 						  <div class="footer-flex-sj">

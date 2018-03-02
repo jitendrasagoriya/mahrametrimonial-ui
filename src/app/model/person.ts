@@ -28,4 +28,15 @@ export class Person {
           personStatus: String;
           profilePic: String;
           maritalStatus:  String;
+          weight: Number;
+          somke: String;
+          drink: String;
+          doingJob: Boolean;
+          wishToJob: Boolean;
+          companyName: String;
+          desgination: String;
+          eatingHabit: String;
+          aboutMe: String;
+          collageName: String;
+          hobbies: String;
 }
