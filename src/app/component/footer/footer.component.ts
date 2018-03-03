@@ -1,3 +1,4 @@
+import { GlobalService } from './../../global/global.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-
-  constructor() { }
+  public baseUrl: string;
+  constructor(private globalService: GlobalService) { }
 
   ngOnInit() {
+    this.baseUrl = this.globalService.baseUrl;
   }
 
 }

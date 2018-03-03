@@ -574,6 +574,8 @@ Template:		Weddings - Mobile Web APP Template
     margin-top: -30px;
 }
 #email,
+#username,
+#repasscode,
 #passcode {
     width: 70%;
     height: 26px;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalService } from '../../global/global.service';
 
 @Component({
   selector: 'app-edit-profile',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditProfileComponent implements OnInit {
 
-  constructor() { }
+  public baseUrl: string;
+
+  constructor(private globalService: GlobalService) {
+      this.baseUrl = this.globalService.baseUrl;
+   }
 
   ngOnInit() {
   }

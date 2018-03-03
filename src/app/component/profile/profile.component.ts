@@ -5,6 +5,7 @@ import { Person } from './../../model/person';
 import { PersonService } from './../../services/person.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GlobalService } from '../../global/global.service';
 
 @Component({
   selector: 'app-profile',
@@ -18,11 +19,16 @@ export class ProfileComponent implements OnInit {
    mother: FamilyMember;
    sibilings: FamilyMember[] = [];
 
+   public baseUrl: string;
+
   constructor(private router: Router,
     private personService: PersonService,
-    private profileService: ProfileService) { }
+    private profileService: ProfileService,
+    private globalService: GlobalService) { }
 
   ngOnInit() {
+     this.baseUrl = this.globalService.baseUrl;
+
      this.profileService.getProfile().subscribe((profile: Profile) => {
        console.log(profile);
        this.person = profile.person;

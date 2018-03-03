@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   @Output() pageChanged: EventEmitter<String> =   new EventEmitter();
 
   isMehra: Boolean;
+  public baseUrl: string;
 
   constructor(
     private router: Router,
@@ -21,6 +22,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.isMehra = this.globalService.isMehra;
+    this.baseUrl = this.globalService.baseUrl;
   }
 
   navigate(path: String) {

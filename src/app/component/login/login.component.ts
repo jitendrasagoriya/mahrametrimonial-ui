@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from '../../services/authentication.service';
+import { GlobalService } from '../../global/global.service';
 
 @Component({
   selector: 'app-login',
@@ -14,13 +15,15 @@ export class LoginComponent implements OnInit {
     loading = false;
     error = '';
     pageName: any;
+    public baseUrl: string;
 
   constructor( private router: Router,
         private authenticationService: AuthenticationService,
-        private route: ActivatedRoute) { }
+        private route: ActivatedRoute,
+        private globalService: GlobalService) { }
 
   ngOnInit() {    // reset login status
-
+    this.baseUrl = this.globalService.baseUrl;
      this.route
       .queryParams
       .subscribe(params => {

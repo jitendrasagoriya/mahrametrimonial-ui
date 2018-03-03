@@ -21,6 +21,7 @@ import { ProfileComponent } from './component/profile/profile.component';
 import { SearchComponent } from './component/search/search.component';
 import { GlobalService } from './global/global.service';
 import { EditProfileComponent } from './component/edit-profile/edit-profile.component';
+import { RegisterComponent } from './component/register/register.component';
 
 
 const appRoutes: Routes = [
@@ -29,6 +30,7 @@ const appRoutes: Routes = [
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService] },
   { path: 'search', component: SearchComponent, canActivate: [AuthGuardService] },
   { path: 'edit', component: EditProfileComponent, canActivate: [AuthGuardService] },
+  { path: 'register', component: RegisterComponent  },
   { path: '**', component: LoginComponent }
 ];
 
@@ -41,7 +43,8 @@ const appRoutes: Routes = [
     FooterComponent,
     ProfileComponent,
     SearchComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

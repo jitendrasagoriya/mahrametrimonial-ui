@@ -1,0 +1,90 @@
+<ng-template #loading>Loading User Data...</ng-template>
+ <!-- Status bar overlay for fullscreen mode-->
+ <div class="statusbar-overlay"></div>
+ <!-- Panels overlay-->
+ <div class="panel-overlay"></div>
+ <app-header></app-header>
+
+ <app-footer></app-footer>
+ <!-- Views -->
+ <div class="views" >
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main">
+       <!-- Main Container Start -->
+
+       <div class="pages">
+        <!-- Page, "data-page" contains page name -->
+        <div data-page="index" class="page">
+        <!-- Scrollable page content -->
+        <div class="page-content" id="app-cover">
+           <div class="app-cover-content">
+              <div class="logo-cover"><img src="{{baseUrl}}/assets/img/logo.png" alt="BizTrendz" width="70" height="70"/></div>
+              <div class="text-large margin-bottom-15  sign-heading">
+                 SIGN UP
+              </div>
+              <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+                <div class="masti-marle-chore-no1">
+                    <div class="row  margin-top-10">
+                        
+                            <div class="col-100">
+                            <img src="{{baseUrl}}/assets/img/avatar2536.png" width="20" class="sign-in-img"/>
+                            <input type="text" id="username" placeholder="User Name" name="username" ngModel required #username="ngModel"/>
+                            </div>
+                            <div class="col-100">
+                            <img src="{{baseUrl}}/assets/img/envelope125.png" width="20" class="sign-in-img"/>
+                            <input type="email" id="email" placeholder="E-mail" name="email" ngModel required #email="ngModel"/>
+                            </div>
+                        
+                            <div class="col-100">
+                            <img src="{{baseUrl}}/assets/img/key2456.png" width="20" class="sign-in-img"/>
+                            <input type="password" id="passcode" placeholder="Password" name="password" ngModel required #password="ngModel"/>
+                            </div>
+
+                            <div class="col-100">
+                                <img src="{{baseUrl}}/assets/img/key2456.png" width="20" class="sign-in-img"/>
+                                <input type="password" id="repasscode" placeholder="Re Password" name="repassword" ngModel required #repassword="ngModel"/>
+                            </div>
+                    </div>
+                </div>
+                <div class="row  margin-top-30">
+                    <div class="col-100">
+                        <a href="login.html" class="button button-fill btn1">
+                        <img src="{{baseUrl}}/assets/img/mail.png" width="20" class="img-icon"/>
+                        <div class="text-alignment-problems">
+                                <button style="background-color: Transparent;color: whitesmoke" >  Register Now </button>
+                            
+                        </div>
+                        </a>
+                    </div>
+                </div>
+            </form>
+              <div class="row offset-top-10 offset-bottom-10">
+                 <div class="col-100">
+                    <div class="line"></div>
+                    <span class="or">or</span> 
+                    <div class="line"></div>
+                 </div>
+              </div>
+              <div class="row ">
+                 <div class="col-50"> 
+                    <a href="#" class="button button-fill fb-btn fb-btn-inputino">
+                    <img src="{{baseUrl}}/assets/img/facebook.png" alt=""  width="20" class="img-icon"/>
+                    Facebook
+                    </a>
+                 </div>
+                 <div class="col-50"> 
+                    <a href="#" class="button button-fill btn3">
+                    <img src="{{baseUrl}}/assets/img/google-plus-symbol.png" alt=""  width="20" class="img-icon"/>
+                    google+
+                    </a>
+                 </div>
+              </div>
+           </div>
+        </div>
+        </div>
+        <div>
+        
+	     <!-- Main container ends -->
+        
+    </div>
+ </div>
