@@ -1,8 +1,4 @@
-<div class="pages">
-  <div data-page="login" class="page layout-dark">
-     <!-- Toolbar has additional "toolbar-bottom" class -->
-     <div class="page-content login-page theme-white">
-        <div class="close"><a href="index.html" class="back" data-force="true"><img src="{{baseUrl}}/assets/img/close.png" alt="close"></a></div>
+
         <!-- Views -->
         <div class="views">
            <!-- Your main view, should have "view-main" class -->
@@ -12,6 +8,9 @@
                  <!-- Page, "data-page" contains page name -->
                  <div data-page="index" class="page">
                     <!-- Scrollable page content -->
+                    
+                     
+                    
                     <div class="page-content" id="app-cover">
                        <div class="app-cover-content">
                           <div class="margin-bottom-10"><img src="{{baseUrl}}/assets/img/logo.png" alt="Biztrendz" width="60" height="60"/></div>
@@ -34,7 +33,7 @@
                             <div class="row  margin-top-30">
                               <div class="col-100">
                                   <a href="javascript:void(0)" class="button button-fill btn1" > 
-                                    <img src="../{{baseUrl}}/assets/img/mail.png" alt=""  width="20" class="img-icon"/>                                    
+                                    <img src="{{baseUrl}}/assets/img/mail.png" alt=""  width="20" class="img-icon"/>                                    
                                       <div class="text-alignment-problems" >
                                         <button style="background-color: Transparent;color: whitesmoke" >  LOGIN NOW </button>
                                       </div>                                  
@@ -52,13 +51,13 @@
                           <div class="row ">
                              <div class="col-50"> 
                                 <a href="sign-up.html" class="button button-fill fb-btn fb-btn-inputino">
-                                <img src="{{baseUrl}}/assets/img/facebook.png" alt=""  width="20" class="img-icon"/>
+                                <img src="{{baseUrl}}/assets/img/facebook.png" alt="" width="20" class="img-icon"/>
                                 Facebook
                                 </a>
                              </div>
-                             <div class="col-50"> 
-                                <a href="sign-up.html" class="button button-fill btn3">
-                                    <img src="{{baseUrl}}/assets/img/google-plus-symbol.png" alt=""  width="20" class="img-icon"/>
+                             <div class="col-50">  
+                                <a href="sign-up.html" class="theme-pink button button-fill btn3" style="background: #e91e63 !important;">
+                                    <img src="{{baseUrl}}assets/img/google-plus-symbol.png" alt=""  width="20" class="img-icon"/>
                                 google+
                                 </a>
                              </div>
@@ -68,13 +67,18 @@
                                 Want to reset your password
                                 <a href="remember-password.html" class="login">Click here</a>
                              </div>
+                             <div class="col-100"> 
+                                Do not have account
+                                <a [routerLink]="['/register']" class="login">Click here</a>
+                             </div>
                           </div>
+                          <div class="row offset-top-10 margin-top-15">
+                              
+                           </div>
                        </div>
                     </div>
                  </div>
               </div>
            </div>
         </div>
-     </div>
-  </div>
-</div>
+    

@@ -1,3 +1,4 @@
+import { Exception } from './../../model/exception';
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -47,13 +48,18 @@ export class LoginComponent implements OnInit {
     this.loading = true;
     this.authenticationService.login( f.value.usename  , f.value.password)
         .subscribe(result => {
+          console.log('login componet' + result);
             if (result === true) {
-                console.log(result);
                 this.router.navigate([this.pageName]);
             } else {
                 this.error = 'Username or password is incorrect';
                 this.loading = false;
             }
+        }, error => {
+          if (error.error === 'Unauthorized') {
+             this.error = 'Username or password is incorrect';
+             this.loading = false;
+          }
         });
 }
 

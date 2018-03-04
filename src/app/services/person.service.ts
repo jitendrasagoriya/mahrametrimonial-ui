@@ -1,3 +1,5 @@
+import { ExceptionService } from './exception.service';
+import { error } from 'protractor';
 import { GlobalService } from './../global/global.service';
 import { Person } from './../model/person';
 import { Observable } from 'rxjs/Observable';
@@ -16,7 +18,7 @@ export class PersonService {
   constructor(private http: Http,
      private authenticationService: AuthenticationService,
      private router: Router,
-     private globalService: GlobalService ) {
+     private globalService: GlobalService, private exceptionService: ExceptionService  ) {
       if (this.globalService.isLocal) {
           this.url = this.globalService.hostLocal;
       } else {
@@ -33,7 +35,9 @@ export class PersonService {
       // get users from api
       return this.http.get(this.url + 'person/', options)
           .map((response: Response) => response.json())
-          .catch((response: Response) => Observable.throw(this.errorHandler(response)));
+          .catch((response: Response) => Observable.throw(
+            this.exceptionService.errorHandlerWithPage(response, 'search')
+          ));
   }
 
   getPerson(): Observable<Person> {
@@ -44,14 +48,7 @@ export class PersonService {
      // get users from api
      return this.http.get(this.url + 'person/profile/view', options)
          .map((response: Response) => response.json())
-         .catch((response: Response) => Observable.throw(this.errorHandler(response)));
-  }
-
-  errorHandler(response: Response): void {
-   const exception = response.json();
-    if (exception.error === 'Unauthorized') {
-      this.router.navigate(['login'], { queryParams: { pagename: 'search' } });
-    }
+         .catch((response: Response) => Observable.throw(this.exceptionService.errorHandler(response)));
   }
 
   registerUser(userName: string, email: string, paswword: string) {
@@ -64,11 +61,8 @@ export class PersonService {
       'enabled': 1
     };
 
-    return this.http.post(this.url + 'register', data, {headers: headers})
-            .map((response: Response) => {
-                console.log(response);
-                this.authenticationService.login(userName, paswword);
-            })
-            .catch((response: Response) => Observable.throw(this.errorHandler(response)));
+    return this.http.post( this.globalService.localBaseUrl + 'register', data, {headers: headers})
+            .map((response: Response) => response.json() )
+            .catch((response: Response) => Observable.throw(response));
   }
 }

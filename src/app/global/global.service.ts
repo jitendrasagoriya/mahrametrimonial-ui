@@ -8,6 +8,8 @@ export class GlobalService {
     public isLocal: Boolean = true;
     public baseUrl = 'https://jitendrasagoriya.github.io/mahrametrimonial-ui/';
 
+    public localBaseUrl = 'http://localhost:8787/';
+
     constructor() {
         if (this.isLocal) {
             this.baseUrl = 'http://localhost:4200/';

@@ -1,0 +1,63 @@
+<div class="views">
+         <!-- Your main view, should have "view-main" class -->
+         <div class="view view-main">
+            <!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages">
+               <!-- Page, "data-page" contains page name -->
+               <div data-page="index" class="page">
+                  <!-- Scrollable page content -->
+                  <div class="page-content" id="app-cover">
+                      
+                     <div class="clearfix"></div>
+                     <div class="app-cover-content">
+                        <div class="margin-bottom-10 margin-top-30"><img src="{{baseUrl}}/assets/img/logo.png" alt="weddings" width="70" height="70"/></div>
+                        <div class="text-large font">
+                           Weddings
+                        </div>
+                        <div class="text-large  margin-top-10 font2">
+                           Create your Dating Mobile App<br>
+                           Comes with great features and designs <br>
+                           There is no Coding skills required<br>
+                           Fully Cuistomized Mobile Template
+                        </div>
+                        <div class="row  margin-top-10">
+                           <div class="col-50"> 
+                              <a [routerLink]="['/login']"  class="button button-fill fb-btn">
+                              <img src="{{baseUrl}}/assets/img/login.png" alt=""  width="20" class="img-icon"/>
+                              Login
+                              </a>
+                           </div>
+                           <div class="col-50"> 
+                              <a [routerLink]="['/register']"  class="button button-fill btn3 btn1">
+                              <img src="{{baseUrl}}/assets/img/pencil.png" alt=""  width="20" class="img-icon"/>
+                              Register
+                              </a>
+                           </div>
+                        </div>
+                        <div class="row offset-top-10 offset-bottom-10">
+                           <div class="col-100">
+                              <div class="line"></div>
+                              <span class="or">or</span> 
+                              <div class="line"></div>
+                           </div>
+                        </div>
+                        <div class="row ">
+                           <div class="col-100"> 
+                              <a href="#" class="button button-fill btn2 fb-btn-final">
+                              <img alt="" src="{{baseUrl}}/assets/img/facebook.png" width="20" class="img-icon"/>
+                              Connect With Facebook
+                              </a>
+                           </div>
+                        </div>
+                        <div class="row offset-top-10 margin-top-15">
+                           <div class="col-100"> 
+                              Already do you have an account?<br>
+                              <a href="login.html" class="login">login</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>

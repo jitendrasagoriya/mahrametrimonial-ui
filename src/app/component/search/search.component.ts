@@ -25,7 +25,6 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     this.baseUrl = this.globalService.baseUrl;
     this.personService.getPersons().subscribe((responce: any) => {
-        console.log( responce.content );
         this.persons = responce.content;
     });
   }

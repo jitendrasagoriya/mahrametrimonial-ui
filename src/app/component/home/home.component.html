@@ -1,14 +1,7 @@
- <!-- Status bar overlay for fullscreen mode-->
- <div class="statusbar-overlay"></div>
- <!-- Panels overlay-->
- <div class="panel-overlay"></div>
- <app-header></app-header>
 
- <app-footer></app-footer>
- <!-- Views -->
  <div class="views">
     <!-- Your main view, should have "view-main" class -->
-    <div class="view view-main">
+    <div class="view view-main">      
        <!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
        <div class="pages">
         <div data-page="home" class="page navbar-fixed">
@@ -31,15 +24,15 @@
                     <div class="swiper-container swiper-2">
                        <div class="swiper-wrapper">
                           <div class="swiper-slide button" style="width:160">
-                             <a href="edit-profile.html?slide=4">
+                             <a [routerLink]="['/basicProfile']">
                                 <span>
                                    <img src="{{baseUrl}}/assets/img/couple.png"> 
-                                   <p class="label-slider-home-sikhjodi">Family</p>
+                                   <p class="label-slider-home-sikhjodi">View Profile</p>
                                 </span>
                              </a>
                           </div>
                           <div class="swiper-slide">
-                             <a href="edit-profile.html">
+                             <a href="#">
                                 <span>
                                    <img src="{{baseUrl}}/assets/img/photocamera1.png"> 
                                    <p class="label-slider-home-sikhjodi">Photos</p>
@@ -47,7 +40,7 @@
                              </a>
                           </div>
                           <div class="swiper-slide">
-                             <a href="edit-profile.html?slide=2">
+                             <a href="#">
                                 <span>
                                    <img src="{{baseUrl}}/assets/img/books-stack-of-three.png"> 
                                    <p class="label-slider-home-sikhjodi">Education</p>
@@ -55,7 +48,7 @@
                              </a>
                           </div>
                           <div class="swiper-slide">
-                             <a href="edit-profile.html?slide=3">
+                             <a href="#">
                                 <span>
                                    <img src="{{baseUrl}}/assets/img/briefcase-model-with-three-lines.png"> 
                                    <p class="label-slider-home-sikhjodi">Career</p>
@@ -63,7 +56,7 @@
                              </a>
                           </div>
                           <div class="swiper-slide">
-                             <a href="edit-profile.html?slide=1">
+                             <a href="#">
                                 <span>
                                    <img src="{{baseUrl}}/assets/img/layout.png"> 
                                    <p class="label-slider-home-sikhjodi">Basic</p>
@@ -71,7 +64,7 @@
                              </a>
                           </div>
                           <div class="swiper-slide">
-                             <a href="edit-profile.html?slide=5">
+                             <a href="#">
                                 <span>
                                    <img src="{{baseUrl}}/assets/img/cocktail.png"> 
                                    <p class="label-slider-home-sikhjodi">Lifestyle</p>
@@ -79,7 +72,7 @@
                              </a>
                           </div>
                           <div class="swiper-slide">
-                             <a href="edit-profile.html?slide=6">
+                             <a href="#">
                                 <span>
                                    <img src="{{baseUrl}}/assets/img/phone1call.png"> 
                                    <p class="label-slider-home-sikhjodi">Contact</p>
@@ -87,7 +80,7 @@
                              </a>
                           </div>
                           <div class="swiper-slide">
-                             <a href="edit-profile.html?slide=7">
+                             <a href="#">
                                 <span>
                                    <img src="{{baseUrl}}/assets/img/workflow.png"> 
                                    <p class="label-slider-home-sikhjodi">Partner</p>
@@ -322,5 +315,4 @@
            </div>
         </div>
      </div>
-    </div>
- </div>
+</div>

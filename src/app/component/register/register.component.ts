@@ -1,3 +1,5 @@
+import { error, element } from 'protractor';
+import { AuthenticationService } from './../../services/authentication.service';
 import { NgForm } from '@angular/forms';
 import { GlobalService } from './../../global/global.service';
 import { ProfileService } from './../../services/profile.service';
@@ -20,7 +22,8 @@ export class RegisterComponent implements OnInit {
   constructor(private router: Router,
     private personService: PersonService,
     private profileService: ProfileService,
-    private globalService: GlobalService
+    private globalService: GlobalService,
+    private authenticationService: AuthenticationService
   ) { }
 
   ngOnInit() {
@@ -32,21 +35,25 @@ export class RegisterComponent implements OnInit {
     if (!f.valid) {
       console.log('please give all fields values');
     } else {
-       this.registerUser(f);
+      this.registerUser(f);
     }
   }
 
   registerUser(f: NgForm) {
     this.loading = true;
-    this.personService.registerUser( f.value.usename, f.value.email  , f.value.password)
+    this.personService.registerUser( f.value.username, f.value.email  , f.value.password)
         .subscribe(result => {
-            if (result === true) {
-                console.log(result);
-                this.router.navigate([this.pageName]);
-            } else {
-                this.error = 'Somethig went wrong. Please try again';
-                this.loading = false;
-            }
+                console.log( 'result' + result);
+                if (this.authenticationService.login(result.username, result.password)) {
+                  this.router.navigate([this.pageName]);
+                } else {
+                  this.router.navigate([this.pageName]);
+                }
+         }, error => {
+          console.log(error);
+          console.log('Somethig went wrong. Please try again');
+          this.error = 'Somethig went wrong. Please try again';
+          this.loading = false;
         });
   }
 

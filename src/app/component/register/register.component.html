@@ -22,13 +22,13 @@
               <div class="text-large margin-bottom-15  sign-heading">
                  SIGN UP
               </div>
-              <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+              <form #rf="ngForm" (ngSubmit)="onSubmit(rf)" novalidate>
                 <div class="masti-marle-chore-no1">
                     <div class="row  margin-top-10">
                         
                             <div class="col-100">
                             <img src="{{baseUrl}}/assets/img/avatar2536.png" width="20" class="sign-in-img"/>
-                            <input type="text" id="username" placeholder="User Name" name="username" ngModel required #username="ngModel"/>
+                            <input type="text" class="testBox" id="username" placeholder="User Name" name="username" ngModel required #username="ngModel"/>
                             </div>
                             <div class="col-100">
                             <img src="{{baseUrl}}/assets/img/envelope125.png" width="20" class="sign-in-img"/>
@@ -36,22 +36,24 @@
                             </div>
                         
                             <div class="col-100">
-                            <img src="{{baseUrl}}/assets/img/key2456.png" width="20" class="sign-in-img"/>
-                            <input type="password" id="passcode" placeholder="Password" name="password" ngModel required #password="ngModel"/>
+                                <img src="{{baseUrl}}/assets/img/key2456.png" width="20" class="sign-in-img"/>
+                                <input type="password" id="passcode" placeholder="Password" name="password" ngModel required #password="ngModel"/>
                             </div>
 
                             <div class="col-100">
                                 <img src="{{baseUrl}}/assets/img/key2456.png" width="20" class="sign-in-img"/>
-                                <input type="password" id="repasscode" placeholder="Re Password" name="repassword" ngModel required #repassword="ngModel"/>
+                                <input type="password" class="testBox" id="repasscode" placeholder="Re Password" name="repassword" ngModel required #repassword="ngModel"/>
                             </div>
                     </div>
                 </div>
                 <div class="row  margin-top-30">
                     <div class="col-100">
-                        <a href="login.html" class="button button-fill btn1">
+                        <a href="javascript:void(0)" class="button button-fill btn1">
                         <img src="{{baseUrl}}/assets/img/mail.png" width="20" class="img-icon"/>
                         <div class="text-alignment-problems">
-                                <button style="background-color: Transparent;color: whitesmoke" >  Register Now </button>
+                                <button type="submit" style="background-color: Transparent;color: whitesmoke" > 
+                                     Register Now 
+                                </button>
                             
                         </div>
                         </a>
@@ -79,6 +81,13 @@
                     </a>
                  </div>
               </div>
+              <div class="row offset-top-10 margin-top-15">
+                     
+                    <div class="col-100"> 
+                       Already have account.
+                       <a [routerLink]="['/login']" class="login">Click here</a>
+                    </div>
+                 </div>
            </div>
         </div>
         </div>

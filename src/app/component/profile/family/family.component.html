@@ -1,0 +1,125 @@
+<div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">   
+            <div class="pages">
+                <div data-page="edit-profile" class="page navbar-fixed">
+                   <div class="navbar">
+                      <div class="navbar-inner">
+                         <div class="left"><a (click)="goBack()" class="back link"> <i class="icon icon-back"></i></a></div>
+                         <div class="center fg-white">Profile View</div>
+                         <div class="right">
+                            <!-- Right link contains only icon - additional "icon-only" class-->
+                            <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+                         </div>
+                      </div>
+                   </div>
+                   <!-- Toolbar has additional "toolbar-bottom" class -->
+                   <div class="page-content">
+                      <div class="guneet-personal-class-editor">
+                         <div class="swiper-custom">
+                            <div class="swiper-container swiper-retro" >
+                              <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                     <div class="first-slider-head-sj">
+                                        <div class="footer-flex-sj-2546">
+                                           <div class="flexy-3-sj-1524 footer-matri-flex-oyod-1 pp-prev" (click)="redirect('career')" >Career</div>
+                                           <div class="flexy-3-sj-1524 footer-matri-flex-oyod">Family</div>
+                                           <div class="flexy-3-sj-1524 footer-matri-flex-oyod-1 pp-next" (click)="redirect('lifestyle')">Lifestyle</div>
+                                        </div>
+                                     </div>
+                                     <div class="white-triangle-sj"></div>
+                                     <div class="content-block">
+                                        <div class="li-ke-lafde-resolve-kar">
+                                           <div class="list-block media-list">
+                                              <ul>
+                                                 <!-- Popup Solution 1 -->
+                                                 <li data-popup=".popup-done-four" class="open-popup" >
+                                                    <a href="#" class="item-link item-content">
+                                                       <div class="item-inner">
+                                                          <div class="item-title-row">
+                                                             <div class="item-title">About My Family</div>
+                                                          </div>
+                                                          <div class="item-text">My family belongs to a Middle class family.There are 4members in my sweet family...</div>
+                                                       </div>
+                                                    </a>
+                                                 </li>
+                                                 <!-- popup-done-one -->
+                                                 <div class="popup popup-done-four">
+                                                    <div class="popup-header-main-edit-sj">
+                                                       <label class="text-class-head-popup">About My Family</label>
+                                                       <label class="label-text-accept-popup-head"><a href="#" class="close-popup"><img src="img/close.png" width="16" height="16" class="sj-popup-icons"></a></label>
+                                                    </div>
+                                                    <div class="content-block">
+                                                       <div class="desi-dhakkan-khol">
+                                                          <div class="align-top">
+                                                             <div class="item-content">
+                                                                <div class="item-inner">
+                                                                   <div class="item-title label">About My Family</div>
+                                                                   <div class="item-input">
+                                                                      <textarea>My family belongs to a Middle class family.There are 4members in my sweet family. First of my Respected Father persuing job in government services and Then. My lovely Mother is Domestic Engineer. In my family the last member is our very cute Doggy. He is also our family Member. In my Family members are loving me and they are inspiration for me and they always supporting in nature.</textarea>
+                                                                   </div>
+                                                                </div>
+                                                             </div>
+                                                          </div>
+                                                          <div class="row">
+                                                             <div class="col-50">
+                                                                <a href="#" class="button button-big button-red close-popup">Cancel</a>
+                                                             </div>
+                                                             <div class="col-50">
+                                                                <a href="#" class="button button-big button-green">Save</a>
+                                                             </div>
+                                                          </div>
+                                                       </div>
+                                                    </div>
+                                                 </div>
+                                                 <!-- Popup Solution 1 -->
+                                                 <!-- Popup Solution 5 -->
+                                                 <li>
+                                                    <a [routerLink]="['/parantDetails']" class="item-link item-content">
+                                                       <div class="item-inner">
+                                                          <div class="item-title-row">
+                                                             <div class="item-title">Parents</div>
+                                                          </div>
+                                                          <div class="item-text">Father Occupation | Mother Occupation | Current Family Income |</div>
+                                                       </div>
+                                                    </a>
+                                                 </li>
+                                                 <!-- Popup Solution 5 -->
+                                                 <!-- Popup Solution 5 -->
+                                                 <li>
+                                                    <a [routerLink]="['/siblingsDetails']" class="item-link item-content">
+                                                       <div class="item-inner">
+                                                          <div class="item-title-row">
+                                                             <div class="item-title">Siblings</div>
+                                                          </div>
+                                                          <div class="item-text">Brother(s) | Sister(s) | Married Brother(s) | Married Sister(s) |</div>
+                                                       </div>
+                                                    </a>
+                                                 </li>
+                                                 <!-- Popup Solution 5 -->
+                                                 <!-- Popup Solution 5 -->
+                                                 <li>
+                                                    <a [routerLink]="['/familyValues']" class="item-link item-content">
+                                                       <div class="item-inner">
+                                                          <div class="item-title-row">
+                                                             <div class="item-title">Family Values</div>
+                                                          </div>
+                                                          <div class="item-text">Family Status | Diffrent Family Types | Living with Parents or Not |</div>
+                                                       </div>
+                                                    </a>
+                                                 </li>
+                                                 <!-- Popup Solution 5 -->
+                                              </ul>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div> 
+                            </div>
+                         </div>
+                      </div>
+                      <!-- Tabs, tabs wrapper -->
+                   </div>
+                </div>
+             </div>
+        </div>
+    </div>

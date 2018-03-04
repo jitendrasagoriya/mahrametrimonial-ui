@@ -1,747 +1,592 @@
-<ng-template #loading>Loading User Data...</ng-template>
- <!-- Status bar overlay for fullscreen mode-->
- <div class="statusbar-overlay"></div>
- <!-- Panels overlay-->
- <div class="panel-overlay"></div>
- <app-header ></app-header>
-
- <app-footer></app-footer>
- <!-- Views -->
- <div class="views" >
-    <!-- Your main view, should have "view-main" class -->
-    <div class="view view-main">
-       <!-- Main Container Start -->
-        <div class="pages">
-		   <div data-page="edit-profile" class="page navbar-fixed">
-			  <div class="navbar">
-				 <div class="navbar-inner">
+<div class="views">
+	<!-- Your main view, should have "view-main" class -->
+	<div class="view view-main">
+		<div class="pages">
+			<div data-page="popup1-now" class="page">
+			<div class="navbar">
+				<div class="navbar-inner">
 					<div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i></a></div>
-					<div class="center fg-white">Profile View</div>
+					<div class="center fg-white">Basic Details</div>
 					<div class="right">
-					   <!-- Right link contains only icon - additional "icon-only" class-->
-					   <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+						<!-- Right link contains only icon - additional "icon-only" class-->
+						<a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
 					</div>
-				 </div>
-			  </div>
-			  <!-- Toolbar has additional "toolbar-bottom" class -->
-			  <div class="page-content">
-				 <div class="guneet-personal-class-editor">
-					<div class="swiper-custom">
-					   <div class="swiper-container swiper-retro" >
-						  <div class="swiper-wrapper">
-							 <div class="swiper-slide">
-								<div class="first-slider-head-sj">
-								   <div class="footer-flex-sj-2546">
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod"></div>
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod">Photos</div>
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod-1 pp-next" >Basic Info</div>
-								   </div>
+				</div>
+			</div>
+			<div class="content-block" style="padding-top:30px;">
+				<div class="page-content">
+					<div class="list-block">
+						<ul>
+						<li>
+							<!-- Smart select, will be opened in Popup -->
+							<a href="#" class="item-link smart-select" data-open-in="popup">
+								<!-- select -->
+								<select name="Height">
+									<option value="4'10">4'10"</option>
+									<option value="4'11">4'11"</option>
+									<option value="5 Feet">5 Feet"</option>
+									<option value="5'1">5'1"</option>
+									<option value="5'2">5'2"</option>
+									<option value="5'3">5'3"</option>
+									<option value="5'4">5'4"</option>
+									<option value="5'5">5'5"</option>
+									<option value="5'6">5'6"</option>
+									<option value="5'7">5'7"</option>
+									<option value="5'8">5'8"</option>
+									<option value="5'9">5'9"</option>
+									<option value="5'10">5'10"</option>
+									<option value="5'11" selected>5'11"</option>
+									<option value="6 Feet">6 Feet</option>
+									<option value="6'1">6'1"</option>
+									<option value="6'2">6'2"</option>
+									<option value="6'3">6'3"</option>
+									<option value="6'3 Above">6'3" Above</option>
+								</select>
+								<div class="item-content">
+									<div class="item-inner">
+									<!-- Select label -->
+									<div class="item-title">Height</div>
+									<!-- Selected value, not required -->
+									<div class="item-after">5'11"</div>
+									</div>
 								</div>
-								<div class="white-triangle-sj"></div>
-								<div class="second-slider-head-sj">
-								   <div class="footer-flex-sj-2546">
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod-1"><a href="#" data-popup=".popup-about" class="open-popup">Photo Change</a></div>
-									  <div class="popup popup-about">
-										 <div class="popup-header-main-edit-sj">
-											<label class="text-class-head-popup">Change your Profile Photo</label>
-											<label class="label-text-accept-popup-head"><a href="#" class="close-popup"><img src="{{baseUrl}}/assets/img/close.png" width="16" height="16" class="sj-popup-icons"></a></label>
-										 </div>
-										 <div class="content-block">
-											<div class="guneet-popup-style-unique-make">
-											   <div class="content-block-title">Select Your Profile Photo</div>
-											   <div class="swiper-container swiper-photo-change">
-												  <div class="swiper-wrapper">
-													 <div class="swiper-slide"><span><img src="{{baseUrl}}/assets/img/m3.jpg"></span></div>
-													 <div class="swiper-slide"><span><img src="{{baseUrl}}/assets/img/m2.jpg"></span></div>
-													 <div class="swiper-slide"><span><img src="{{baseUrl}}/assets/img/m4.jpg"></span></div>
-													 <div class="swiper-slide"><span><img src="{{baseUrl}}/assets/img/m1.jpg"></span></div>
-												  </div>
-											   </div>
-											   <div class="pop-up-dash-line-text">
-												  <a herf="#">
-													 <p class="button dash-line-text-p close-popup">Make Your Profile Photo</p>
-												  </a>
-											   </div>
-											</div>
-										 </div>
-									  </div>
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod-1"><a href="#" data-popup=".popup-services" class="open-popup">Photo Privacy</a></div>
-									  <div class="popup popup-services">
-										 <div class="popup-header-main-edit-sj">
-											<label class="text-class-head-popup">Photo Provacy Settings</label>
-											<label class="label-text-accept-popup-head"><a href="#" class="close-popup"><img src="{{baseUrl}}/assets/img/close.png" width="16" height="16" class="sj-popup-icons"></a></label>
-										 </div>
-										 <div class="content-block">
-											<div class="inner-privacy-charter-manage">
-											   <div class="item-content">
-												  <div class="item-media">
-													 Visible to all (Recommended)
-													 <label class="label-switch">
-														<input type="checkbox">
-														<div class="checkbox"></div>
-													 </label>
-												  </div>
-											   </div>
-											</div>
-											<div class="inner-privacy-charter-manage">
-											   <div class="item-content">
-												  <div class="item-media">
-													 Only Visible to Accepted Contacts
-													 <label class="label-switch">
-														<input type="checkbox">
-														<div class="checkbox"></div>
-													 </label>
-												  </div>
-											   </div>
-											</div>
-											<p><a href="#" class="button button-fill button-big color-pink close-popup">DONE</a></p>
-										 </div>
-									  </div>
-								   </div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="item-link smart-select" data-open-in="popup">
+								<!-- select -->
+								<select name="Country Living In">
+									<option value="AF">Afghanistan</option>
+									<option value="AL">Albania</option>
+									<option value="DZ">Algeria</option>
+									<option value="AS">American Samoa</option>
+									<option value="AD">Andorra</option>
+									<option value="AO">Angola</option>
+									<option value="AI">Anguilla</option>
+									<option value="AQ">Antarctica</option>
+									<option value="AG">Antigua And Barbuda</option>
+									<option value="AR">Argentina</option>
+									<option value="AM">Armenia</option>
+									<option value="AW">Aruba</option>
+									<option value="AU">Australia</option>
+									<option value="AT">Austria</option>
+									<option value="AZ">Azerbaijan</option>
+									<option value="BS">Bahamas</option>
+									<option value="BH">Bahrain</option>
+									<option value="BD">Bangladesh</option>
+									<option value="BB">Barbados</option>
+									<option value="BY">Belarus</option>
+									<option value="BE">Belgium</option>
+									<option value="BZ">Belize</option>
+									<option value="BJ">Benin</option>
+									<option value="BM">Bermuda</option>
+									<option value="BT">Bhutan</option>
+									<option value="BO">Bolivia</option>
+									<option value="BA">Bosnia And Herzegowina</option>
+									<option value="BW">Botswana</option>
+									<option value="BV">Bouvet Island</option>
+									<option value="BR">Brazil</option>
+									<option value="IO">British Indian Ocean Territory</option>
+									<option value="BN">Brunei Darussalam</option>
+									<option value="BG">Bulgaria</option>
+									<option value="BF">Burkina Faso</option>
+									<option value="BI">Burundi</option>
+									<option value="KH">Cambodia</option>
+									<option value="CM">Cameroon</option>
+									<option value="CA">Canada</option>
+									<option value="CV">Cape Verde</option>
+									<option value="KY">Cayman Islands</option>
+									<option value="CF">Central African Republic</option>
+									<option value="TD">Chad</option>
+									<option value="CL">Chile</option>
+									<option value="CN">China</option>
+									<option value="CX">Christmas Island</option>
+									<option value="CC">Cocos (Keeling) Islands</option>
+									<option value="CO">Colombia</option>
+									<option value="KM">Comoros</option>
+									<option value="CG">Congo</option>
+									<option value="CK">Cook Islands</option>
+									<option value="CR">Costa Rica</option>
+									<option value="CI">Cote D'Ivoire</option>
+									<option value="HR">Croatia (Local Name: Hrvatska)</option>
+									<option value="CU">Cuba</option>
+									<option value="CY">Cyprus</option>
+									<option value="CZ">Czech Republic</option>
+									<option value="DK">Denmark</option>
+									<option value="DJ">Djibouti</option>
+									<option value="DM">Dominica</option>
+									<option value="DO">Dominican Republic</option>
+									<option value="TP">East Timor</option>
+									<option value="EC">Ecuador</option>
+									<option value="EG">Egypt</option>
+									<option value="SV">El Salvador</option>
+									<option value="GQ">Equatorial Guinea</option>
+									<option value="ER">Eritrea</option>
+									<option value="EE">Estonia</option>
+									<option value="ET">Ethiopia</option>
+									<option value="FK">Falkland Islands (Malvinas)</option>
+									<option value="FO">Faroe Islands</option>
+									<option value="FJ">Fiji</option>
+									<option value="FI">Finland</option>
+									<option value="FR">France</option>
+									<option value="GF">French Guiana</option>
+									<option value="PF">French Polynesia</option>
+									<option value="TF">French Southern Territories</option>
+									<option value="GA">Gabon</option>
+									<option value="GM">Gambia</option>
+									<option value="GE">Georgia</option>
+									<option value="DE">Germany</option>
+									<option value="GH">Ghana</option>
+									<option value="GI">Gibraltar</option>
+									<option value="GR">Greece</option>
+									<option value="GL">Greenland</option>
+									<option value="GD">Grenada</option>
+									<option value="GP">Guadeloupe</option>
+									<option value="GU">Guam</option>
+									<option value="GT">Guatemala</option>
+									<option value="GN">Guinea</option>
+									<option value="GW">Guinea-Bissau</option>
+									<option value="GY">Guyana</option>
+									<option value="HT">Haiti</option>
+									<option value="HM">Heard And Mc Donald Islands</option>
+									<option value="VA">Holy See (Vatican City State)</option>
+									<option value="HN">Honduras</option>
+									<option value="HK">Hong Kong</option>
+									<option value="HU">Hungary</option>
+									<option value="IS">Icel And</option>
+									<option value="IN">India</option>
+									<option value="ID">Indonesia</option>
+									<option value="IR">Iran (Islamic Republic Of)</option>
+									<option value="IQ">Iraq</option>
+									<option value="IE">Ireland</option>
+									<option value="IL">Israel</option>
+									<option value="IT">Italy</option>
+									<option value="JM">Jamaica</option>
+									<option value="JP">Japan</option>
+									<option value="JO">Jordan</option>
+									<option value="KZ">Kazakhstan</option>
+									<option value="KE">Kenya</option>
+									<option value="KI">Kiribati</option>
+									<option value="KP">Korea, Dem People'S Republic</option>
+									<option value="KR">Korea, Republic Of</option>
+									<option value="KW">Kuwait</option>
+									<option value="KG">Kyrgyzstan</option>
+									<option value="LA">Lao People'S Dem Republic</option>
+									<option value="LV">Latvia</option>
+									<option value="LB">Lebanon</option>
+									<option value="LS">Lesotho</option>
+									<option value="LR">Liberia</option>
+									<option value="LY">Libyan Arab Jamahiriya</option>
+									<option value="LI">Liechtenstein</option>
+									<option value="LT">Lithuania</option>
+									<option value="LU">Luxembourg</option>
+									<option value="MO">Macau</option>
+									<option value="MK">Macedonia</option>
+									<option value="MG">Madagascar</option>
+									<option value="MW">Malawi</option>
+									<option value="MY">Malaysia</option>
+									<option value="MV">Maldives</option>
+									<option value="ML">Mali</option>
+									<option value="MT">Malta</option>
+									<option value="MH">Marshall Islands</option>
+									<option value="MQ">Martinique</option>
+									<option value="MR">Mauritania</option>
+									<option value="MU">Mauritius</option>
+									<option value="YT">Mayotte</option>
+									<option value="MX">Mexico</option>
+									<option value="FM">Micronesia, Federated States</option>
+									<option value="MD">Moldova, Republic Of</option>
+									<option value="MC">Monaco</option>
+									<option value="MN">Mongolia</option>
+									<option value="MS">Montserrat</option>
+									<option value="MA">Morocco</option>
+									<option value="MZ">Mozambique</option>
+									<option value="MM">Myanmar</option>
+									<option value="NA">Namibia</option>
+									<option value="NR">Nauru</option>
+									<option value="NP">Nepal</option>
+									<option value="NL">Netherlands</option>
+									<option value="AN">Netherlands Ant Illes</option>
+									<option value="NC">New Caledonia</option>
+									<option value="NZ">New Zealand</option>
+									<option value="NI">Nicaragua</option>
+									<option value="NE">Niger</option>
+									<option value="NG">Nigeria</option>
+									<option value="NU">Niue</option>
+									<option value="NF">Norfolk Island</option>
+									<option value="MP">Northern Mariana Islands</option>
+									<option value="NO">Norway</option>
+									<option value="OM">Oman</option>
+									<option value="PK">Pakistan</option>
+									<option value="PW">Palau</option>
+									<option value="PA">Panama</option>
+									<option value="PG">Papua New Guinea</option>
+									<option value="PY">Paraguay</option>
+									<option value="PE">Peru</option>
+									<option value="PH">Philippines</option>
+									<option value="PN">Pitcairn</option>
+									<option value="PL">Poland</option>
+									<option value="PT">Portugal</option>
+									<option value="PR">Puerto Rico</option>
+									<option value="QA">Qatar</option>
+									<option value="RE">Reunion</option>
+									<option value="RO">Romania</option>
+									<option value="RU">Russian Federation</option>
+									<option value="RW">Rwanda</option>
+									<option value="KN">Saint K Itts And Nevis</option>
+									<option value="LC">Saint Lucia</option>
+									<option value="VC">Saint Vincent, The Grenadines</option>
+									<option value="WS">Samoa</option>
+									<option value="SM">San Marino</option>
+									<option value="ST">Sao Tome And Principe</option>
+									<option value="SA">Saudi Arabia</option>
+									<option value="SN">Senegal</option>
+									<option value="SC">Seychelles</option>
+									<option value="SL">Sierra Leone</option>
+									<option value="SG">Singapore</option>
+									<option value="SK">Slovakia (Slovak Republic)</option>
+									<option value="SI">Slovenia</option>
+									<option value="SB">Solomon Islands</option>
+									<option value="SO">Somalia</option>
+									<option value="ZA">South Africa</option>
+									<option value="GS">South Georgia , S Sandwich Is.</option>
+									<option value="ES">Spain</option>
+									<option value="LK">Sri Lanka</option>
+									<option value="SH">St. Helena</option>
+									<option value="PM">St. Pierre And Miquelon</option>
+									<option value="SD">Sudan</option>
+									<option value="SR">Suriname</option>
+									<option value="SJ">Svalbard, Jan Mayen Islands</option>
+									<option value="SZ">Sw Aziland</option>
+									<option value="SE">Sweden</option>
+									<option value="CH">Switzerland</option>
+									<option value="SY">Syrian Arab Republic</option>
+									<option value="TW">Taiwan</option>
+									<option value="TJ">Tajikistan</option>
+									<option value="TZ">Tanzania, United Republic Of</option>
+									<option value="TH">Thailand</option>
+									<option value="TG">Togo</option>
+									<option value="TK">Tokelau</option>
+									<option value="TO">Tonga</option>
+									<option value="TT">Trinidad And Tobago</option>
+									<option value="TN">Tunisia</option>
+									<option value="TR">Turkey</option>
+									<option value="TM">Turkmenistan</option>
+									<option value="TC">Turks And Caicos Islands</option>
+									<option value="TV">Tuvalu</option>
+									<option value="UG">Uganda</option>
+									<option value="UA">Ukraine</option>
+									<option value="AE">United Arab Emirates</option>
+									<option value="GB">United Kingdom</option>
+									<option value="US" selected>United States</option>
+									<option value="UM">United States Minor Is.</option>
+									<option value="UY">Uruguay</option>
+									<option value="UZ">Uzbekistan</option>
+									<option value="VU">Vanuatu</option>
+									<option value="VE">Venezuela</option>
+									<option value="VN">Viet Nam</option>
+									<option value="VG">Virgin Islands (British)</option>
+									<option value="VI">Virgin Islands (U.S.)</option>
+									<option value="WF">Wallis And Futuna Islands</option>
+									<option value="EH">Western Sahara</option>
+									<option value="YE">Yemen</option>
+									<option value="ZR">Zaire</option>
+									<option value="ZM">Zambia</option>
+									<option value="ZW">Zimbabwe</option>
+								</select>
+								<div class="item-content">
+									<div class="item-inner">
+									<!-- Select label -->
+									<div class="item-title">Country Living In</div>
+									<!-- Selected value, not required -->
+									<div class="item-after">United States</div>
+									</div>
 								</div>
-								<a href="#" class="open-slider-modal-men">
-								<span class="text-accepton-image"><img src="{{baseUrl}}/assets/img/photo-camera.png" width="20" height="20"><label class="label-text-accept-mastara">4</label></span>
-								</a>
-								<img src="{{baseUrl}}/assets/img/m2.jpg" width="100%">
-								<div class="footer-sj-manage-all">
-								   <div class="footer-flex-sj">
-									  <div class="flexy-3-sj">
-										 <a href="#" class="footer-matri-flex button">
-											<img src="{{baseUrl}}/assets/img/gallery.png" width="16" height="16" class="sj-rcorners2-icons">
-											<p class="para-inside-footer-sj-2">Gallery</p>
-										 </a>
-									  </div>
-									  <div class="flexy-3-sj">
-										 <a href="#" class="footer-matri-flex button">
-											<img src="{{baseUrl}}/assets/img/img-camera-1.png" width="16" height="16" class="sj-rcorners2-icons">
-											<p class="para-inside-footer-sj-2">Camera</p>
-										 </a>
-									  </div>
-									  <div class="flexy-3-sj">
-										 <a href="#" class="footer-matri-flex button">
-											<img src="{{baseUrl}}/assets/img/facebook-16-16.png" width="16" height="16" class="sj-rcorners2-icons">
-											<p class="para-inside-footer-sj-2">Facebook</p>
-										 </a>
-									  </div>
-								   </div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="item-link smart-select" data-searchbar="true" data-searchbar-placeholder="Search State">
+								<!-- select -->
+								<select name="State Living In">
+									<option value="1">Alabama</option>
+									<option value="2">Alaska</option>
+									<option value="3">Arizona</option>
+									<option value="4">Arkansas</option>
+									<option value="5">California</option>
+									<option value="6">Colorado</option>
+									<option value="7">Connecticut</option>
+									<option value="8">Delaware</option>
+									<option value="9">District of Columbia</option>
+									<option value="10" selected>Florida</option>
+									<option value="11">Georgia</option>
+									<option value="12">Hawaii</option>
+									<option value="13">Idaho</option>
+									<option value="14">Illinois</option>
+									<option value="15">Indiana</option>
+									<option value="16">Iowa</option>
+									<option value="17">Kansas</option>
+									<option value="18">Kentucky</option>
+									<option value="19">Louisiana</option>
+									<option value="20">Maine</option>
+									<option value="21">Maryland</option>
+									<option value="22">Massachusetts</option>
+									<option value="23">Michigan</option>
+									<option value="24">Minnesota</option>
+									<option value="25">Mississippi</option>
+									<option value="26">Missouri</option>
+									<option value="27">Montana</option>
+									<option value="28">Nebraska</option>
+									<option value="29">Nevada</option>
+									<option value="30">New Hampshire</option>
+									<option value="31">New Jersey</option>
+									<option value="32">New Mexico</option>
+									<option value="33">New York</option>
+									<option value="34">North Carolina</option>
+									<option value="35">North Dakota</option>
+									<option value="36">Ohio</option>
+									<option value="37">Oklahoma</option>
+									<option value="38">Oregon</option>
+									<option value="39">Pennsylvania</option>
+									<option value="40">Rhode Island</option>
+									<option value="41">South Carolina</option>
+									<option value="42">South Dakota</option>
+									<option value="43">Tennessee</option>
+									<option value="44">Texas</option>
+									<option value="45">Utah</option>
+									<option value="46">Vermont</option>
+									<option value="47">Virginia</option>
+									<option value="48">Washington</option>
+									<option value="49">West Virginia</option>
+									<option value="50">Wisconsin</option>
+									<option value="51">Wyoming</option>
+								</select>
+								<div class="item-content">
+									<div class="item-inner">
+									<!-- Select label -->
+									<div class="item-title">State Living In</div>
+									<!-- Selected value, not required -->
+									<div class="item-after">Florida</div>
+									</div>
 								</div>
-							 </div>
-							 <div class="swiper-slide">
-								<div class="first-slider-head-sj">
-								   <div class="footer-flex-sj-2546">
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod-1 pp-prev">Photos</div>
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod">Basic Info</div>
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod-1 pp-next">Education</div>
-								   </div>
+							</a>
+						</li>
+						
+						<li>
+							<!-- Smart select, will be opened in Popup -->
+							<a href="#" class="item-link smart-select" data-open-in="popup">
+								<!-- select -->
+								<select name="Profile Managed By">
+									<option value="Self">Self</option>
+									<option value="Parents">Parents</option>
+									<option value="Siblings" selected>Siblings</option>
+									<option value="Relative">Relative</option>
+									<option value="Friend">Friend</option>
+									<option value="Marriage Bureau">Marriage Bureau</option>
+									<option value="Others">Others</option>
+								</select>
+								<div class="item-content">
+									<div class="item-inner">
+									<!-- Select label -->
+									<div class="item-title">Profile Managed By</div>
+									<!-- Selected value, not required -->
+									<div class="item-after">Siblings</div>
+									</div>
 								</div>
-								<div class="white-triangle-sj"></div>
-								<div class="content-block">
-								   <div class="li-ke-lafde-resolve-kar">
-									  <div class="list-block media-list">
-										 <ul>
-											<!-- Popup Solution 1 -->
-											<li data-popup=".popup-done-one" class="open-popup" >
-											   <a href="#" class="item-link item-content">
-												  <div class="item-inner">
-													 <div class="item-title-row">
-														<div class="item-title">About Me</div>
-													 </div>
-													 <div class="item-text">I have been living in new Delhi. I am 6 feet tall and moderately built my fitness more..</div>
-												  </div>
-											   </a>
-											</li>
-											<!-- popup-done-one -->
-											<div class="popup popup-done-one">
-											   <div class="popup-header-main-edit-sj">
-												  <label class="text-class-head-popup">About Me</label>
-												  <label class="label-text-accept-popup-head"><a href="#" class="close-popup"><img src="{{baseUrl}}/assets/img/close.png" width="16" height="16" class="sj-popup-icons"></a></label>
-											   </div>
-											   <div class="content-block">
-												  <div class="desi-dhakkan-khol">
-													 <div class="align-top">
-														<div class="item-content">
-														   <div class="item-inner">
-															  <div class="item-title label">About Me (Min 120 Words)</div>
-															  <div class="item-input">
-																 <textarea>I have been living in new Delhi. I am 6 feet tall and moderately built. my fitness obsession helps me in keeping body fat at bay! I am working as chief software developer with our company. "HostRider IT Services", I am always trying to learn new skills to keep pace with the changing technology.</textarea>
-															  </div>
-														   </div>
-														</div>
-													 </div>
-													 <div class="row">
-														<div class="col-50">
-														   <a href="#" class="button button-big button-red close-popup">Cancel</a>
-														</div>
-														<div class="col-50">
-														   <a href="#" class="button button-big button-green">Save</a>
-														</div>
-													 </div>
-												  </div>
-											   </div>
-											</div>
-											<!-- Popup Solution 1 -->
-											<!-- Popup Solution 2 -->
-											<li>
-											   <a href="personal-popup-details.html" class="item-link item-content">
-												  <div class="item-inner">
-													 <div class="item-title-row">
-														<div class="item-title">Personal Details</div>
-													 </div>
-													 <div class="item-text">Can be edited only once - Date of Birth | Maritial Status |</div>
-												  </div>
-											   </a>
-											</li>
-											<!-- Popup Solution 2 -->
-											<!-- Popup Solution 3 -->
-											<li>
-											   <a href="basic-details-pop.html" class="item-link item-content">
-												  <div class="item-inner">
-													 <div class="item-title-row">
-														<div class="item-title">Basic Details</div>
-													 </div>
-													 <div class="item-text">Full Name | Height | Country Living In | Gender | Profile Manage By |</div>
-												  </div>
-											   </a>
-											</li>
-											<!-- Popup Solution 3 -->
-											<!-- Popup Solution 4 -->
-											<li>
-											   <a href="ethnicity.html" class="item-link item-content">
-												  <div class="item-inner">
-													 <div class="item-title-row">
-														<div class="item-title">Ethinicity</div>
-													 </div>
-													 <div class="item-text">Religion | Mother Tongue | Caste | Gotra | Family Based |</div>
-												  </div>
-											   </a>
-											</li>
-											<!-- Popup Solution 4 -->
-											<!-- Popup Solution 5 -->
-											<li>
-											   <a href="belief-system.html" class="item-link item-content">
-												  <div class="item-inner">
-													 <div class="item-title-row">
-														<div class="item-title">Belief System</div>
-													 </div>
-													 <div class="item-text">Are you Amritdhari | Do you cut your Hair | Do you Trim your Beared |</div>
-												  </div>
-											   </a>
-											</li>
-											<!-- Popup Solution 5 -->
-										 </ul>
-									  </div>
-								   </div>
+							</a>
+						</li>
+						<li>
+							<!-- Smart select, will be opened in Popup -->
+							<a href="#" class="item-link smart-select" data-open-in="popup">
+								<!-- select -->
+								<select name="Gender">
+									<option value="Female">Female</option>
+									<option value="Male" selected>Male</option>
+								</select>
+								<div class="item-content">
+									<div class="item-inner">
+									<!-- Select label -->
+									<div class="item-title">Gender</div>
+									<!-- Selected value, not required -->
+									<div class="item-after">Male</div>
+									</div>
 								</div>
-							 </div>
-							 <div class="swiper-slide">
-								<div class="first-slider-head-sj">
-								   <div class="footer-flex-sj-2546">
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod-1 pp-prev">Basic Info</div>
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod">Education</div>
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod-1 pp-next">Career</div>
-								   </div>
+							</a>
+						</li>
+						<li>
+							<!-- Smart select, will be opened in Popup -->
+							<a href="#" class="item-link smart-select" data-open-in="popup">
+								<!-- select -->
+								<select name="Show Name to All">
+									<option value="Female" selected>Yes</option>
+									<option value="Male">No</option>
+								</select>
+								<div class="item-content">
+									<div class="item-inner">
+									<!-- Select label -->
+									<div class="item-title">Show Name to All</div>
+									<!-- Selected value, not required -->
+									<div class="item-after">Yes</div>
+									</div>
 								</div>
-								<div class="white-triangle-sj"></div>
-								<div class="content-block">
-								   <div class="li-ke-lafde-resolve-kar">
-									  <div class="list-block media-list">
-										 <ul>
-											<!-- Popup Solution 1 -->
-											<li data-popup=".popup-done-two" class="open-popup" >
-											   <a href="#" class="item-link item-content">
-												  <div class="item-inner">
-													 <div class="item-title-row">
-														<div class="item-title">About My Education</div>
-													 </div>
-													 <div class="item-text">Skills, Centifications, Diploma, Degree, Cources More...</div>
-												  </div>
-											   </a>
-											</li>
-											<!-- popup-done-one -->
-											<div class="popup popup-done-two">
-											   <div class="popup-header-main-edit-sj">
-												  <label class="text-class-head-popup">About My Education</label>
-												  <label class="label-text-accept-popup-head"><a href="#" class="close-popup"><img src="{{baseUrl}}/assets/img/close.png" width="16" height="16" class="sj-popup-icons"></a></label>
-											   </div>
-											   <div class="content-block">
-												  <div class="desi-dhakkan-khol">
-													 <div class="align-top">
-														<div class="item-content">
-														   <div class="item-inner">
-															  <div class="item-title label">About My Education</div>
-															  <div class="item-input">
-																 <textarea>EXECUTIVE SECRETARY - Managed 4 employees in an executive office, maintaining an atmosphere of exactness, efficiency, and attention to detail, Designed and implemented efficiency programs aimed at streamlining direct office services, saving $150,000 per year in labor costs. Skills: Programing Languages: Java, Python, C#, Javascript, PHP, C, My SQL. Google Adwords, Digital Promotion, Search Engine Marketing, Content Outreach.</textarea>
-															  </div>
-														   </div>
-														</div>
-													 </div>
-													 <div class="row">
-														<div class="col-50">
-														   <a href="#" class="button button-big button-red close-popup">Cancel</a>
-														</div>
-														<div class="col-50">
-														   <a href="#" class="button button-big button-green">Save</a>
-														</div>
-													 </div>
-												  </div>
-											   </div>
-											</div>
-											<!-- Popup Solution 1 -->
-											<!-- Popup Solution 5 -->
-											<li>
-											   <a href="college-details.html" class="item-link item-content">
-												  <div class="item-inner">
-													 <div class="item-title-row">
-														<div class="item-title">College Details</div>
-													 </div>
-													 <div class="item-text">Highest Education | PG Degree | UG Degree | School Name |</div>
-												  </div>
-											   </a>
-											</li>
-											<!-- Popup Solution 5 -->
-										 </ul>
-									  </div>
-								   </div>
+							</a>
+						</li>
+						<li>
+							<!-- Smart select, will be opened in Popup -->
+							<a href="#" class="item-link smart-select" data-open-in="popup">
+								<!-- select -->
+								<select name="Complexion">
+									<option value="Female" selected>Fair</option>
+									<option value="Male">Very Fair</option>
+									<option value="Male">Wheatish</option>
+									<option value="Male">Wheatish Brown</option>
+									<option value="Male">Dark</option>
+								</select>
+								<div class="item-content">
+									<div class="item-inner">
+									<!-- Select label -->
+									<div class="item-title">Complexion</div>
+									<!-- Selected value, not required -->
+									<div class="item-after">Fair</div>
+									</div>
 								</div>
-							 </div>
-							 <div class="swiper-slide">
-								<div class="first-slider-head-sj">
-								   <div class="footer-flex-sj-2546">
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod-1 pp-prev">Education</div>
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod">Career</div>
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod-1 pp-next">Family</div>
-								   </div>
+							</a>
+						</li>
+						<li>
+							<!-- Smart select, will be opened in Popup -->
+							<a href="#" class="item-link smart-select" data-open-in="popup">
+								<!-- select -->
+								<select name="Body Type">
+									<option value="Female" selected>Athletic</option>
+									<option value="Male">Slim</option>
+									<option value="Male">Average</option>
+									<option value="Male">Heavy</option>
+								</select>
+								<div class="item-content">
+									<div class="item-inner">
+									<!-- Select label -->
+									<div class="item-title">Body Type</div>
+									<!-- Selected value, not required -->
+									<div class="item-after">Athletic</div>
+									</div>
 								</div>
-								<div class="white-triangle-sj"></div>
-								<div class="content-block">
-								   <div class="li-ke-lafde-resolve-kar">
-									  <div class="list-block media-list">
-										 <ul>
-											<!-- Popup Solution 1 -->
-											<li data-popup=".popup-done-three" class="open-popup" >
-											   <a href="#" class="item-link item-content">
-												  <div class="item-inner">
-													 <div class="item-title-row">
-														<div class="item-title">About My Career</div>
-													 </div>
-													 <div class="item-text">Currently I am Working as a Cheif Software Developer with our company HostRider...</div>
-												  </div>
-											   </a>
-											</li>
-											<!-- popup-done-one -->
-											<div class="popup popup-done-three">
-											   <div class="popup-header-main-edit-sj">
-												  <label class="text-class-head-popup">About My Career</label>
-												  <label class="label-text-accept-popup-head"><a href="#" class="close-popup"><img src="{{baseUrl}}/assets/img/close.png" width="16" height="16" class="sj-popup-icons"></a></label>
-											   </div>
-											   <div class="content-block">
-												  <div class="desi-dhakkan-khol">
-													 <div class="align-top">
-														<div class="item-content">
-														   <div class="item-inner">
-															  <div class="item-title label">About My Career</div>
-															  <div class="item-input">
-																 <textarea>I am Guneet Singh working as Chief Business Developer with HostRider Services since its inception. I started my career working as a webmaster with an IT company in New Delhi. Thereafter I developed interest in SEO as I was working with search engine optimizer in my organization. Since then I have been working on SEO and have developed a kind of expertise in Client Interaction and retention.
-																 </textarea>
-															  </div>
-														   </div>
-														</div>
-													 </div>
-													 <div class="row">
-														<div class="col-50">
-														   <a href="#" class="button button-big button-red close-popup">Cancel</a>
-														</div>
-														<div class="col-50">
-														   <a href="#" class="button button-big button-green">Save</a>
-														</div>
-													 </div>
-												  </div>
-											   </div>
-											</div>
-											<!-- Popup Solution 1 -->
-											<!-- Popup Solution 5 -->
-											<li>
-											   <a href="career-details.html" class="item-link item-content">
-												  <div class="item-inner">
-													 <div class="item-title-row">
-														<div class="item-title">Career Details</div>
-													 </div>
-													 <div class="item-text">Work Experience | Occupation | Annual Income | Designation |</div>
-												  </div>
-											   </a>
-											</li>
-											<!-- Popup Solution 5 -->
-										 </ul>
-									  </div>
-								   </div>
+							</a>
+						</li>
+						<li>
+							<!-- Smart select, will be opened in Popup -->
+							<a href="#" class="item-link smart-select" data-open-in="popup">
+								<!-- select -->
+								<select name="Body Weight (Kgs)">
+									<option value="42 Kgs">42 Kgs</option>
+									<option value="43 Kgs">43 Kgs</option>
+									<option value="44 Kgs">44 Kgs</option>
+									<option value="45 Kgs">45 Kgs</option>
+									<option value="46 Kgs">46 Kgs</option>
+									<option value="47 Kgs">47 Kgs</option>
+									<option value="48 Kgs">48 Kgs</option>
+									<option value="49 Kgs">49 Kgs</option>
+									<option value="50 Kgs">50 Kgs</option>
+									<option value="51 Kgs">51 Kgs</option>
+									<option value="52 Kgs">52 Kgs</option>
+									<option value="53 Kgs">53 Kgs</option>
+									<option value="54 Kgs">54 Kgs</option>
+									<option value="55 Kgs">55 Kgs</option>
+									<option value="56 Kgs">56 Kgs</option>
+									<option value="57 Kgs">57 Kgs</option>
+									<option value="58 Kgs">58 Kgs</option>
+									<option value="59 Kgs">59 Kgs</option>
+									<option value="60 Kgs">60 Kgs</option>
+									<option value="61 Kgs">61 Kgs</option>
+									<option value="62 Kgs">62 Kgs</option>
+									<option value="63 Kgs">63 Kgs</option>
+									<option value="64 Kgs">64 Kgs</option>
+									<option value="65 Kgs">65 Kgs</option>
+									<option value="66 Kgs">66 Kgs</option>
+									<option value="67 Kgs">67 Kgs</option>
+									<option value="68 Kgs">68 Kgs</option>
+									<option value="69 Kgs">69 Kgs</option>
+									<option value="70 Kgs">70 Kgs</option>
+									<option value="71 Kgs">71 Kgs</option>
+									<option value="72 Kgs">72 Kgs</option>
+									<option value="73 Kgs">73 Kgs</option>
+									<option value="74 Kgs">74 Kgs</option>
+									<option value="75 Kgs">75 Kgs</option>
+									<option value="76 Kgs">76 Kgs</option>
+									<option value="77 Kgs">77 Kgs</option>
+									<option value="78 Kgs" selected>78 Kgs</option>
+									<option value="79 Kgs">79 Kgs</option>
+									<option value="80 Kgs">80 Kgs</option>
+									<option value="81 Kgs">81 Kgs</option>
+									<option value="82 Kgs">82 Kgs</option>
+									<option value="83 Kgs">83 Kgs</option>
+									<option value="84 Kgs">84 Kgs</option>
+									<option value="85 Kgs">85 Kgs</option>
+									<option value="86 Kgs">86 Kgs</option>
+									<option value="87 Kgs">87 Kgs</option>
+									<option value="88 Kgs">88 Kgs</option>
+									<option value="89 Kgs">89 Kgs</option>
+									<option value="90 Kgs">90 Kgs</option>
+									<option value="91 Kgs">91 Kgs</option>
+									<option value="92 Kgs">92 Kgs</option>
+									<option value="93 Kgs">93 Kgs</option>
+									<option value="94 Kgs">94 Kgs</option>
+									<option value="95 Kgs">95 Kgs</option>
+									<option value="96 Kgs">96 Kgs</option>
+									<option value="97 Kgs">97 Kgs</option>
+									<option value="98 Kgs">98 Kgs</option>
+									<option value="99 Kgs">99 Kgs</option>
+									<option value="100 Kgs">100 Kgs</option>
+									<option value="101 Kgs">101 Kgs</option>
+									<option value="102 Kgs">102 Kgs</option>
+									<option value="103 Kgs">103 Kgs</option>
+									<option value="104 Kgs">104 Kgs</option>
+									<option value="105 Kgs">105 Kgs</option>
+									<option value="106 Kgs">106 Kgs</option>
+									<option value="107 Kgs">107 Kgs</option>
+									<option value="108 Kgs">108 Kgs</option>
+									<option value="109 Kgs">109 Kgs</option>
+									<option value="110 Kgs">110 Kgs</option>
+									<option value="111 Kgs">111 Kgs</option>
+									<option value="112 Kgs">112 Kgs</option>
+									<option value="113 Kgs">113 Kgs</option>
+									<option value="114 Kgs">114 Kgs</option>
+									<option value="115 Kgs">115 Kgs</option>
+									<option value="116 Kgs">116 Kgs</option>
+									<option value="117 Kgs">117 Kgs</option>
+									<option value="118 Kgs">118 Kgs</option>
+									<option value="119 Kgs">119 Kgs</option>
+									<option value="120 Kgs Above">120 Kgs Above</option>
+								</select>
+								<div class="item-content">
+									<div class="item-inner">
+									<!-- Select label -->
+									<div class="item-title">Body Weight (Kgs)</div>
+									<!-- Selected value, not required -->
+									<div class="item-after">78 Kgs</div>
+									</div>
 								</div>
-							 </div>
-							 <div class="swiper-slide">
-								<div class="first-slider-head-sj">
-								   <div class="footer-flex-sj-2546">
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod-1 pp-prev">Career</div>
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod">Family</div>
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod-1 pp-next">Lifestyle</div>
-								   </div>
-								</div>
-								<div class="white-triangle-sj"></div>
-								<div class="content-block">
-								   <div class="li-ke-lafde-resolve-kar">
-									  <div class="list-block media-list">
-										 <ul>
-											<!-- Popup Solution 1 -->
-											<li data-popup=".popup-done-four" class="open-popup" >
-											   <a href="#" class="item-link item-content">
-												  <div class="item-inner">
-													 <div class="item-title-row">
-														<div class="item-title">About My Family</div>
-													 </div>
-													 <div class="item-text">My family belongs to a Middle class family.There are 4members in my sweet family...</div>
-												  </div>
-											   </a>
-											</li>
-											<!-- popup-done-one -->
-											<div class="popup popup-done-four">
-											   <div class="popup-header-main-edit-sj">
-												  <label class="text-class-head-popup">About My Family</label>
-												  <label class="label-text-accept-popup-head"><a href="#" class="close-popup"><img src="{{baseUrl}}/assets/img/close.png" width="16" height="16" class="sj-popup-icons"></a></label>
-											   </div>
-											   <div class="content-block">
-												  <div class="desi-dhakkan-khol">
-													 <div class="align-top">
-														<div class="item-content">
-														   <div class="item-inner">
-															  <div class="item-title label">About My Family</div>
-															  <div class="item-input">
-																 <textarea>My family belongs to a Middle class family.There are 4members in my sweet family. First of my Respected Father persuing job in government services and Then. My lovely Mother is Domestic Engineer. In my family the last member is our very cute Doggy. He is also our family Member. In my Family members are loving me and they are inspiration for me and they always supporting in nature.</textarea>
-															  </div>
-														   </div>
-														</div>
-													 </div>
-													 <div class="row">
-														<div class="col-50">
-														   <a href="#" class="button button-big button-red close-popup">Cancel</a>
-														</div>
-														<div class="col-50">
-														   <a href="#" class="button button-big button-green">Save</a>
-														</div>
-													 </div>
-												  </div>
-											   </div>
-											</div>
-											<!-- Popup Solution 1 -->
-											<!-- Popup Solution 5 -->
-											<li>
-											   <a href="parents-details.html" class="item-link item-content">
-												  <div class="item-inner">
-													 <div class="item-title-row">
-														<div class="item-title">Parents</div>
-													 </div>
-													 <div class="item-text">Father Occupation | Mother Occupation | Current Family Income |</div>
-												  </div>
-											   </a>
-											</li>
-											<!-- Popup Solution 5 -->
-											<!-- Popup Solution 5 -->
-											<li>
-											   <a href="siblings.html" class="item-link item-content">
-												  <div class="item-inner">
-													 <div class="item-title-row">
-														<div class="item-title">Siblings</div>
-													 </div>
-													 <div class="item-text">Brother(s) | Sister(s) | Married Brother(s) | Married Sister(s) |</div>
-												  </div>
-											   </a>
-											</li>
-											<!-- Popup Solution 5 -->
-											<!-- Popup Solution 5 -->
-											<li>
-											   <a href="family-values.html" class="item-link item-content">
-												  <div class="item-inner">
-													 <div class="item-title-row">
-														<div class="item-title">Family Values</div>
-													 </div>
-													 <div class="item-text">Family Status | Diffrent Family Types | Living with Parents or Not |</div>
-												  </div>
-											   </a>
-											</li>
-											<!-- Popup Solution 5 -->
-										 </ul>
-									  </div>
-								   </div>
-								</div>
-							 </div>
-							 <div class="swiper-slide">
-								<div class="first-slider-head-sj">
-								   <div class="footer-flex-sj-2546">
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod-1 pp-prev">Family</div>
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod">Lifestyle</div>
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod-1 pp-next">Contact</div>
-								   </div>
-								</div>
-								<div class="white-triangle-sj"></div>
-								<div class="content-block">
-								   <div class="li-ke-lafde-resolve-kar">
-									  <div class="list-block media-list">
-										 <ul>
-											<li data-popup=".popup-done-six" class="open-popup" >
-											   <a href="#" class="item-link item-content">
-												  <div class="item-inner">
-													 <div class="item-title-row">
-														<div class="item-title">Food I Cook</div>
-													 </div>
-													 <div class="item-text">Chinese Food, Mexican Food, Italian Food, Japanese Food, Greek cuisine...</div>
-												  </div>
-											   </a>
-											</li>
-											<!-- popup-done-one -->
-											<div class="popup popup-done-six">
-											   <div class="popup-header-main-edit-sj">
-												  <label class="text-class-head-popup">Food I Cook</label>
-												  <label class="label-text-accept-popup-head"><a href="#" class="close-popup"><img src="{{baseUrl}}/assets/img/close.png" width="16" height="16" class="sj-popup-icons"></a></label>
-											   </div>
-											   <div class="content-block">
-												  <div class="desi-dhakkan-khol">
-													 <div class="align-top">
-														<div class="item-content">
-														   <div class="item-inner">
-															  <div class="item-title label">Food I Cook</div>
-															  <div class="item-input">
-																 <textarea>Chinese Food | Mexican Food | Italian Food | Japanese Food | Greek cuisine | French cuisine | Thai cuisine | Spanish cuisine | Indian cuisine |
-																 </textarea>
-															  </div>
-														   </div>
-														</div>
-													 </div>
-													 <div class="row">
-														<div class="col-50">
-														   <a href="#" class="button button-big button-red close-popup">Cancel</a>
-														</div>
-														<div class="col-50">
-														   <a href="#" class="button button-big button-green">Save</a>
-														</div>
-													 </div>
-												  </div>
-											   </div>
-											</div>
-											<!-- Popup Solution 5 -->
-											<!-- Popup Solution 5 -->
-											<li>
-											   <a href="habits.html" class="item-link item-content">
-												  <div class="item-inner">
-													 <div class="item-title-row">
-														<div class="item-title">Habits</div>
-													 </div>
-													 <div class="item-text">Dietary Habits | Smoking Habits | Open to Pets | Drinking ? |</div>
-												  </div>
-											   </a>
-											</li>
-											<!-- Popup Solution 5 -->
-											<!-- Popup Solution 5 -->
-											<li>
-											   <a href="assets.html" class="item-link item-content">
-												  <div class="item-inner">
-													 <div class="item-title-row">
-														<div class="item-title">Assets</div>
-													 </div>
-													 <div class="item-text">Own House | Own Car | Own Agricultural Land | Own Shop |</div>
-												  </div>
-											   </a>
-											</li>
-											<!-- Popup Solution 5 -->
-											<!-- Popup Solution 5 -->
-											<li>
-											   <a href="hobbies.html" class="item-link item-content">
-												  <div class="item-inner">
-													 <div class="item-title-row">
-														<div class="item-title">Hobbies</div>
-													 </div>
-													 <div class="item-text">Art | Handicraft | Printing | Gardening | Music Instruments |</div>
-												  </div>
-											   </a>
-											</li>
-											<!-- Popup Solution 5 -->
-											<!-- Popup Solution 5 -->
-											<li>
-											   <a href="interest.html" class="item-link item-content">
-												  <div class="item-inner">
-													 <div class="item-title-row">
-														<div class="item-title">Interest</div>
-													 </div>
-													 <div class="item-text">Music Listen | Movies | Travel | Sports | Meditation | Yoga |</div>
-												  </div>
-											   </a>
-											</li>
-											<!-- Popup Solution 5 -->
-										 </ul>
-									  </div>
-								   </div>
-								</div>
-							 </div>
-							 <div class="swiper-slide">
-								<div class="first-slider-head-sj">
-								   <div class="footer-flex-sj-2546">
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod-1 pp-prev">Lifestyle</div>
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod">Contact</div>
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod-1 pp-next">Partner</div>
-								   </div>
-								</div>
-								<div class="white-triangle-sj"></div>
-								<div class="content-block">
-								   <div class="li-ke-lafde-resolve-kar">
-									  <div class="list-block media-list">
-										 <ul>
-											<li>
-											   <a href="#" class="item-link item-content prompt-ok-cancel">
-												  <div class="item-inner">
-													 <div class="item-title-row">
-														<div class="item-title">Email ID</div>
-													 </div>
-													 <div class="item-text">katerina@gmail.com - Varified</div>
-												  </div>
-											   </a>
-											</li>
-											<!-- Popup Solution 5 -->
-											<!-- Popup Solution 5 -->
-											<li>
-											   <a href="#" class="item-link item-content prompt-ok-cancel-one">
-												  <div class="item-inner">
-													 <div class="item-title-row">
-														<div class="item-title">Mobile Number</div>
-													 </div>
-													 <div class="item-text">+ 91-9717171759 - Varified</div>
-												  </div>
-											   </a>
-											</li>
-											<!-- Popup Solution 5 -->
-											<!-- Popup Solution 5 -->
-											<li>
-											   <a href="#" class="item-link item-content prompt-ok-cancel-one">
-												  <div class="item-inner">
-													 <div class="item-title-row">
-														<div class="item-title">Landline Number</div>
-													 </div>
-													 <div class="item-text">91-011-30183955</div>
-												  </div>
-											   </a>
-											</li>
-											<!-- Popup Solution 5 -->
-											<!-- Popup Solution 5 -->
-											<li>
-											   <!-- Smart select, will be opened in Popup -->
-											   <a href="#" class="item-link smart-select">
-												  <!-- select -->
-												  <select name="timetocall">
-													 <option value="4'10">9:00 AM - 12:00 AM</option>
-													 <option value="4'11">12:00 AM - 3:00 PM</option>
-													 <option value="5 Feet">3:00 PM - 6:00 PM</option>
-													 <option value="5'10">6:00 PM - 9:00 PM</option>
-												  </select>
-												  <div class="item-inner">
-													 <div class="item-title-row">
-														<div class="item-title">Suitable time to Call</div>
-													 </div>
-													 <div class="item-text">9:00 AM - 12:00 AM</div>
-												  </div>
-											   </a>
-											</li>
-											<!-- Popup Solution 5 -->
-										 </ul>
-									  </div>
-								   </div>
-								</div>
-							 </div>
-							 <div class="swiper-slide">
-								<div class="first-slider-head-sj">
-								   <div class="footer-flex-sj-2546">
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod-1 pp-prev">Contact</div>
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod">Partner</div>
-									  <div class="flexy-3-sj-1524 footer-matri-flex-oyod-1"></div>
-								   </div>
-								</div>
-								<div class="white-triangle-sj"></div>
-								<div class="content-block custom-list-wedding">
-								   <div class="button-scrolling-sikhjodi">
-									  <div class="textorial-sup">
-										 Also send me the matches outside my desired partner profile.
-									  </div>
-									  <div class="button-boxery-two">
-										 <label class="label-switch">
-											<input type="checkbox">
-											<div class="checkbox"></div>
-										 </label>
-									  </div>
-								   </div>
-								   <div class="button-scrolling-sikhjodi-2is">
-									  <div class="textorial-sup">
-										 Manage Strict Filters to all my saved desired criteria for selection.
-									  </div>
-									  <div class="button-boxery-two">
-										 <label class="label-switch">
-											<input type="checkbox">
-											<div class="checkbox"></div>
-										 </label>
-									  </div>
-								   </div>
-								   <div class="button-scrolling-sikhjodi-2is">
-									  <div class="santana-ke-bantana">
-										 <a href="#" class="item-link item-content pp-basicd">
-											<div class="item-inner"></div>
-											<div class="item-maaldar-hai-aerrow"><img src="{{baseUrl}}/assets/img/dataimage-2546.svg" height="20" width="20"></div>
-											<div class="item-title-row">
-											   <div class="item-title">Basic Details</div>
-											</div>
-											<div class="item-text">Age | Height | Country | City | Maritial Status |</div>
-										 </a>
-									  </div>
-								   </div>
-								   <div class="button-scrolling-sikhjodi-2is">
-									  <div class="santana-ke-bantana">
-										 <a href="ethnicity.html" class="item-link item-content">
-											<div class="item-inner"></div>
-											<div class="item-maaldar-hai-aerrow"><img src="{{baseUrl}}/assets/img/dataimage-2546.svg" height="20" width="20"></div>
-											<div class="item-title-row">
-											   <div class="item-title">Religion & Ethinicity</div>
-											</div>
-											<div class="item-text">Religion | Caste | Mother Toungue | Manglik Status |</div>
-										 </a>
-									  </div>
-								   </div>
-								   <div class="button-scrolling-sikhjodi-2is">
-									  <div class="santana-ke-bantana">
-										 <a href="#" class="item-link item-content pp-educatione">
-											<div class="item-inner"></div>
-											<div class="item-maaldar-hai-aerrow"><img src="{{baseUrl}}/assets/img/dataimage-2546.svg" height="20" width="20"></div>
-											<div class="item-title-row">
-											   <div class="item-title">Education & Occupation</div>
-											</div>
-											<div class="item-text">Degree | Education | Annual Income | About Career |</div>
-										 </a>
-									  </div>
-								   </div>
-								   <div class="button-scrolling-sikhjodi-2is">
-									  <div class="santana-ke-bantana">
-										 <a href="#" class="item-link item-content pp-lifestyle">
-											<div class="item-inner"></div>
-											<div class="item-maaldar-hai-aerrow"><img src="{{baseUrl}}/assets/img/dataimage-2546.svg" height="20" width="20"></div>
-											<div class="item-title-row">
-											   <div class="item-title">Lifestyle</div>
-											</div>
-											<div class="item-text">Dietary Habits | Smoking | Drinking | Complexion | Body Type |</div>
-										 </a>
-									  </div>
-								   </div>
-								</div>
-							 </div>
-						  </div>
-					   </div>
+							</a>
+						</li>
+							
+						</ul>
+
+						
+						
 					</div>
-				 </div>
-				 <!-- Tabs, tabs wrapper -->
-			  </div>
-		   </div>
+					<div class="dis-flex">
+						<div class="flex-1">
+						<a href="#" class="designer-combat-matri button">
+							<p class="para-inside-card-interest">Cancel</p>
+						</a>
+						</div>
+						<div class="flex-1">
+						<a href="#" class="designer-combat-matri button">
+							<p class="para-inside-card-interest">Next</p>
+						</a>
+						</div>
+					</div>				
+				<!-- Tabs, tabs wrapper -->
+			</div>
 		</div>
-	   <!-- Main container ends -->
-        
-    </div>
- </div>
+	</div>
+</div>
+		

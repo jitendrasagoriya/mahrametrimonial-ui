@@ -1,0 +1,103 @@
+<div class="views">
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main">   
+        <div class="pages">
+            <div data-page="edit-profile" class="page navbar-fixed">
+               <div class="navbar">
+                  <div class="navbar-inner">
+                     <div class="left"><a (click)="goBack()" class="back link"> <i class="icon icon-back"></i></a></div>
+                     <div class="center fg-white">Profile View</div>
+                     <div class="right">
+                        <!-- Right link contains only icon - additional "icon-only" class-->
+                        <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+                     </div>
+                  </div>
+               </div>
+               <!-- Toolbar has additional "toolbar-bottom" class -->
+               <div class="page-content">
+                  <div class="guneet-personal-class-editor">
+                     <div class="swiper-custom">
+                        <div class="swiper-container swiper-retro" >
+                           <div class="swiper-wrapper">
+                               <div class="swiper-slide">
+                                 <div class="first-slider-head-sj">
+                                    <div class="footer-flex-sj-2546">
+                                       <div class="flexy-3-sj-1524 footer-matri-flex-oyod-1 pp-prev" (click)="redirect('education')">Education</div>
+                                       <div class="flexy-3-sj-1524 footer-matri-flex-oyod">Career</div>
+                                       <div class="flexy-3-sj-1524 footer-matri-flex-oyod-1 pp-next" (click)="redirect('family')">Family</div>
+                                    </div>
+                                 </div>
+                                 <div class="white-triangle-sj"></div>
+                                 <div class="content-block">
+                                    <div class="li-ke-lafde-resolve-kar">
+                                       <div class="list-block media-list">
+                                          <ul>
+                                             <!-- Popup Solution 1 -->
+                                             <li data-popup=".popup-done-three" class="open-popup" >
+                                                <a href="#" class="item-link item-content">
+                                                   <div class="item-inner">
+                                                      <div class="item-title-row">
+                                                         <div class="item-title">About My Career</div>
+                                                      </div>
+                                                      <div class="item-text">Currently I am Working as a Cheif Software Developer with our company HostRider...</div>
+                                                   </div>
+                                                </a>
+                                             </li>
+                                             <!-- popup-done-one -->
+                                             <div class="popup popup-done-three">
+                                                <div class="popup-header-main-edit-sj">
+                                                   <label class="text-class-head-popup">About My Career</label>
+                                                   <label class="label-text-accept-popup-head"><a href="#" class="close-popup"><img src="http://via.placeholder.com/16x16?text=close&close.png" width="16" height="16" class="sj-popup-icons"></a></label>
+                                                </div>
+                                                <div class="content-block">
+                                                   <div class="desi-dhakkan-khol">
+                                                      <div class="align-top">
+                                                         <div class="item-content">
+                                                            <div class="item-inner">
+                                                               <div class="item-title label">About My Career</div>
+                                                               <div class="item-input">
+                                                                  <textarea>I am Guneet Singh working as Chief Business Developer with HostRider Services since its inception. I started my career working as a webmaster with an IT company in New Delhi. Thereafter I developed interest in SEO as I was working with search engine optimizer in my organization. Since then I have been working on SEO and have developed a kind of expertise in Client Interaction and retention.
+                                                                  </textarea>
+                                                               </div>
+                                                            </div>
+                                                         </div>
+                                                      </div>
+                                                      <div class="row">
+                                                         <div class="col-50">
+                                                            <a href="#" class="button button-big button-red close-popup">Cancel</a>
+                                                         </div>
+                                                         <div class="col-50">
+                                                            <a href="#" class="button button-big button-green">Save</a>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <!-- Popup Solution 1 -->
+                                             <!-- Popup Solution 5 -->
+                                             <li>
+                                                <a [routerLink]="['/careerDetail']"  class="item-link item-content">
+                                                   <div class="item-inner">
+                                                      <div class="item-title-row">
+                                                         <div class="item-title">Career Details</div>
+                                                      </div>
+                                                      <div class="item-text">Work Experience | Occupation | Annual Income | Designation |</div>
+                                                   </div>
+                                                </a>
+                                             </li>
+                                             <!-- Popup Solution 5 -->
+                                          </ul>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>                      
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- Tabs, tabs wrapper -->
+               </div>
+            </div>
+         </div>
+    </div>
+</div>

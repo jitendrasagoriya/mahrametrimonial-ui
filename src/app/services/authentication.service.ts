@@ -1,3 +1,4 @@
+import { error } from 'protractor';
 import { GlobalService } from './../global/global.service';
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
@@ -49,9 +50,15 @@ export class AuthenticationService {
                 // return false to indicate failed login
                 return false;
             }
-        });
+        }).catch((response: Response) => Observable.throw(response));
   }
 
+  errorHandler(response: Response): void {
+    const exception = response.json();
+     if (exception.error === 'Unauthorized') {
+        console.log('fslse');
+     }
+   }
   logout(): void {
     // clear token remove user from local storage to log user out
     this.token = null;
