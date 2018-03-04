@@ -70,3 +70,7 @@ THE SOFTWARE.
 @angular/core@5.2.5
 MIT
 MIT
+
+@ngx-translate/core@9.1.1
+MIT
+MIT
