@@ -33,7 +33,7 @@ export class AuthenticationService {
     const options = new RequestOptions({ headers: headers });
     const data = {};
 
-    return this.http.post(this.url + 'auth', data, {headers: headers})
+    return this.http.post(this.url + '/auth', data, {headers: headers})
         .map((response: Response) => {
             // login successful if there's a jwt token in the response
             const token = response.json() && response.json().token;

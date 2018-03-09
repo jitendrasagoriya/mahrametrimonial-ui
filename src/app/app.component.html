@@ -1,8 +1,11 @@
 
-         <!-- Status bar overlay for fullscreen mode-->
-         <div class="statusbar-overlay"></div>
+<app-test></app-test>                     
          <!-- Panels overlay-->
-         <div class="panel-overlay"></div>
+         <!-- Status bar overlay for fullscreen mode-->
+      <div class="statusbar-overlay"></div>
+      <!-- Panels overlay-->
+      <div class="panel-overlay" id="farji-overlay"></div>
+      <!-- Left panel with reveal effect-->
          <!-- Left panel with reveal effect-->
          <div class="panel panel-left panel-reveal">
             <div class="content-block">
@@ -25,20 +28,20 @@
                <div class="list-block list-menu">
                   <ul class="no-border">
                      <li>
-                        <i class="flaticon-home-2"></i> <a href="home.html" class="close-panel no-animation">Home</a>
+                        <i class="flaticon-home-2"></i> <a (click)="goto('home')" class="close-panel no-animation">Home</a>
                      </li>
-                     <li>
+                     <li *ngIf="!isMehra">
                         <i class="flaticon-favorite-1"></i>  
                         <div class="item-has-badge"><a href="interest-received.html"  class="close-panel no-animation">Interest Recieved</a></div>
                         <span class="badge bg-pink">5</span>
                      </li>
-                     <li>
+                     <li *ngIf="!isMehra">
                         <i class="flaticon-search-2"></i>  <a href="search-your-match.html" class="close-panel no-animation">Search your Match</a>
                      </li>
                      <li>
-                        <i class="flaticon-id-card-1"></i>  <a href="edit-profile.html" class="close-panel no-animation">Edit Profile</a>
+                        <i class="flaticon-id-card-1"></i>  <a  (click)="goto('edit')"   class="close-panel no-animation">Edit Profile</a>
                      </li>
-                     <li>
+                     <li *ngIf="!isMehra">
                         <i class="flaticon-people"></i>  
                         <div class="item-has-badge"><a href="profile-visitors.html" class="close-panel no-animation">Profile Visitors</a></div>
                         <span class="badge bg-orange">8</span>
@@ -46,15 +49,15 @@
                      <li>
                         <i class="flaticon-examine-man"></i>  <a href="search-profile-by-id.html" class="close-panel no-animation">Search by ID</a>
                      </li>
-                     <li>
+                     <li *ngIf="!isMehra">
                         <i class="flaticon-layout"></i>  
                         <div class="item-has-badge"> <a href="features-list.html" class="close-panel no-animation">All Features</a></div>
                      </li>
-                     <li>
+                     <li *ngIf="!isMehra">
                         <i class="flaticon-settings"></i> <a href="settings.html" class="close-panel no-animation">Settings</a>
                      </li>
-                     <li>
-                        <div class="item-has-badge">Toll Free: 1800-222-4545</div>
+                     <li >
+                        <div class="item-has-badge">Design & Develop by: Jitendra Sagoriya</div>
                      </li>
                   </ul>
                </div>

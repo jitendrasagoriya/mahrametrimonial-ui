@@ -24,73 +24,65 @@
                     <div class="swiper-container swiper-2">
                        <div class="swiper-wrapper">
                           <div class="swiper-slide button" style="width:160">
-                             <a [routerLink]="['/basicProfile']">
+                             <a [routerLink]="['/profile']">
                                 <span>
                                    <img src="{{baseUrl}}/assets/img/couple.png"> 
                                    <p class="label-slider-home-sikhjodi">View Profile</p>
                                 </span>
                              </a>
-                          </div>
-                          <div class="swiper-slide">
-                             <a href="#">
-                                <span>
-                                   <img src="{{baseUrl}}/assets/img/photocamera1.png"> 
-                                   <p class="label-slider-home-sikhjodi">Photos</p>
-                                </span>
-                             </a>
-                          </div>
-                          <div class="swiper-slide">
-                             <a href="#">
-                                <span>
-                                   <img src="{{baseUrl}}/assets/img/books-stack-of-three.png"> 
-                                   <p class="label-slider-home-sikhjodi">Education</p>
-                                </span>
-                             </a>
-                          </div>
-                          <div class="swiper-slide">
-                             <a href="#">
-                                <span>
-                                   <img src="{{baseUrl}}/assets/img/briefcase-model-with-three-lines.png"> 
-                                   <p class="label-slider-home-sikhjodi">Career</p>
-                                </span>
-                             </a>
-                          </div>
-                          <div class="swiper-slide">
-                             <a href="#">
-                                <span>
-                                   <img src="{{baseUrl}}/assets/img/layout.png"> 
-                                   <p class="label-slider-home-sikhjodi">Basic</p>
-                                </span>
-                             </a>
-                          </div>
-                          <div class="swiper-slide">
-                             <a href="#">
-                                <span>
-                                   <img src="{{baseUrl}}/assets/img/cocktail.png"> 
-                                   <p class="label-slider-home-sikhjodi">Lifestyle</p>
-                                </span>
-                             </a>
-                          </div>
-                          <div class="swiper-slide">
-                             <a href="#">
-                                <span>
-                                   <img src="{{baseUrl}}/assets/img/phone1call.png"> 
-                                   <p class="label-slider-home-sikhjodi">Contact</p>
-                                </span>
-                             </a>
-                          </div>
-                          <div class="swiper-slide">
-                             <a href="#">
-                                <span>
-                                   <img src="{{baseUrl}}/assets/img/workflow.png"> 
-                                   <p class="label-slider-home-sikhjodi">Partner</p>
-                                </span>
-                             </a>
-                          </div>
+                          </div>                           
                        </div>
                     </div>
                  </div>
-                 <div class="row">
+
+
+                 <div class="card facebook-card" id="interestStatus01" *ngFor="let person of persons; index as i" (click)="viewProfile(person.userName)">
+                  <div class="card-content">
+                     <div class="card-content-inner">                                 
+                        <a href="#" class="open-slider-modal">
+                        <span class="text-accepton-image"><img alt="" src="{{baseUrl}}/assets/img/photo-camera.png" width="20" height="20"><label class="label-text-accept">4</label></span>
+                        </a>
+                        <img alt="" src="{{baseUrl}}/assets/img/ferry.jpg" width="100%">
+                        <p>{{person.fName}} {{person.lName}}</p>
+                        <div class="columns-oney color-card-greyish">
+                           <p>{{person?.dob}} {{person?.height}}"</p>
+                           <p>{{person?.gotra}}</p>
+                           <p>Indian</p>
+                           <p>{{person?.city}}</p>
+                           <p>{{person?.desgination}}</p>
+                           <p>{{person?.income}}</p>
+                           <p>{{person?.qualification}} - {{person?.nameOfCollage}}</p>
+                        </div>
+                     </div>
+                  </div>
+                   
+                  <div class="footer-sj-manage-all-in-set" *ngIf="!isMehra">
+                     <div class="footer-flex-sj">
+                        <div class="flexy-3-sj">
+                           <a href="live-chat.html" class="footer-matri-flex-oney button">
+                              <img alt="" src="{{baseUrl}}/assets/img/gallery.png" width="16" height="16" class="sj-rcorners2-icons-1">
+                              <p class="para-inside-footer-sj-2">Message</p>
+                           </a>
+                        </div>
+                        <div class="flexy-3-sj">
+                           <a href="#" class="footer-matri-flex-oney button cancelInterest" id="Status01">
+                              <img alt="" src="{{baseUrl}}/assets/img/cross.png" width="16" height="16" class="sj-rcorners2-icons-1">
+                              <p class="para-inside-footer-sj-2">Cancel</p>
+                           </a>
+                        </div>
+                        <div class="flexy-3-sj">
+                           <a href="#" class="footer-matri-flex-oney button alert-text-viewcontact">
+                              <img alt="" src="{{baseUrl}}/assets/img/phone-call-2.png" width="16" height="16" class="sj-rcorners2-icons-1">
+                              <p class="para-inside-footer-sj-2">Contact</p>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+                
+               </div>    
+
+
+                 <div class="row" *ngIf="!isMehra">
                     <section class="inner-box-accept-st col-50">
                        <a href="accepted-members.html">
                           <p>24</p>
@@ -108,7 +100,7 @@
                        </a>
                     </section>
                  </div>
-                 <div class="guneet-personal-class">
+                 <div class="guneet-personal-class" *ngIf="!isMehra">
                     Interest Recieved 5 - View All
                     <div class="swiper-container swiper-1">
                        <div class="swiper-wrapper">
@@ -225,7 +217,7 @@
                        </div>
                     </div>
                  </div>
-                 <div class="row col-100">
+                 <div class="row col-100" *ngIf="!isMehra" >
                     <p>Daily Profile Visitors - View All</p>
                     <div class="class-profile-visitors">
                        <div class="item-media round-visitors-slab"><img src="{{baseUrl}}/assets/img/useri-5-rep.png" width="60" alt="user" class="img-circle-profile-slab"></div>
@@ -238,7 +230,7 @@
                        </a>
                     </div>
                  </div>
-                 <div class="guneet-personal-class">
+                 <div class="guneet-personal-class" *ngIf="!isMehra">
                     Daily Recommendations 5 - View All
                     <div class="swiper-container swiper-1">
                        <div class="swiper-wrapper">

@@ -13,6 +13,8 @@ import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient} from '@angular/common/http';
 
+import { LoggerModule, NgxLoggerLevel, NGXLogger } from 'ngx-logger';
+
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/login/login.component';
@@ -50,13 +52,16 @@ import { ContactComponent } from './component/profile/contact/contact.component'
 import { PartnerComponent } from './component/profile/partner/partner.component';
 import { IndexComponent } from './component/index/index.component';
 
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+import { LoadingComponent } from './component/loading/loading.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuardService] },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService] },
+  { path: 'profile/:name', component: ProfileComponent, canActivate: [AuthGuardService] },
   { path: 'search', component: SearchComponent, canActivate: [AuthGuardService] },
-  { path: 'basicProfile', component: BasicProfileComponent, canActivate: [AuthGuardService] },
+  { path: 'edit', component: BasicProfileComponent, canActivate: [AuthGuardService] },
   { path: 'personal', component: PersonalDetailComponent, canActivate: [AuthGuardService] },
   { path: 'basic', component: BasicDetailComponent, canActivate: [AuthGuardService] },
   { path: 'ethnicity', component: EthnicityDetailComponent, canActivate: [AuthGuardService] },
@@ -78,6 +83,8 @@ const appRoutes: Routes = [
   { path: 'partner', component: PartnerComponent, canActivate: [AuthGuardService] },
   { path: 'index', component: IndexComponent, canActivate: [AuthGuardService] },
 
+
+  { path: 'help', component: LoadingComponent  },
   { path: 'register', component: RegisterComponent  },
   { path: '**', component: IndexComponent }
 ];
@@ -113,7 +120,8 @@ const appRoutes: Routes = [
     InterestDetailsComponent,
     ContactComponent,
     PartnerComponent,
-    IndexComponent
+    IndexComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -121,13 +129,15 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     HttpClientModule,
+    Ng4LoadingSpinnerModule ,
     TranslateModule.forRoot({
         loader: {
             provide: TranslateLoader,
             useFactory: HttpLoaderFactory,
             deps: [HttpClient]
         }
-    })
+    }),
+    LoggerModule.forRoot({serverLoggingUrl: '/api/logs', level: NgxLoggerLevel.INFO, serverLogLevel: NgxLoggerLevel.ERROR})
   ],
   providers: [
     {
@@ -139,7 +149,9 @@ const appRoutes: Routes = [
       PersonService,
       ProfileService,
       GlobalService,
-      ExceptionService
+      ExceptionService,
+      LoadingComponent,
+      NGXLogger
   ],
   bootstrap: [AppComponent]
 })

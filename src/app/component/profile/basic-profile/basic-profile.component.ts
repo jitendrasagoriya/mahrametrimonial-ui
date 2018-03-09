@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { NGXLogger } from 'ngx-logger';
 
 @Component({
   selector: 'app-basic-profile',
@@ -9,9 +10,18 @@ import { Router } from '@angular/router';
 })
 export class BasicProfileComponent implements OnInit {
 
-  constructor(private router: Router, private location: Location) { }
+  constructor(private router: Router,
+    private route: ActivatedRoute,
+    private location: Location,
+    private logger: NGXLogger) { }
 
   ngOnInit() {
+    this.route.params.subscribe( params => {
+      if (params['load']) {
+        this.logger.info('Refresh');
+        document.getElementById('farji-overlay').remove();
+      }
+   });
   }
 
   redirect(redirect: string) {

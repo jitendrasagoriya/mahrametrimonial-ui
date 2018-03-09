@@ -33,7 +33,7 @@ export class PersonService {
       const options = new RequestOptions({ headers: headers });
 
       // get users from api
-      return this.http.get(this.url + 'person/', options)
+      return this.http.get(this.url + '/person/', options)
           .map((response: Response) => response.json())
           .catch((response: Response) => Observable.throw(
             this.exceptionService.errorHandlerWithPage(response, 'search')
@@ -46,7 +46,7 @@ export class PersonService {
      const options = new RequestOptions({ headers: headers });
 
      // get users from api
-     return this.http.get(this.url + 'person/profile/view', options)
+     return this.http.get(this.url + '/person/profile/view', options)
          .map((response: Response) => response.json())
          .catch((response: Response) => Observable.throw(this.exceptionService.errorHandler(response)));
   }
@@ -61,7 +61,7 @@ export class PersonService {
       'enabled': 1
     };
 
-    return this.http.post( this.globalService.localBaseUrl + 'register', data, {headers: headers})
+    return this.http.post( this.globalService.localBaseUrl + '/register', data, {headers: headers})
             .map((response: Response) => response.json() )
             .catch((response: Response) => Observable.throw(response));
   }

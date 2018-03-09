@@ -4,6 +4,7 @@ import {NgForm} from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from '../../services/authentication.service';
 import { GlobalService } from '../../global/global.service';
+import { LoadingComponent } from '../loading/loading.component';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit {
   constructor( private router: Router,
         private authenticationService: AuthenticationService,
         private route: ActivatedRoute,
-        private globalService: GlobalService) { }
+        private globalService: GlobalService,
+        private loadingComponent: LoadingComponent) { }
 
   ngOnInit() {    // reset login status
     this.baseUrl = this.globalService.baseUrl;
@@ -45,11 +47,12 @@ export class LoginComponent implements OnInit {
   }
 
   login(f: NgForm) {
-    this.loading = true;
+    this.loadingComponent.show();
     this.authenticationService.login( f.value.usename  , f.value.password)
         .subscribe(result => {
           console.log('login componet' + result);
             if (result === true) {
+                this.loadingComponent.hide();
                 this.router.navigate([this.pageName]);
             } else {
                 this.error = 'Username or password is incorrect';

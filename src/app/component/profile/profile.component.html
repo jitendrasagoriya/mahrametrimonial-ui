@@ -1,11 +1,4 @@
-<ng-template #loading>Loading User Data...</ng-template>
- <!-- Status bar overlay for fullscreen mode-->
- <div class="statusbar-overlay"></div>
- <!-- Panels overlay-->
- <div class="panel-overlay"></div>
- <app-header></app-header>
 
- <app-footer></app-footer>
  <!-- Views -->
  <div class="views" >
     <!-- Your main view, should have "view-main" class -->
@@ -16,7 +9,7 @@
 		   <div data-page="single-profile-view" class="page navbar-fixed">
 			  <div class="navbar">
 				 <div class="navbar-inner">
-					<div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i></a></div>
+					<div class="left"><a [routerLink]="['/home']" class="back link"> <i class="icon icon-back"></i></a></div>
 					<div class="center fg-white">Profile View</div>
 					<div class="right">
 					   <!-- Right link contains only icon - additional "icon-only" class-->
@@ -50,7 +43,7 @@
 						  <!-- Tab 1, active by default -->
 						  <div id="tab1" class="tab active">
 							 <div class="content-block">
-								<p><strong>{{person.userName}} - Last Online Today</strong></p>
+								<p><strong>{{person?.fName}}  {{person?.lName}} <!-- Last Online Today --> </strong></p>
 								<div class="columns-oney color-card-greyish">
 								   <p>25 Years 5'7"</p>
 								   <p>{{person.gotra}}</p>
@@ -126,9 +119,9 @@
 						  </div>
 						  <!-- Tab 3 -->
 						  
-						  <!--
+						   
 
-							<div id="tab3" class="tab">
+							<div *ngIf="!isMehra" id="tab3" class="tab">
 							 <div class="content-block">
 								<div class="footer-flex-sj ">
 								   <div class="flexy-3-sj">
@@ -161,10 +154,10 @@
 							 </div>
 						  </div>
 
-						  -->
+						  
 
 					   </div>
-					   <div class="footer-sj-manage-all-in-set">
+					   <div *ngIf="!isMehra" class="footer-sj-manage-all-in-set">
 						  <div class="footer-flex-sj">
 							 <div class="flexy-3-sj">
 								<a href="#" class="footer-matri-flex-oney button">
