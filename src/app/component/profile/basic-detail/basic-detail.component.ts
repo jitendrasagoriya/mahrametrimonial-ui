@@ -1,5 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { GlobalService } from '../../../global/global.service';
 
 @Component({
   selector: 'app-basic-detail',
@@ -8,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasicDetailComponent implements OnInit {
 
-  constructor(private location: Location) { }
+  public isMehra: Boolean = false;
+
+  constructor(private location: Location,
+              private global: GlobalService) { }
+
 
   ngOnInit() {
+    this.isMehra = this.global.isMehra;
   }
 
   goBack() {

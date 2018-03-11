@@ -17,7 +17,7 @@
                   <div class="page-content">
                      <div class="list-block">
                         <ul>
-                           <li>
+                           <li >
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
@@ -52,7 +52,7 @@
                                  </div>
                               </a>
                            </li>
-                           <li>
+                           <li *ngIf="!isMehra">
                               <a href="#" class="item-link smart-select" data-searchbar="true" data-searchbar-placeholder="Search Countries">
                                  <!-- select -->
                                  <select name="Country Living In">
@@ -304,7 +304,7 @@
                                  </div>
                               </a>
                            </li>
-                           <li>
+                           <li *ngIf="!isMehra">
                               <a href="#" class="item-link smart-select" data-searchbar="true" data-searchbar-placeholder="Search State">
                                  <!-- select -->
                                  <select name="State Living In">
@@ -370,7 +370,7 @@
                                  </div>
                               </a>
                            </li>
-                           <li>
+                           <li *ngIf="!isMehra" >
                               <a href="#" class="item-link smart-select" data-searchbar="true" data-searchbar-placeholder="Search City">
                                  <!-- select -->
                                  <select name="City Living In">

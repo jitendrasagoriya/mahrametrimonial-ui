@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
 
 import 'rxjs/add/operator/map';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthenticationService {
@@ -13,7 +14,8 @@ export class AuthenticationService {
   public url: string;
 
   constructor(private http: Http,
-    private globalService: GlobalService) {
+    private globalService: GlobalService,
+    private router: Router) {
         const currentUser = JSON.parse(localStorage.getItem('currentUser'));
         this.token = currentUser && currentUser.token;
         if (this.globalService.isLocal) {
@@ -63,6 +65,7 @@ export class AuthenticationService {
     // clear token remove user from local storage to log user out
     this.token = null;
     localStorage.removeItem('currentUser');
+    this.router.navigate(['login'] );
   }
 
 }

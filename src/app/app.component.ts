@@ -1,3 +1,4 @@
+import { AuthenticationService } from './services/authentication.service';
 import { Observable } from 'rxjs/Observable';
 import { GlobalService } from './global/global.service';
 import { Component } from '@angular/core';
@@ -19,7 +20,8 @@ export class AppComponent {
   stopCondition: Boolean = false;
   constructor(private translate: TranslateService,
     private global: GlobalService,
-    private router: Router) {
+    private router: Router,
+    private authenticationService: AuthenticationService) {
     this.isMehra = this.global.isMehra;
     translate.setDefaultLang('en');
   }
@@ -34,6 +36,13 @@ export class AppComponent {
         this.stopCondition = true;
         this.router.navigate([pageName] );
       });
+  }
+
+  logout() {
+    Observable.interval(500).take(4).subscribe(() => {
+      this.stopCondition = true;
+      this.authenticationService.logout();
+    });
   }
 }
 
