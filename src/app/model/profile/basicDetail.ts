@@ -1,8 +1,9 @@
 export class BasicDetail {
-    height: String;
+    height: Number;
     managedBy: String;
     showName: Boolean;
     complexion: String;
     bodyType: String;
-    weight: String;
+    weight: Number ;
+    gender: String;
 }

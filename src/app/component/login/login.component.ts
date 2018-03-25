@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
         private loadingComponent: LoadingComponent) { }
 
   ngOnInit() {    // reset login status
+    this.loadingComponent.hide();
     this.baseUrl = this.globalService.baseUrl;
      this.route
       .queryParams

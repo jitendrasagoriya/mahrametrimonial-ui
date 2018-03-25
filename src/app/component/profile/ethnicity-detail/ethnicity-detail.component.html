@@ -18,87 +18,46 @@
                      <div class="list-block">
                         <ul>
                            <li>
-                              <!-- Smart select, will be opened in Popup -->
-                              <a href="#" class="item-link smart-select" data-open-in="popup">
-                                 <!-- select -->
-                                 <select name="Religion">
-                                    <option value="Agnostic">Agnostic</option>
-                                    <option value="Atheist">Atheist</option>
-                                    <option value="Baptist">Baptist</option>
-                                    <option value="Buddhist">Buddhist</option>
-                                    <option value="Catholic">Catholic</option>
-                                    <option value="Christian" selected>Christian</option>
-                                    <option value="Hindu">Hindu</option>
-                                    <option value="Jewish">Jewish</option>
-                                    <option value="Lutheran">Lutheran</option>
-                                    <option value="Methodist">Methodist</option>
-                                    <option value="Mormon">Mormon</option>
-                                    <option value="Muslim">Muslim</option>
-                                    <option value="Organic">Adventist</option>
-                                    <option value="Other">Other</option>
-                                 </select>
+                                 <!-- Smart select, will be opened in Popup -->                               
                                  <div class="item-content">
                                     <div class="item-inner">
                                        <!-- Select label -->
-                                       <div class="item-title">Religion</div>
+                                       <div class="item-title">Gotra</div>
                                        <!-- Selected value, not required -->
-                                       <div class="item-after">Christianity</div>
+                                       <div class="item-after">
+                                           <input type='text' name="gotra" placeholder="gotra" [(ngModel)]='ethinicity.gotra' />
+                                       </div>
                                     </div>
                                  </div>
-                              </a>
+                               
                            </li>
                            <li>
-                              <a href="#" class="item-link smart-select" data-searchbar="true" data-searchbar-placeholder="Search Language">
-                                 <!-- select -->
-                                 <select name="Mother Tongue">
-                                    <option value="Hindi-Delhi">English</option>
-                                    <option value="Hindi-UP">Spanish</option>
-                                    <option value="Hindi-MP">Chinese</option>
-                                    <option value="Punjabi" selected>French</option>
-                                    <option value="Haryanvi">Tagalog</option>
-                                    <option value="Himachali">Vietnamese</option>
-                                    <option value="Rajasthani">Hindi</option>
-                                    <option value="Sindhi">Korean</option>
-                                    <option value="Kashmiri">German</option>
-                                    <option value="Urdu">Russian</option>
-                                    <option value="Marathi">Italian</option>
-                                    <option value="Gujrati">Portuguese</option>
-                                    <option value="Hindi-MP">Polish</option>
-                                 </select>
+                               
                                  <div class="item-content">
                                     <div class="item-inner">
                                        <!-- Select label -->
-                                       <div class="item-title">Mother Tongue</div>
+                                       <div class="item-title">Gotra Save</div>
                                        <!-- Selected value, not required -->
-                                       <div class="item-after">French</div>
+                                       <div class="item-after">
+                                            <input type='text' name="gotraToSave" placeholder="gotra to save" [(ngModel)]='ethinicity.gotraToSave' />
+                                       </div>
                                     </div>
                                  </div>
-                              </a>
+                              
                            </li>
                            <li>
-                              <a href="#" class="item-link smart-select" data-searchbar="true" data-searchbar-placeholder="Search Caste">
-                                 <!-- select -->
-                                 <select name="Caste">
-                                    <option value="African">African</option>
-                                    <option value="American" selected>American</option>
-                                    <option value="Australian">Australian</option>
-                                    <option value="Asian">Asian</option>
-                                    <option value="Caucasian">Caucasian</option>
-                                    <option value="European">European</option>
-                                    <option value="Latino">Latino</option>
-                                    <option value="Indian">Indian</option>
-                                    <option value="Middle Eastern">Middle Eastern</option>
-                                    <option value="Other">Other</option>
-                                 </select>
+                                 
                                  <div class="item-content">
                                     <div class="item-inner">
                                        <!-- Select label -->
-                                       <div class="item-title">Ethnicity</div>
+                                       <div class="item-title">Caste</div>
                                        <!-- Selected value, not required -->
-                                       <div class="item-after">American</div>
+                                       <div class="item-after">
+                                            <input type='text' name="caste"  placeholder="caste" [(ngModel)]='ethinicity.caste'/>
+                                       </div>
                                     </div>
                                  </div>
-                              </a>
+                               
                            </li>
                         </ul>
                      </div>

@@ -21,30 +21,60 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="highest education">
-                                    <option value="B.Arch">B.Architecture</option>
-                                    <option value="5 Feet">B.E/B.Technology</option>
-                                    <option value="5'2">M.Architecture</option>
-                                    <option value="5'4">M.E/M.Technology</option>
-                                    <option value="5'5">M.Pharma</option>
-                                    <option value="5'7">D.D.S: Dr. Dental Surgery</option>
-                                    <option value="5'8" selected>MCA/PGDCA</option>
-                                    <option value="5'9">B.Commerce</option>
-                                    <option value="5'10">B. N. - Bachelor of Nursing</option>
-                                    <option value="5'11">B.S.N. - B.S. in Nursing</option>
-                                    <option value="6'1">M.Commerce</option>
+                                 <select name="highest education" [(ngModel)]='collageDetails.highestEducation'>
+                                    <option value="X">10th</option>
+                                    <option value="XII">12th</option>
+                                    <option value="G">Graducation</option>
+                                    <option value="PG">Post Graducation</option>
+                                     
                                  </select>
                                  <div class="item-content">
                                     <div class="item-inner">
                                        <!-- Select label -->
                                        <div class="item-title">Highest Education</div>
                                        <!-- Selected value, not required -->
-                                       <div class="item-after">MCA/PGDCA</div>
+                                       <div class="item-after">{{collageDetails.highestEducation}}</div>
                                     </div>
                                  </div>
                               </a>
                            </li>
-                           <li>
+
+                           <li  *ngIf='isMehra'>
+                                <div class="item-content" >
+                                    <div class="item-inner" style="border-bottom: 1px solid rgb(217, 217, 217)">                                            
+                                           <!-- Selected value, not required -->
+                                        <div class="item-title">Subject</div>
+                                        <div class="item-after">
+                                            <input type="text" name='subject' placeholder="Subject" [(ngModel)]='collageDetails.subject'/>
+                                        </div>
+                                    </div>
+                                </div>
+                           </li>
+
+                           <li  *ngIf='isMehra'>
+                                <div class="item-content"  >
+                                    <div class="item-inner" style="border-bottom: 1px solid rgb(217, 217, 217)">  
+                                        <div class="item-title">Name</div>                                         
+                                           <!-- Selected value, not required -->
+                                        <div class="item-after">
+                                            <input type="text" name='name' placeholder="School/ College Name" [(ngModel)]='collageDetails.schoolCollegeName'/>
+                                        </div>
+                                    </div>
+                                </div>
+                           </li>
+
+                           <li  *ngIf='isMehra'>
+                                <div class="item-content"  >
+                                    <div class="item-inner" style="border-bottom: 1px solid rgb(217, 217, 217)">        
+                                        <div class="item-title">University</div>                                      
+                                           <!-- Selected value, not required -->
+                                        <div class="item-after">
+                                            <input type="text" name='university' placeholder="University" [(ngModel)]='collageDetails.university'/>
+                                        </div>
+                                    </div>
+                                </div>
+                           </li>
+                           <li *ngIf='!isMehra'>
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
@@ -76,7 +106,7 @@
                                  </div>
                               </a>
                            </li>
-                           <li>
+                           <li *ngIf='!isMehra'>
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
@@ -108,7 +138,7 @@
                                  </div>
                               </a>
                            </li>
-                           <li>
+                           <li *ngIf='!isMehra'>
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
@@ -138,7 +168,7 @@
                                  </div>
                               </a>
                            </li>
-                           <li>
+                           <li *ngIf='!isMehra'>
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->

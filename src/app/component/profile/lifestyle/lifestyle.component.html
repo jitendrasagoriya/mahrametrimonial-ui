@@ -55,7 +55,7 @@
                                                           <div class="item-inner">
                                                              <div class="item-title label">Food I Cook</div>
                                                              <div class="item-input">
-                                                                <textarea>Chinese Food | Mexican Food | Italian Food | Japanese Food | Greek cuisine | French cuisine | Thai cuisine | Spanish cuisine | Indian cuisine |
+                                                                <textarea [(ngModel)]='lifeStyle.foodAndCook'> 
                                                                 </textarea>
                                                              </div>
                                                           </div>
@@ -86,7 +86,7 @@
                                            </li>
                                            <!-- Popup Solution 5 -->
                                            <!-- Popup Solution 5 -->
-                                           <li>
+                                           <li *ngIf='!isMehra'>
                                               <a  [routerLink]="['/assets']" class="item-link item-content">
                                                  <div class="item-inner">
                                                     <div class="item-title-row">
@@ -99,26 +99,31 @@
                                            <!-- Popup Solution 5 -->
                                            <!-- Popup Solution 5 -->
                                            <li>
-                                              <a [routerLink]="['/hobbies']"  class="item-link item-content">
+                                               
                                                  <div class="item-inner">
                                                     <div class="item-title-row">
                                                        <div class="item-title">Hobbies</div>
                                                     </div>
-                                                    <div class="item-text">Art | Handicraft | Printing | Gardening | Music Instruments |</div>
+                                                    <div class="item-text" style="margin-top: 20px;">
+                                                      <input type="text" name="hobbies" [(ngModel)]='lifeStyle.hobbies'   placeholder="Art | Handicraft | Printing | Gardening | Music Instruments"/>
+                                                    </div>
                                                  </div>
-                                              </a>
+                                              
                                            </li>
-                                           <!-- Popup Solution 5 -->
+                                           <!-- Popup Solution 5 -->  
                                            <!-- Popup Solution 5 -->
                                            <li>
-                                              <a [routerLink]="['/interest']" class="item-link item-content">
+                                              
                                                  <div class="item-inner">
                                                     <div class="item-title-row">
                                                        <div class="item-title">Interest</div>
                                                     </div>
-                                                    <div class="item-text">Music Listen | Movies | Travel | Sports | Meditation | Yoga |</div>
+                                                    <div class="item-text" style="margin-top: 20px;">
+                                                        <input type="text" name="intrest" [(ngModel)]='lifeStyle.interest'    placeholder="Music Listen | Movies | Travel | Sports | Meditation | Yoga"/>
+                                                      
+                                                    </div>
                                                  </div>
-                                              </a>
+                                              
                                            </li>
                                            <!-- Popup Solution 5 -->
                                         </ul>

@@ -1,7 +1,5 @@
+import { FamilyMember } from './../familyMembers';
 export class Parants {
-    fatherOccupation: String;
-    fatherIncome: String;
-    motherOccupation: String;
-    motherIncome: String;
-    familyIncome: Number;
+    father: FamilyMember;
+    mother: FamilyMember;
 }

@@ -1,3 +1,5 @@
+import { FamilyMemberService } from './services/family-member.service';
+import { BuilderService } from './services/builder.service';
 import { SiblingsDetailsComponent } from './component/profile/siblings-details/siblings-details.component';
 import { ExceptionService } from './services/exception.service';
 import { ProfileService } from './services/profile.service';
@@ -14,6 +16,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient} from '@angular/common/http';
 
 import { LoggerModule, NgxLoggerLevel, NGXLogger } from 'ngx-logger';
+import { SESSION_STORAGE, StorageService, StorageServiceModule } from 'angular-webstorage-service';
 
 
 import { AppComponent } from './app.component';
@@ -130,6 +133,7 @@ const appRoutes: Routes = [
     HttpModule,
     HttpClientModule,
     Ng4LoadingSpinnerModule ,
+    StorageServiceModule,
     TranslateModule.forRoot({
         loader: {
             provide: TranslateLoader,
@@ -148,10 +152,12 @@ const appRoutes: Routes = [
       AuthenticationService,
       PersonService,
       ProfileService,
+      FamilyMemberService,
       GlobalService,
       ExceptionService,
       LoadingComponent,
-      NGXLogger
+      NGXLogger,
+      BuilderService
   ],
   bootstrap: [AppComponent]
 })

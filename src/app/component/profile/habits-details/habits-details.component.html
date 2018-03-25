@@ -21,18 +21,19 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="Specify your Diet">
-                                    <option value="B.Arch">Non Vegetarian</option>
-                                    <option value="B.Des">Jain</option>
-                                    <option value="5 Feet">Eggetarian</option>
-                                    <option value="5'8" selected>Vegetarian</option>
+                                 <select name="Specify your Diet" [(ngModel)]='habit.diet'>
+                                    <option value="NONVEGETARIAN">Non Vegetarian</option>
+                                    <option value="JAIN">Jain</option>
+                                    <option value="EGGETARIAN">Eggetarian</option>
+                                    <option value="VEGETARIAN"  >Vegetarian</option>
+                                    <option value="NA"  >Dont want to disclose</option>
                                  </select>
                                  <div class="item-content">
                                     <div class="item-inner">
                                        <!-- Select label -->
                                        <div class="item-title">Specify your Diet</div>
                                        <!-- Selected value, not required -->
-                                       <div class="item-after">Vegetarian</div>
+                                       <div class="item-after">{{habit.diet | titlecase}}</div>
                                     </div>
                                  </div>
                               </a>
@@ -41,17 +42,17 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="Do you Smoke">
-                                    <option value="B.Arch">Yes</option>
-                                    <option value="B.Des">Occasionally</option>
-                                    <option value="5'4" selected>No</option>
+                                 <select name="Do you Smoke" [(ngModel)]='habit.smoke'>
+                                    <option value="YES">Yes</option>
+                                    <option value="OCCASIONALLY">Occasionally</option>
+                                    <option value="NO" selected>No</option>
                                  </select>
                                  <div class="item-content">
                                     <div class="item-inner">
                                        <!-- Select label -->
                                        <div class="item-title">Do you Smoke ?</div>
                                        <!-- Selected value, not required -->
-                                       <div class="item-after">NO</div>
+                                       <div class="item-after">{{habit.smoke | titlecase}}</div>
                                     </div>
                                  </div>
                               </a>
@@ -60,26 +61,26 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="Do you Drink">
-                                    <option value="B.Arch">Yes</option>
-                                    <option value="B.Des">Occasionally</option>
-                                    <option value="5'4" selected>No</option>
+                                 <select name="Do you Drink" [(ngModel)]='habit.drink'>
+                                        <option value="YES">Yes</option>
+                                        <option value="OCCASIONALLY">Occasionally</option>
+                                        <option value="NO" selected>No</option>
                                  </select>
                                  <div class="item-content">
                                     <div class="item-inner">
                                        <!-- Select label -->
                                        <div class="item-title">Do you Drink ?</div>
                                        <!-- Selected value, not required -->
-                                       <div class="item-after">NO</div>
+                                       <div class="item-after">{{habit.drink | titlecase}}</div>
                                     </div>
                                  </div>
                               </a>
                            </li>
-                           <li>
+                           <li *ngIf='!isMehra'>
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="opento">
+                                 <select name="opento" >
                                     <option value="4242" selected>Yes</option>
                                     <option value="42452">No</option>
                                  </select>

@@ -38,7 +38,7 @@ export class PersonService {
           .catch((response: Response) => Observable.throw(
             this.exceptionService.errorHandlerWithPage(response, 'search')
           ));
-  }
+    }
 
   getPerson(): Observable<Person> {
      // add authorization header with jwt token

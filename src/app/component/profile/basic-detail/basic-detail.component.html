@@ -21,7 +21,7 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="Height">
+                                 <select name="Height" [(ngModel)]='basic.height'>
                                     <option value="4'10">4'10"</option>
                                     <option value="4'11">4'11"</option>
                                     <option value="5 Feet">5 Feet"</option>
@@ -47,7 +47,7 @@
                                        <!-- Select label -->
                                        <div class="item-title">Height</div>
                                        <!-- Selected value, not required -->
-                                       <div class="item-after">5'11"</div>
+                                       <div class="item-after">{{basic.height}}</div>
                                     </div>
                                  </div>
                               </a>
@@ -909,7 +909,7 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="Profile Managed By">
+                                 <select name="Profile Managed By" [(ngModel)]='basic.managedBy'>
                                     <option value="Self">Self</option>
                                     <option value="Parents">Parents</option>
                                     <option value="Siblings" selected>Siblings</option>
@@ -923,7 +923,7 @@
                                        <!-- Select label -->
                                        <div class="item-title">Profile Managed By</div>
                                        <!-- Selected value, not required -->
-                                       <div class="item-after">Siblings</div>
+                                       <div class="item-after">{{basic.managedBy | titlecase}}</div>
                                     </div>
                                  </div>
                               </a>
@@ -932,16 +932,16 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="Gender">
-                                    <option value="Female">Female</option>
-                                    <option value="Male" selected>Male</option>
+                                 <select name="Gender"  [(ngModel)]='basic.gender'>
+                                    <option value="FEMALE">Female</option>
+                                    <option value="MALE" selected>Male</option>
                                  </select>
                                  <div class="item-content">
                                     <div class="item-inner">
                                        <!-- Select label -->
                                        <div class="item-title">Gender</div>
                                        <!-- Selected value, not required -->
-                                       <div class="item-after">Male</div>
+                                       <div class="item-after">{{basic.gender | titlecase}}</div>
                                     </div>
                                  </div>
                               </a>
@@ -950,7 +950,7 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="Show Name to All">
+                                 <select name="Show Name to All" [(ngModel)]='basic.showName'>
                                     <option value="Female" selected>Yes</option>
                                     <option value="Male">No</option>
                                  </select>
@@ -959,7 +959,7 @@
                                        <!-- Select label -->
                                        <div class="item-title">Show Name to All</div>
                                        <!-- Selected value, not required -->
-                                       <div class="item-after">Yes</div>
+                                       <div class="item-after">{{basic.showName | titlecase}}</div>
                                     </div>
                                  </div>
                               </a>
@@ -968,19 +968,20 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="Complexion">
-                                    <option value="Female" selected>Fair</option>
-                                    <option value="Male">Very Fair</option>
-                                    <option value="Male">Wheatish</option>
-                                    <option value="Male">Wheatish Brown</option>
-                                    <option value="Male">Dark</option>
+                                 <select name="Complexion" [(ngModel)]='basic.complexion'>
+                                    <option value="NA">NA</option>
+                                    <option value="FAIR" selected>Fair</option>
+                                    <option value="VERYFAIR">Very Fair</option>
+                                    <option value="WHEATISH">Wheatish</option>
+                                    <option value="WHEATISH_BROWN">Wheatish Brown</option>
+                                    <option value="DARK">Dark</option>
                                  </select>
                                  <div class="item-content">
                                     <div class="item-inner">
                                        <!-- Select label -->
                                        <div class="item-title">Complexion</div>
                                        <!-- Selected value, not required -->
-                                       <div class="item-after">Fair</div>
+                                       <div class="item-after">{{basic.complexion | titlecase}}</div>
                                     </div>
                                  </div>
                               </a>
@@ -989,18 +990,19 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="Body Type">
-                                    <option value="Female" selected>Athletic</option>
-                                    <option value="Male">Slim</option>
-                                    <option value="Male">Average</option>
-                                    <option value="Male">Heavy</option>
+                                 <select name="Body Type" [(ngModel)]='basic.bodyType'>
+                                    <option value="ATHLETIC">Athletic</option>
+                                    <option value="SLIM">Slim</option>
+                                    <option value="AVERAGE">Average</option>
+                                    <option value="HEAVY">Heavy</option>
+                                    <option value="NA">NA</option>
                                  </select>
                                  <div class="item-content">
                                     <div class="item-inner">
                                        <!-- Select label -->
                                        <div class="item-title">Body Type</div>
                                        <!-- Selected value, not required -->
-                                       <div class="item-after">Athletic</div>
+                                       <div class="item-after">{{basic.bodyType | titlecase}}</div>
                                     </div>
                                  </div>
                               </a>
@@ -1009,7 +1011,7 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="Body Weight (Kgs)">
+                                 <select name="Body Weight (Kgs)" [(ngModel)]='basic.weight'>
                                     <option value="42 Kgs">42 Kgs</option>
                                     <option value="43 Kgs">43 Kgs</option>
                                     <option value="44 Kgs">44 Kgs</option>
@@ -1095,7 +1097,7 @@
                                        <!-- Select label -->
                                        <div class="item-title">Body Weight (Kgs)</div>
                                        <!-- Selected value, not required -->
-                                       <div class="item-after">78 Kgs</div>
+                                       <div class="item-after">{{basic.weight}} Kgs</div>
                                     </div>
                                  </div>
                               </a>

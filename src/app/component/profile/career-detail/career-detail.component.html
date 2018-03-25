@@ -23,30 +23,83 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="Occupation">
-                                    <option value="B.Arch">Looking for Job</option>
-                                    <option value="B.Des">Not Working</option>
-                                    <option value="5 Feet">Actor/Model</option>
-                                    <option value="5'1">Advertising Professional</option>
-                                    <option value="5'2" selected>Software Professional</option>
-                                    <option value="5'3">Agent</option>
-                                    <option value="5'4">Air Hostess</option>
-                                    <option value="5'5">Architech</option>
-                                    <option value="5'6">Banking Profesional</option>
-                                    <option value="5'7">Business Person</option>
-                                    <option value="5'8">Charted Accounted</option>
-                                    <option value="5'9">Doctor</option>
-                                    <option value="5'10">Farming</option>
-                                    <option value="5'11">Fashion Designer</option>
-                                    <option value="6 Feet">Govt. Services</option>
-                                    <option value="6'1">Interior Designer</option>
+                                 <select name="Occupation"  [(ngModel)]='careerDetail.occupation'>
+                                        <option value="LOOKINGFORAJOB"> Looking for a job </option>
+                                        <option value="NOTWORKING"> Not working </option>
+                                        <option value="ACTORMODEL"> Actor/Model </option>
+                                        <option value="ADVERTISINGPROFESSIONAL"> Advertising Professional </option>
+                                        <option value="AGENT"> Agent</option>
+                                        <option value="AIRHOSTESS"> Air Hostess</option>
+                                        <option value="ANALYST"> Analyst</option>
+                                        <option value="ARCHITECT"> Architect</option>
+                                        <option value="BPOITES"> BPO/ITeS</option>
+                                        <option value="BANKINGPROFESSIONAL"> Banking Professional</option>
+                                        <option value="BEAUTICIAN"> Beautician</option>
+                                        <option value="BUSINESSPERSON"> Businessperson</option>
+                                        <option value="CHARTEREDACCOUNTANT"> Chartered accountant</option>
+                                        <option value="CIVILSERVICES"> Civil Services ">IAS/ IFS/ IPS/ IRS)</option>
+                                        <option value="CONSULTANT"> Consultant</option>
+                                        <option value="CORPORATECOMMUNICATION"> Corporate Communication</option>
+                                        <option value="CORPORATEPLANNINGPROFESSIONAL"> Corporate Planning Professional</option>
+                                        <option value="CUSTOMERSERVICES"> Customer Services</option>
+                                        <option value="CYBERNETWORKSECURITY"> Cyber / Network Security</option>
+                                        <option value="DEFENCE"> Defence</option>
+                                        <option value="DOCTOR"> Doctor</option>
+                                        <option value="EDUCATIONPROFESSIONAL"> Education Professional</option>
+                                        <option value="ENGINEERNONIT"> Engineer - Non IT</option>
+                                        <option value="FARMING"> Farming</option>
+                                        <option value="FASHIONDESIGNER"> Fashion Designer</option>
+                                        <option value="FILMPROFESSIONAL"> Film Professional</option>
+                                        <option value="FINANCIALSERVICESACCOUNTING"> Financial Services/Accounting</option>
+                                        <option value="FITNESSPROFESSIONAL"> Fitness Professional</option>
+                                        <option value="GOVTSERVICES"> Govt. Services</option>
+                                        <option value="HRPROFESSIONAL"> HR Professional</option>
+                                        <option value="HARDWARETELECOM"> Hardware/Telecom</option>
+                                        <option value="HEALTHCAREPROFESSIONAL"> Healthcare Professional</option>
+                                        <option value="HOTELSHOSPITALITYPROFESSIONAL"> Hotels/Hospitality Professional</option>
+                                        <option value="INTERIORDESIGNER"> Interior Designer</option>
+                                        <option value="JOURNALIST"> Journalist</option>
+                                        <option value="LAWYERANDLEGALPROFESSIONAL"> Lawyer/Legal Professional</option>
+                                        <option value="LOGISTICSSCMPROFESSIONAL"> Logistics/SCM Professional</option>
+                                        <option value="MANAGER"> Manager</option>
+                                        <option value="MARKETINGPROFESSIONAL"> Marketing Professional</option>
+                                        <option value="MEDIAPROFESSIONAL"> Media Professional</option>
+                                        <option value="MERCHANTNAVY"> Merchant Navy</option>
+                                        <option value="NGOSOCIALSERVICES"> NGO/Social Services</option>
+                                        <option value="NURSE">  Nurse</option>
+                                        <option value="OFFICEADMIN">  Office Admin</option>
+                                        <option value="OPERATORTECHNICIAN">  Operator/Technician</option>
+                                        <option value="PHYSIOTHERAPIST">  Physiotherapist</option>
+                                        <option value="PILOT">  Pilot</option>
+                                        <option value="POLICE">  Police</option>
+                                        <option value="PRIVATESECURITY">  Private Security</option>
+                                        <option value="PRODUCTMANAGER">  Product manager</option>
+                                        <option value="PROFESSORLECTURER">  Professor/Lecturer</option>
+                                        <option value="PROGRAMMANAGER">  Program Manager</option>
+                                        <option value="PROJECTMANAGERIT">  Project Manager - IT</option>
+                                        <option value="PROJECTMANAGERNONI">  Project Manager - Non IT</option>
+                                        <option value="PSYCHOLOGIST">  Psychologist</option>
+                                        <option value="RESEARCHPROFESSIONAL">  Research Professional</option>
+                                        <option value="SALESPROFESSIONAL">  Sales Professional</option>
+                                        <option value="SCIENTIST">  Scientist</option>
+                                        <option value="SECRETARYFRONTOFFICE">  Secretary/Front Office</option>
+                                        <option value="SECURITYPROFESSIONAL">  Security Professional</option>
+                                        <option value="SELFEMPLOYED">  Self Employed</option>
+                                        <option value="SOFTWAREPROFESSIONAL">  Software Professional</option>
+                                        <option value="SPORTSPERSON">  Sportsperson</option>
+                                        <option value="STUDENT">  Student</option>
+                                        <option value="TEACHER">  Teacher</option>
+                                        <option value="TOPMANAGEMENT">  Top Management ">CXO M.D. etc.)</option>
+                                        <option value="UIUXDESIGNER">  UI/UX designer</option>
+                                        <option value="WEBGRAPHIDESIGN">  Web/Graphic Design</option>
+                                        <option value="OTHERS">  Others");
                                  </select>
                                  <div class="item-content">
                                     <div class="item-inner">
                                        <!-- Select label -->
                                        <div class="item-title">Occupation</div>
                                        <!-- Selected value, not required -->
-                                       <div class="item-after">Software Professional</div>
+                                       <div class="item-after">{{careerDetail.occupation | titlecase}}</div>
                                     </div>
                                  </div>
                               </a>
@@ -55,7 +108,7 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="Designation">
+                                 <select name="Designation" [(ngModel)]='careerDetail.designation'>
                                     <option value="B.Arch">Project Manager</option>
                                     <option value="B.Des">Team Leader</option>
                                     <option value="5 Feet">Managing Director</option>
@@ -77,40 +130,30 @@
                                        <!-- Select label -->
                                        <div class="item-title">Designation</div>
                                        <!-- Selected value, not required -->
-                                       <div class="item-after">Business Manager</div>
+                                       <div class="item-after">{{careerDetail.designation | titlecase}}</div>
                                     </div>
                                  </div>
                               </a>
                            </li>
                            <li>
-                              <!-- Smart select, will be opened in Popup -->
-                              <a href="#" class="item-link smart-select" data-open-in="popup">
-                                 <!-- select -->
-                                 <select name="incomecalculate">
-                                    <option value="Less than 25,000$">Less than 25,000$</option>
-                                    <option value="25,000$ - 50,000$" selected>25,000$ - 50,000$</option>
-                                    <option value="50,000$ - 1,00,000$">50,000$ - 1,00,000$</option>
-                                    <option value="1,00,000$ - 2,00,000$">1,00,000$ - 2,00,000$</option>
-                                    <option value="2,00,000$ - 5,00,000$">2,00,000$ - 5,00,000$</option>
-                                    <option value="5,00,000$ - 7,50,000$">5,00,000$ - 7,50,000$</option>
-                                    <option value="7,50,000$ - $1 Million">7,50,000$ - $1 Million</option>
-                                    <option value="$1 Million Above">$1 Million Above</option>
-                                 </select>
+                               
                                  <div class="item-content">
-                                    <div class="item-inner">
+                                    <div class="item-inner" style="border-bottom: 1px solid rgb(217, 217, 217)">
                                        <!-- Select label -->
                                        <div class="item-title">Annual Income</div>
                                        <!-- Selected value, not required -->
-                                       <div class="item-after">25,000$ - 50,000$</div>
+                                       <div class="item-after"> 
+                                           <input type="text" [(ngModel)]='careerDetail.income' placeholder="Annual Income" />
+                                       </div>
                                     </div>
                                  </div>
-                              </a>
+                               
                            </li>
                            <li>
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="Experience">
+                                 <select name="Experience" [(ngModel)]='careerDetail.experience'>
                                     <option value="B.qArch">6 Months</option>
                                     <option value="Bw.Des">1 Year</option>
                                     <option value="B.eDes">2 Year</option>
@@ -130,7 +173,7 @@
                                        <!-- Select label -->
                                        <div class="item-title">Work Experience</div>
                                        <!-- Selected value, not required -->
-                                       <div class="item-after">8 Years</div>
+                                       <div class="item-after">{{careerDetail.experience}} Years</div>
                                     </div>
                                  </div>
                               </a>

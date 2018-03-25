@@ -17,17 +17,29 @@
                           <div class="page-content">
                              <div class="list-block">
                                 <ul>
+                                   <li>                                                                
+                                      <div class="item-content">
+                                         <div class="item-inner">
+                                            <!-- Select label -->
+                                            <div class="item-title">Father Name</div>
+                                             <!-- Selected value, not required -->
+                                             <div class="item-after">
+                                                 <input type="text" name='father' [(ngModel)]='father.name' placeholder="Enter your father name"/>
+                                             </div>
+                                          </div>
+                                        </div>
+                                      </li>     
                                    <li>
                                       <!-- Smart select, will be opened in Popup -->
                                       <a href="#" class="item-link smart-select" data-open-in="popup">
                                          <!-- select -->
-                                         <select name="Father is">
+                                         <select name="Father is"  [(ngModel)]='father.occupation'>
                                             <option value="B.Arch" selected>Business Person</option>
                                             <option value="B.Des">Service - Private</option>
                                             <option value="5 Feet">Service - Govt</option>
                                             <option value="5'1">Army - Armed Force</option>
                                             <option value="5'2">Civil Services</option>
-                                            <option value="5'3">Retired</option>
+                                            <option value="RETIRED">Retired</option>
                                             <option value="5'4">Not Employed</option>
                                             <option value="5'5">Expired</option>
                                             <option value="5'6">Teacher</option>
@@ -37,16 +49,28 @@
                                                <!-- Select label -->
                                                <div class="item-title">Father is</div>
                                                <!-- Selected value, not required -->
-                                               <div class="item-after">Business Person</div>
+                                               <div class="item-after">{{father.occupation | titlecase}}</div>
                                             </div>
                                          </div>
                                       </a>
+                                   </li>
+                                   <li>                                                                
+                                      <div class="item-content">
+                                          <div class="item-inner">
+                                              <!-- Select label -->
+                                              <div class="item-title">Father Name</div>
+                                              <!-- Selected value, not required -->
+                                              <div class="item-after">
+                                                   <input type="text" name="mother" placeholder="Enter your mother name" [(ngModel)]='mother.name' />
+                                              </div>
+                                           </div>
+                                      </div>
                                    </li>
                                    <li>
                                       <!-- Smart select, will be opened in Popup -->
                                       <a href="#" class="item-link smart-select" data-open-in="popup">
                                          <!-- select -->
-                                         <select name="occupation">
+                                         <select name="occupation" [(ngModel)]='mother.occupation'>
                                             <option value="B.Arch">Business Person</option>
                                             <option value="B.Des">Service - Private</option>
                                             <option value="5 Feet">Service - Govt</option>
@@ -56,41 +80,31 @@
                                             <option value="5'4">Not Employed</option>
                                             <option value="5'5">Expired</option>
                                             <option value="5'6">Teacher</option>
-                                            <option value="5'4" selected>Home Maker</option>
+                                            <option value="HOUSEWIFE" selected>Home Maker</option>
                                          </select>
                                          <div class="item-content">
                                             <div class="item-inner">
                                                <!-- Select label -->
                                                <div class="item-title">Mother is</div>
                                                <!-- Selected value, not required -->
-                                               <div class="item-after">Home Maker</div>
+                                               <div class="item-after">{{mother.occupation | titlecase}}</div>
                                             </div>
                                          </div>
                                       </a>
                                    </li>
                                    <li>
-                                      <!-- Smart select, will be opened in Popup -->
-                                      <a href="#" class="item-link smart-select" data-open-in="popup">
-                                         <!-- select -->
-                                         <select name="family-income">
-                                            <option value="Less than 25,000$">Less than 25,000$</option>
-                                            <option value="25,000$ - 50,000$">25,000$ - 50,000$</option>
-                                            <option value="50,000$ - 1,00,000$">50,000$ - 1,00,000$</option>
-                                            <option value="1,00,000$ - 2,00,000$" selected>1,00,000$ - 2,00,000$</option>
-                                            <option value="2,00,000$ - 5,00,000$">2,00,000$ - 5,00,000$</option>
-                                            <option value="5,00,000$ - 7,50,000$">5,00,000$ - 7,50,000$</option>
-                                            <option value="7,50,000$ - $1 Million">7,50,000$ - $1 Million</option>
-                                            <option value="$1 Million Above">$1 Million Above</option>
-                                         </select>
-                                         <div class="item-content">
-                                            <div class="item-inner">
-                                               <!-- Select label -->
-                                               <div class="item-title">Family Income</div>
+                                      
+                                    <div class="item-content">
+                                        <div class="item-inner">
+                                            <!-- Select label -->
+                                           <div class="item-title">Family Income</div>
                                                <!-- Selected value, not required -->
-                                               <div class="item-after">25,000$ - 50,000$</div>
+                                            <div class="item-after">
+                                                <input type="text" placeholder="Family Income" name="familyincome" [(ngModel)]='income' />
                                             </div>
-                                         </div>
-                                      </a>
+                                        </div>
+                                    </div>
+                                      
                                    </li>
                                 </ul>
                              </div>

@@ -18,11 +18,13 @@ export class AppComponent {
   title = 'app';
   isMehra: Boolean = false;
   stopCondition: Boolean = false;
+  name: String;
   constructor(private translate: TranslateService,
     private global: GlobalService,
     private router: Router,
     private authenticationService: AuthenticationService) {
     this.isMehra = this.global.isMehra;
+    this.name =  JSON.parse( localStorage.getItem('currentUser') ).username;
     translate.setDefaultLang('en');
   }
 

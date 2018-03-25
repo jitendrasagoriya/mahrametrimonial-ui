@@ -1,5 +1,5 @@
 export class PersonalDetail {
-    employment: String;
+    occupation: String;
     maritalStatus: String;
     habit: String;
     eyeColor: String;

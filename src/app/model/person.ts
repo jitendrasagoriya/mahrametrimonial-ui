@@ -19,6 +19,8 @@ export class Person {
           city:  String ;
           noOfSisters: Number;
           noOfBrother: Number;
+          noOfMarriedSisters: Number;
+          noOfMarriedBrother: Number;
           height:  Number ;
           bodyType:  String ;
           complexion:  String ;
@@ -39,4 +41,17 @@ export class Person {
           aboutMe: String;
           collageName: String;
           hobbies: String;
+          occupation: String;
+          univercity: String;
+          subject: String;
+          familyStatus: String;
+          familyValues: String;
+          familyType: String;
+          aboutFamily: String;
+          aboutJob: String;
+          aboutPartner: String;
+          livingWithParants: Boolean;
+          foodAndCook: String;
+          interest: String;
+          email: String;
 }
