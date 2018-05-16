@@ -959,7 +959,7 @@
                                        <!-- Select label -->
                                        <div class="item-title">Show Name to All</div>
                                        <!-- Selected value, not required -->
-                                       <div class="item-after">{{basic.showName | titlecase}}</div>
+                                       <div class="item-after">{{basic.showName }}</div>
                                     </div>
                                  </div>
                               </a>
@@ -990,7 +990,7 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="Body Type" [(ngModel)]='basic.bodyType'>
+                                 <select name="Body Type" [(ngModel)]='basic.bodyType' (change)='onBodyTypeChange()' >
                                     <option value="ATHLETIC">Athletic</option>
                                     <option value="SLIM">Slim</option>
                                     <option value="AVERAGE">Average</option>

@@ -24,7 +24,10 @@ export class AppComponent {
     private router: Router,
     private authenticationService: AuthenticationService) {
     this.isMehra = this.global.isMehra;
-    this.name =  JSON.parse( localStorage.getItem('currentUser') ).username;
+     console.log(localStorage.getItem('currentUser'));
+    if(localStorage.getItem('currentUser') !=null ){
+      this.name =  JSON.parse( localStorage.getItem('currentUser') ).username;
+    }
     translate.setDefaultLang('en');
   }
 

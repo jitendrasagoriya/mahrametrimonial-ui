@@ -51,6 +51,17 @@ export class ProfileService {
         .catch((response: Response) => Observable.throw(this.errorHandler(response)));
  }
 
+ changeProfile(jsonObject: any) {
+    const headers = new Headers({ 'x-auth-token': this.authenticationService.token });
+    const options = new RequestOptions({ headers: headers });
+
+    this.logger.info('getProfileByName :' + this.url + '/profile/');
+
+    return this.http.put(this.url + '/profile/', jsonObject, options)
+        .map( (response: Response) => response.text)
+        .catch((response: Response) => Observable.throw(this.errorHandler(response)));
+ }
+
  errorHandler(response: Response): void {
   const exception = response.json();
    if (exception.error === 'Unauthorized') {

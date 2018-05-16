@@ -1,3 +1,4 @@
+import { Request } from './../model/request';
 import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -14,5 +15,9 @@ export class GlobalService {
         if (this.isLocal) {
             this.baseUrl = 'http://localhost:4200/';
         }
+    }
+
+    convertIntoJson(propertyName: String, propertyValue: String, id: String) {
+        return new Request(propertyName, propertyValue, id);
     }
 }
