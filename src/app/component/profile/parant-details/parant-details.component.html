@@ -34,15 +34,17 @@
                                       <a href="#" class="item-link smart-select" data-open-in="popup">
                                          <!-- select -->
                                          <select name="Father is"  [(ngModel)]='father.occupation'>
-                                            <option value="B.Arch" selected>Business Person</option>
-                                            <option value="B.Des">Service - Private</option>
-                                            <option value="5 Feet">Service - Govt</option>
-                                            <option value="5'1">Army - Armed Force</option>
-                                            <option value="5'2">Civil Services</option>
+                                            <option value="BUSSINESS" selected>Business Person</option>
+                                            <option value="PRIVATE">Service - Private</option>
+                                            <option value="GOVERNAMENT">Service - Govt</option>
+                                            <option value="ARMY">Army - Armed Force</option>
+                                            <option value="CIVIL">Civil Services</option>
                                             <option value="RETIRED">Retired</option>
-                                            <option value="5'4">Not Employed</option>
-                                            <option value="5'5">Expired</option>
-                                            <option value="5'6">Teacher</option>
+                                            <option value="NOTEMPLOYED">Not Employed</option>
+                                            <option value="EXPIRED">Expired</option>
+                                            <option value="FARMER">Farmer</option>
+                                            <option value="OTHERS">Other</option>
+                                             
                                          </select>
                                          <div class="item-content">
                                             <div class="item-inner">
@@ -61,7 +63,7 @@
                                               <div class="item-title">Father Name</div>
                                               <!-- Selected value, not required -->
                                               <div class="item-after">
-                                                   <input type="text" name="mother" placeholder="Enter your mother name" [(ngModel)]='mother.name' />
+                                                   <input type="text" (blur)="_updateMotherName()" name="mother" placeholder="Enter your mother name" [(ngModel)]='mother.name' />
                                               </div>
                                            </div>
                                       </div>
@@ -70,17 +72,18 @@
                                       <!-- Smart select, will be opened in Popup -->
                                       <a href="#" class="item-link smart-select" data-open-in="popup">
                                          <!-- select -->
-                                         <select name="occupation" [(ngModel)]='mother.occupation'>
-                                            <option value="B.Arch">Business Person</option>
-                                            <option value="B.Des">Service - Private</option>
-                                            <option value="5 Feet">Service - Govt</option>
-                                            <option value="5'1">Army - Armed Force</option>
-                                            <option value="5'2">Civil Services</option>
-                                            <option value="5'3">Retired</option>
-                                            <option value="5'4">Not Employed</option>
-                                            <option value="5'5">Expired</option>
-                                            <option value="5'6">Teacher</option>
+                                         <select name="occupation" (change)="_updateMotherOccupation()" [(ngModel)]='mother.occupation'>
+                                            
                                             <option value="HOUSEWIFE" selected>Home Maker</option>
+                                            <option value="BUSSINESS">Business Person</option>
+                                            <option value="PRIVATE">Service - Private</option>
+                                            <option value="GOVERNAMENT">Service - Govt</option>
+                                            <option value="ARMY">Army - Armed Force</option>
+                                            <option value="CIVIL">Civil Services</option>                                            
+                                            <option value="TEACHER">Teacher</option>
+                                            <option value="RETIRED">Retired</option>
+                                            <option value="FARMER">Farmer</option>
+                                            <option value="5'5">Expired</option>                                            
                                          </select>
                                          <div class="item-content">
                                             <div class="item-inner">

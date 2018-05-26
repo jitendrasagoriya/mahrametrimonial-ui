@@ -21,7 +21,8 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="highest education" [(ngModel)]='collageDetails.highestEducation'>
+                                 <select name="highest education" [(ngModel)]='collageDetails.highestEducation'
+                                 (change)="_onHighestEducationChange()">
                                     <option value="X">10th</option>
                                     <option value="XII">12th</option>
                                     <option value="G">Graducation</option>
@@ -45,7 +46,8 @@
                                            <!-- Selected value, not required -->
                                         <div class="item-title">Subject</div>
                                         <div class="item-after">
-                                            <input type="text" name='subject' placeholder="Subject" [(ngModel)]='collageDetails.subject'/>
+                                            <input type="text" (blur)="_onSubjectChange()" name='subject' 
+                                            placeholder="Subject" [(ngModel)]='collageDetails.subject'/>
                                         </div>
                                     </div>
                                 </div>
@@ -54,10 +56,11 @@
                            <li  *ngIf='isMehra'>
                                 <div class="item-content"  >
                                     <div class="item-inner" style="border-bottom: 1px solid rgb(217, 217, 217)">  
-                                        <div class="item-title">Name</div>                                         
+                                        <div class="item-title">Collage Name</div>                                         
                                            <!-- Selected value, not required -->
                                         <div class="item-after">
-                                            <input type="text" name='name' placeholder="School/ College Name" [(ngModel)]='collageDetails.schoolCollegeName'/>
+                                            <input  (blur)="_onSchoolCollegeNameChange()" type="text" 
+                                            name='name' placeholder="School/ College Name" [(ngModel)]='collageDetails.schoolCollegeName'/>
                                         </div>
                                     </div>
                                 </div>
@@ -69,7 +72,8 @@
                                         <div class="item-title">University</div>                                      
                                            <!-- Selected value, not required -->
                                         <div class="item-after">
-                                            <input type="text" name='university' placeholder="University" [(ngModel)]='collageDetails.university'/>
+                                            <input  (blur)="_onUniversityChange()" type="text"
+                                             name='university' placeholder="University" [(ngModel)]='collageDetails.university'/>
                                         </div>
                                     </div>
                                 </div>

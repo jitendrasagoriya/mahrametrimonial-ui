@@ -47,6 +47,7 @@ export class BuilderService {
     this.personalDetail.habit = null;
     this.personalDetail.maritalStatus = person.maritalStatus;
     this.personalDetail.occupation = 'Not Working';
+    this.personalDetail.habit = person.eatingHabit;
     return this.personalDetail;
   }
 

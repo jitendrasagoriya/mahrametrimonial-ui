@@ -1,4 +1,6 @@
+import { ProfileService } from './../../../services/profile.service';
 import { Person } from './../../../model/person';
+import { ProfileBase } from './../../profileBase';
 import { FamilyMemberService } from './../../../services/family-member.service';
 import { FamilyMember } from './../../../model/familyMembers';
 import { BuilderService } from './../../../services/builder.service';
@@ -13,19 +15,21 @@ import { Component, OnInit, Inject } from '@angular/core';
   templateUrl: './parant-details.component.html',
   styleUrls: ['./parant-details.component.css']
 })
-export class ParantDetailsComponent implements OnInit {
+export class ParantDetailsComponent extends ProfileBase implements OnInit {
   public isMehra: Boolean;
   public father: FamilyMember;
   public mother: FamilyMember;
   public income: Number;
   private person: Person;
 
-  constructor(private location: Location,
-    private global: GlobalService,
-    @Inject(SESSION_STORAGE) private storage: StorageService,
-    private loading: LoadingComponent,
-    private builder: BuilderService,
-    private parants: FamilyMemberService) { }
+  constructor(@Inject(SESSION_STORAGE) private storage: StorageService,
+  private profileServiceTemp: ProfileService
+, private locationTemp: Location, private parants: FamilyMemberService) {
+
+  super();
+  this.setprofileService(profileServiceTemp);
+  this.setLocation(locationTemp);
+}
 
 
   ngOnInit() {
@@ -34,7 +38,7 @@ export class ParantDetailsComponent implements OnInit {
       this.person = this.storage.get('person');
       this.income = this.person.familyIncome;
    }
-    this.loading.show();
+    this.loadingComponent.show();
     this.getParants();
   }
 
@@ -47,12 +51,36 @@ export class ParantDetailsComponent implements OnInit {
           this.mother = member;
         }
       });
-      this.loading.hide();
+      this.loadingComponent.hide();
     });
   }
 
   goBack() {
     this.location.back();
+  }
+
+  getFatherId(): any {
+    return this.father.id;
+  }
+
+  getMotherId(): any {
+    return this.mother.id;
+  }
+
+  _updateMotherName() {
+    this.updateProfile('name', this.mother.name, this.getMotherId());
+  }
+
+  _updateMotherOccupation() {
+    this.updateProfile('MotherOccupation', this.mother.occupation, this.getMotherId());
+  }
+
+  _updateFatherName() {
+    this.updateProfile('name', this.father.name, this.getFatherId());
+  }
+
+  _updateFatherOccupation() {
+    this.updateProfile('MotherOccupation', this.father.occupation, this.getFatherId());
   }
 
 }

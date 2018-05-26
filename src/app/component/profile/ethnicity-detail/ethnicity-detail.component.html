@@ -25,7 +25,7 @@
                                        <div class="item-title">Gotra</div>
                                        <!-- Selected value, not required -->
                                        <div class="item-after">
-                                           <input type='text' name="gotra" placeholder="gotra" [(ngModel)]='ethinicity.gotra' />
+                                           <input type='text' name="gotra" placeholder="gotra" [(ngModel)]='ethinicity.gotra' (blur)="_onGotraChange()" />
                                        </div>
                                     </div>
                                  </div>
@@ -39,7 +39,7 @@
                                        <div class="item-title">Gotra Save</div>
                                        <!-- Selected value, not required -->
                                        <div class="item-after">
-                                            <input type='text' name="gotraToSave" placeholder="gotra to save" [(ngModel)]='ethinicity.gotraToSave' />
+                                            <input type='text' name="gotraToSave" (blur)="_onGotraToSaveChange()" placeholder="gotra to save" [(ngModel)]='ethinicity.gotraToSave' />
                                        </div>
                                     </div>
                                  </div>
@@ -53,7 +53,7 @@
                                        <div class="item-title">Caste</div>
                                        <!-- Selected value, not required -->
                                        <div class="item-after">
-                                            <input type='text' name="caste"  placeholder="caste" [(ngModel)]='ethinicity.caste'/>
+                                            <input type='text' name="caste" (blur)="_onCasteChange()"  placeholder="caste" [(ngModel)]='ethinicity.caste'/>
                                        </div>
                                     </div>
                                  </div>

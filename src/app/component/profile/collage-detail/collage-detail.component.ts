@@ -1,3 +1,5 @@
+import { ProfileService } from './../../../services/profile.service';
+import { ProfileBase } from './../../profileBase';
 import { CollageDetails } from './../../../model/profile/collageDetails';
 import { BuilderService } from './../../../services/builder.service';
 import { LoadingComponent } from './../../loading/loading.component';
@@ -11,16 +13,19 @@ import { Component, OnInit, Inject } from '@angular/core';
   templateUrl: './collage-detail.component.html',
   styleUrls: ['./collage-detail.component.css']
 })
-export class CollageDetailComponent implements OnInit {
+export class CollageDetailComponent extends ProfileBase implements OnInit {
 
   public isMehra: Boolean;
   public collageDetails: CollageDetails;
 
-  constructor(private location: Location,
-              private global: GlobalService,
-              @Inject(SESSION_STORAGE) private storage: StorageService,
-              private loading: LoadingComponent,
-              private builder: BuilderService) { }
+  constructor(@Inject(SESSION_STORAGE) private storage: StorageService,
+    private profileServiceTemp: ProfileService
+  , private locationTemp: Location) {
+
+    super();
+    this.setprofileService(profileServiceTemp);
+    this.setLocation(locationTemp);
+  }
 
   ngOnInit() {
     this.isMehra = this.global.isMehra;
@@ -31,5 +36,21 @@ export class CollageDetailComponent implements OnInit {
 
   goBack() {
     this.location.back();
+  }
+
+  _onHighestEducationChange() {
+    this.updateProfile('highestEducation', this.collageDetails.highestEducation, null);
+  }
+
+  _onSubjectChange() {
+    this.updateProfile('subject', this.collageDetails.subject, null);
+  }
+
+  _onSchoolCollegeNameChange() {
+    this.updateProfile('schoolCollegeName', this.collageDetails.schoolCollegeName, null);
+  }
+
+  _onUniversityChange() {
+    this.updateProfile('university', this.collageDetails.university, null);
   }
 }

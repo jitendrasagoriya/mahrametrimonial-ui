@@ -18,40 +18,16 @@
                     <div class="page-content">
                         <div class="list-block">
                             <ul>
+                             
                             <li>
                                 <!-- Smart select, will be opened in Popup -->
-                                <a href="#" class="item-link smart-select" data-open-in="popup">
-                                    <!-- select [(ngModel)]='personalDetail.occupation'  -->
-                                    <select name="employment"  >
-                                        <option value="68" selected>Full Time</option>
-                                        <option value="69">Part Time</option>
-                                        <option value="72">Self Employed</option>
-                                        <option value="73">Retired</option>
-                                        <option value="70">Student</option>
-                                        <option value="71">Home Maker</option>
-                                        <option value="67">Unemployed</option>
-                                        <option value="74">Other</option>
-                                    </select>
-                                    <div class="item-content">
-                                        <div class="item-inner">
-                                        <!-- Select label -->
-                                        <div class="item-title">Employment</div>
-                                        <!-- Selected value, not required -->
-                                        <div class="item-after">{{personalDetail.occupation | titlecase}}</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <!-- Smart select, will be opened in Popup -->
-                                <a href="#" class="item-link smart-select" data-open-in="popup">
+                                <a href="#" class="item-link smart-select" data-open-in="popup" >
                                     <!-- select -->
-                                    <select name="Marital Status"  name="usename" [(ngModel)]='personalDetail.maritalStatus'  >
-                                        <option value="Single">Single</option>
-                                        <option value="Divorced">Divorced</option>
+                                    <select name="Marital Status"  name="usename" [(ngModel)]='personalDetail.maritalStatus' (change)="onMaritalStatusChange()" >
                                         <option value="NEVERMARRIED" selected>Never Married</option>
-                                        <option value="Legally Separated">Legally Separated</option>
-                                        <option value="Widow/Widower">Widow/Widower</option>
+                                        <option value="AWAITINGDIVORCE">Awaiting Divorce</option>
+                                        <option value="DIVORCED">Divorced</option> 
+                                        <option value="WINDOWED">Widow/Widower</option>
                                     </select>
                                     <div class="item-content">
                                         <div class="item-inner">
@@ -62,40 +38,42 @@
                                         </div>
                                     </div>
                                 </a>
-                            </li>
-                            <li >
+                            </li> 
+                            <li>
+                                <!-- Smart select, will be opened in Popup -->
                                 <a href="#" class="item-link smart-select" data-open-in="popup">
-                                    <!-- select -->
-                                    <select name="Exercise" [(ngModel)]='personalDetail.habit'>
-                                        <option value="184">Daily</option>
-                                        <option value="185" selected>2 times a week</option>
-                                        <option value="186">4 times a week</option>
-                                        <option value="187">Not at all</option>
-                                        <option value="188">Other</option>
-                                    </select>
-                                    <div class="item-content">
-                                        <div class="item-inner">
-                                        <!-- Select label -->
-                                        <div class="item-title">Exercise Habit</div>
-                                        <!-- Selected value, not required -->
-                                        <div class="item-after">2 times a week</div>
-                                        </div>
-                                    </div>
+                                   <!-- select -->
+                                   <select name="Specify your Diet" [(ngModel)]='personalDetail.habit' (change)="onhabitChange()">
+                                      <option value="NONVEGETARIAN">Non Vegetarian</option>
+                                      <option value="JAIN">Jain</option>
+                                      <option value="EGGETARIAN">Eggetarian</option>
+                                      <option value="VEGETARIAN"  >Vegetarian</option>
+                                      <option value="NA"  >Dont want to disclose</option>
+                                   </select>
+                                   <div class="item-content">
+                                      <div class="item-inner">
+                                         <!-- Select label -->
+                                         <div class="item-title">Specify your Diet</div>
+                                         <!-- Selected value, not required -->
+                                         <div class="item-after">{{personalDetail.habit | titlecase}}</div>
+                                      </div>
+                                   </div>
                                 </a>
-                            </li>
+                             </li>
                             <li>
                                 <!-- Smart select, will be opened in Popup -->
                                 <a href="#" class="item-link smart-select" data-open-in="popup">
                                     <!-- select -->
-                                    <select name="Eye Color"  [(ngModel)]='personalDetail.eyeColor'>
-                                        <option value="194">Amber</option>
-                                        <option value="302">Black</option>
-                                        <option value="195">Blue</option>
-                                        <option value="196" selected>Brown</option>
-                                        <option value="197">Green</option>
-                                        <option value="198">Gray</option>
-                                        <option value="199">Hazel</option>
-                                        <option value="200">Other</option>
+                                    <select name="Eye Color"  [(ngModel)]='personalDetail.eyeColor'
+                                    (change)="onEyeColorChange()" >
+                                        <option value="Amber">Amber</option>
+                                        <option value="Black">Black</option>
+                                        <option value="Blue">Blue</option>
+                                        <option value="Brown" selected>Brown</option>
+                                        <option value="Green">Green</option>
+                                        <option value="Gray">Gray</option>
+                                        <option value="Hazel">Hazel</option>
+                                        <option value="Other">Other</option>
                                     </select>
                                     <div class="item-content">
                                         <div class="item-inner">
@@ -116,15 +94,14 @@
                                     <div class="item-inner">
                                         <div class="item-title label">Date of Birth</div>
                                         <div class="item-input">
-                                        <input type="date" placeholder="Birth day" [(ngModel)]="personalDetail.dob">
+                                        <input type="date" (blur)="onDOBChange()" placeholder="Birth day" [(ngModel)]="personalDetail.dob">
                                         </div>
                                     </div>
                                 </div>
                             </li>
                             </ul>
                         </div>
-                    </div>
-                   
+                    </div>                   
                   <!-- Tabs, tabs wrapper -->
                </div>
             </div>

@@ -1,3 +1,5 @@
+import { ProfileService } from './../../../services/profile.service';
+import { ProfileBase } from './../../profileBase';
 import { Ethinicity } from './../../../model/profile/ethinicity';
 import { BuilderService } from './../../../services/builder.service';
 import { SESSION_STORAGE, StorageService } from 'angular-webstorage-service';
@@ -10,14 +12,18 @@ import { Component, OnInit, Inject } from '@angular/core';
   templateUrl: './ethnicity-detail.component.html',
   styleUrls: ['./ethnicity-detail.component.css']
 })
-export class EthnicityDetailComponent implements OnInit {
+export class EthnicityDetailComponent extends ProfileBase implements OnInit {
 
   public ethinicity: Ethinicity;
 
-  constructor(private location: Location,
-              private global: GlobalService,
-              @Inject(SESSION_STORAGE) private storage: StorageService,
-              private builder: BuilderService) { }
+  constructor(@Inject(SESSION_STORAGE) private storage: StorageService,
+      private profileServiceTemp: ProfileService
+    , private locationTemp: Location) {
+
+      super();
+      this.setprofileService(profileServiceTemp);
+      this.setLocation(locationTemp);
+ }
 
   ngOnInit() {
 
@@ -28,6 +34,18 @@ export class EthnicityDetailComponent implements OnInit {
 
   goBack() {
     this.location.back();
+  }
+
+  _onGotraChange() {
+    this.updateProfile('gotra', this.ethinicity.gotra, null);
+  }
+
+  _onGotraToSaveChange() {
+    this.updateProfile('gotraToSave', this.ethinicity.gotraToSave, null);
+  }
+
+  _onCasteChange() {
+    this.updateProfile('cast', this.ethinicity.caste, null);
   }
 
 }

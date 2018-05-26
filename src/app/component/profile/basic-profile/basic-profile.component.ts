@@ -1,3 +1,4 @@
+import { ProfileBase } from './../../profileBase';
 import { GlobalService } from './../../../global/global.service';
 import { BuilderService } from './../../../services/builder.service';
 import { BasicDetail } from './../../../model/profile/basicDetail';
@@ -16,25 +17,23 @@ import { NGXLogger } from 'ngx-logger';
   templateUrl: './basic-profile.component.html',
   styleUrls: ['./basic-profile.component.css']
 })
-export class BasicProfileComponent implements OnInit, OnDestroy {
+export class BasicProfileComponent extends ProfileBase implements OnInit, OnDestroy {
 
     private basicDetail: BasicDetail;
     public isMehra: Boolean;
 
-  constructor(private router: Router,
+  constructor(private tempRouter: Router,
     private route: ActivatedRoute,
-    private location: Location,
     private logger: NGXLogger,
     private personService: PersonService,
-    @Inject(SESSION_STORAGE) private storage: StorageService,
-    private loading: LoadingComponent,
-    private builderService: BuilderService,
-    private global: GlobalService  ) { }
+    @Inject(SESSION_STORAGE) private storage: StorageService ) {
+      super();
+      this.setRouter(tempRouter);
+    }
 
   ngOnInit() {
-
     this.isMehra = this.global.isMehra;
-    this.loading.show();
+    this.loadingComponent.show();
     this.route.params.subscribe( params => {
       if (params['load']) {
         this.logger.info('Refresh');
@@ -44,7 +43,7 @@ export class BasicProfileComponent implements OnInit, OnDestroy {
 
    this.personService.getPerson().subscribe( (person: Person) => {
       this.storage.set('person', person);
-      this.loading.hide();
+      this.loadingComponent.hide();
    });
 
   }

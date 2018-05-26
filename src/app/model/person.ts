@@ -54,4 +54,5 @@ export class Person {
           foodAndCook: String;
           interest: String;
           email: String;
+          aboutEducation: String;
 }

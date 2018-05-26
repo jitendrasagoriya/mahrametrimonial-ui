@@ -56,7 +56,7 @@
                                                                 <div class="item-inner">
                                                                    <div class="item-title label">About My Family</div>
                                                                    <div class="item-input">
-                                                                      <textarea>My family belongs to a Middle class family.There are 4members in my family.My Father perusing job in government services and Then. My Mother is Domestic Engineer.I Have 0 brother and 1 sister. </textarea>
+                                                                      <textarea [(ngModel)]='aboutFamily' >My family belongs to a Middle class family.There are 4members in my family.My Father perusing job in government services and Then. My Mother is Domestic Engineer.I Have 0 brother and 1 sister. </textarea>
                                                                    </div>
                                                                 </div>
                                                              </div>
@@ -66,7 +66,7 @@
                                                                 <a href="#" class="button button-big button-red close-popup">Cancel</a>
                                                              </div>
                                                              <div class="col-50">
-                                                                <a href="#" class="button button-big button-green">Save</a>
+                                                                <a href="#" class="button button-big button-green" (click)="_onAboutfamilyChange()" >Save</a>
                                                              </div>
                                                           </div>
                                                        </div>

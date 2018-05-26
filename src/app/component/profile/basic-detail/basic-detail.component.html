@@ -19,7 +19,7 @@
                         <ul>
                            <li >
                               <!-- Smart select, will be opened in Popup -->
-                              <a href="#" class="item-link smart-select" data-open-in="popup">
+                              <a href="#" class="item-link smart-select" data-open-in="popup" (change)="onHeightChange()">
                                  <!-- select -->
                                  <select name="Height" [(ngModel)]='basic.height'>
                                     <option value="4'10">4'10"</option>
@@ -930,7 +930,7 @@
                            </li>
                            <li>
                               <!-- Smart select, will be opened in Popup -->
-                              <a href="#" class="item-link smart-select" data-open-in="popup">
+                              <a href="#" class="item-link smart-select" data-open-in="popup" (change)="onGenderChange()">
                                  <!-- select -->
                                  <select name="Gender"  [(ngModel)]='basic.gender'>
                                     <option value="FEMALE">Female</option>
@@ -968,7 +968,7 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="Complexion" [(ngModel)]='basic.complexion'>
+                                 <select name="Complexion" [(ngModel)]='basic.complexion' (change)=onComplexionChange()>
                                     <option value="NA">NA</option>
                                     <option value="FAIR" selected>Fair</option>
                                     <option value="VERYFAIR">Very Fair</option>
@@ -1011,86 +1011,86 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="Body Weight (Kgs)" [(ngModel)]='basic.weight'>
-                                    <option value="42 Kgs">42 Kgs</option>
-                                    <option value="43 Kgs">43 Kgs</option>
-                                    <option value="44 Kgs">44 Kgs</option>
-                                    <option value="45 Kgs">45 Kgs</option>
-                                    <option value="46 Kgs">46 Kgs</option>
-                                    <option value="47 Kgs">47 Kgs</option>
-                                    <option value="48 Kgs">48 Kgs</option>
-                                    <option value="49 Kgs">49 Kgs</option>
-                                    <option value="50 Kgs">50 Kgs</option>
-                                    <option value="51 Kgs">51 Kgs</option>
-                                    <option value="52 Kgs">52 Kgs</option>
-                                    <option value="53 Kgs">53 Kgs</option>
-                                    <option value="54 Kgs">54 Kgs</option>
-                                    <option value="55 Kgs">55 Kgs</option>
-                                    <option value="56 Kgs">56 Kgs</option>
-                                    <option value="57 Kgs">57 Kgs</option>
-                                    <option value="58 Kgs">58 Kgs</option>
-                                    <option value="59 Kgs">59 Kgs</option>
-                                    <option value="60 Kgs">60 Kgs</option>
-                                    <option value="61 Kgs">61 Kgs</option>
-                                    <option value="62 Kgs">62 Kgs</option>
-                                    <option value="63 Kgs">63 Kgs</option>
-                                    <option value="64 Kgs">64 Kgs</option>
-                                    <option value="65 Kgs">65 Kgs</option>
-                                    <option value="66 Kgs">66 Kgs</option>
-                                    <option value="67 Kgs">67 Kgs</option>
-                                    <option value="68 Kgs">68 Kgs</option>
-                                    <option value="69 Kgs">69 Kgs</option>
-                                    <option value="70 Kgs">70 Kgs</option>
-                                    <option value="71 Kgs">71 Kgs</option>
-                                    <option value="72 Kgs">72 Kgs</option>
-                                    <option value="73 Kgs">73 Kgs</option>
-                                    <option value="74 Kgs">74 Kgs</option>
-                                    <option value="75 Kgs">75 Kgs</option>
-                                    <option value="76 Kgs">76 Kgs</option>
-                                    <option value="77 Kgs">77 Kgs</option>
-                                    <option value="78 Kgs" selected>78 Kgs</option>
-                                    <option value="79 Kgs">79 Kgs</option>
-                                    <option value="80 Kgs">80 Kgs</option>
-                                    <option value="81 Kgs">81 Kgs</option>
-                                    <option value="82 Kgs">82 Kgs</option>
-                                    <option value="83 Kgs">83 Kgs</option>
-                                    <option value="84 Kgs">84 Kgs</option>
-                                    <option value="85 Kgs">85 Kgs</option>
-                                    <option value="86 Kgs">86 Kgs</option>
-                                    <option value="87 Kgs">87 Kgs</option>
-                                    <option value="88 Kgs">88 Kgs</option>
-                                    <option value="89 Kgs">89 Kgs</option>
-                                    <option value="90 Kgs">90 Kgs</option>
-                                    <option value="91 Kgs">91 Kgs</option>
-                                    <option value="92 Kgs">92 Kgs</option>
-                                    <option value="93 Kgs">93 Kgs</option>
-                                    <option value="94 Kgs">94 Kgs</option>
-                                    <option value="95 Kgs">95 Kgs</option>
-                                    <option value="96 Kgs">96 Kgs</option>
-                                    <option value="97 Kgs">97 Kgs</option>
-                                    <option value="98 Kgs">98 Kgs</option>
-                                    <option value="99 Kgs">99 Kgs</option>
-                                    <option value="100 Kgs">100 Kgs</option>
-                                    <option value="101 Kgs">101 Kgs</option>
-                                    <option value="102 Kgs">102 Kgs</option>
-                                    <option value="103 Kgs">103 Kgs</option>
-                                    <option value="104 Kgs">104 Kgs</option>
-                                    <option value="105 Kgs">105 Kgs</option>
-                                    <option value="106 Kgs">106 Kgs</option>
-                                    <option value="107 Kgs">107 Kgs</option>
-                                    <option value="108 Kgs">108 Kgs</option>
-                                    <option value="109 Kgs">109 Kgs</option>
-                                    <option value="110 Kgs">110 Kgs</option>
-                                    <option value="111 Kgs">111 Kgs</option>
-                                    <option value="112 Kgs">112 Kgs</option>
-                                    <option value="113 Kgs">113 Kgs</option>
-                                    <option value="114 Kgs">114 Kgs</option>
-                                    <option value="115 Kgs">115 Kgs</option>
-                                    <option value="116 Kgs">116 Kgs</option>
-                                    <option value="117 Kgs">117 Kgs</option>
-                                    <option value="118 Kgs">118 Kgs</option>
-                                    <option value="119 Kgs">119 Kgs</option>
-                                    <option value="120 Kgs Above">120 Kgs Above</option>
+                                 <select name="Body Weight (Kgs)" [(ngModel)]='basic.weight' (change)="onWeightChange()">
+                                    <option value="42">42 Kgs</option>
+                                    <option value="43">43 Kgs</option>
+                                    <option value="44">44 Kgs</option>
+                                    <option value="45">45 Kgs</option>
+                                    <option value="46">46 Kgs</option>
+                                    <option value="47">47 Kgs</option>
+                                    <option value="48">48 Kgs</option>
+                                    <option value="49">49 Kgs</option>
+                                    <option value="50">50 Kgs</option>
+                                    <option value="51">51 Kgs</option>
+                                    <option value="52">52 Kgs</option>
+                                    <option value="53">53 Kgs</option>
+                                    <option value="54">54 Kgs</option>
+                                    <option value="55">55 Kgs</option>
+                                    <option value="56">56 Kgs</option>
+                                    <option value="57">57 Kgs</option>
+                                    <option value="58">58 Kgs</option>
+                                    <option value="59">59 Kgs</option>
+                                    <option value="60">60 Kgs</option>
+                                    <option value="61">61 Kgs</option>
+                                    <option value="62">62 Kgs</option>
+                                    <option value="63">63 Kgs</option>
+                                    <option value="64">64 Kgs</option>
+                                    <option value="65">65 Kgs</option>
+                                    <option value="66">66 Kgs</option>
+                                    <option value="67">67 Kgs</option>
+                                    <option value="68">68 Kgs</option>
+                                    <option value="69">69 Kgs</option>
+                                    <option value="70">70 Kgs</option>
+                                    <option value="71">71 Kgs</option>
+                                    <option value="72">72 Kgs</option>
+                                    <option value="73">73 Kgs</option>
+                                    <option value="74">74 Kgs</option>
+                                    <option value="75">75 Kgs</option>
+                                    <option value="76">76 Kgs</option>
+                                    <option value="77">77 Kgs</option>
+                                    <option value="78" selected>78 Kgs</option>
+                                    <option value="79">79 Kgs</option>
+                                    <option value="80">80 Kgs</option>
+                                    <option value="81">81 Kgs</option>
+                                    <option value="82">82 Kgs</option>
+                                    <option value="83">83 Kgs</option>
+                                    <option value="84">84 Kgs</option>
+                                    <option value="85">85 Kgs</option>
+                                    <option value="86">86 Kgs</option>
+                                    <option value="87">87 Kgs</option>
+                                    <option value="88">88 Kgs</option>
+                                    <option value="89">89 Kgs</option>
+                                    <option value="90">90 Kgs</option>
+                                    <option value="91">91 Kgs</option>
+                                    <option value="92">92 Kgs</option>
+                                    <option value="93">93 Kgs</option>
+                                    <option value="94">94 Kgs</option>
+                                    <option value="95">95 Kgs</option>
+                                    <option value="96">96 Kgs</option>
+                                    <option value="97">97 Kgs</option>
+                                    <option value="98">98 Kgs</option>
+                                    <option value="99">99 Kgs</option>
+                                    <option value="100">100 Kgs</option>
+                                    <option value="101">101 Kgs</option>
+                                    <option value="102">102 Kgs</option>
+                                    <option value="103">103 Kgs</option>
+                                    <option value="104">104 Kgs</option>
+                                    <option value="105">105 Kgs</option>
+                                    <option value="106">106 Kgs</option>
+                                    <option value="107">107 Kgs</option>
+                                    <option value="108">108 Kgs</option>
+                                    <option value="109">109 Kgs</option>
+                                    <option value="110">110 Kgs</option>
+                                    <option value="111">111 Kgs</option>
+                                    <option value="112">112 Kgs</option>
+                                    <option value="113">113 Kgs</option>
+                                    <option value="114">114 Kgs</option>
+                                    <option value="115">115 Kgs</option>
+                                    <option value="116">116 Kgs</option>
+                                    <option value="117">117 Kgs</option>
+                                    <option value="118">118 Kgs</option>
+                                    <option value="119">119 Kgs</option>
+                                    <option value="120">120 Kgs Above</option>
                                  </select>
                                  <div class="item-content">
                                     <div class="item-inner">
