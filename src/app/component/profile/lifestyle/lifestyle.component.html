@@ -55,7 +55,7 @@
                                                           <div class="item-inner">
                                                              <div class="item-title label">Food I Cook</div>
                                                              <div class="item-input">
-                                                                <textarea [(ngModel)]='lifeStyle.foodAndCook'> 
+                                                                <textarea [(ngModel)]='lifeStyle.foodAndCook' placeholder="Chinese Food | Mexican Food | Italian Food | Japanese Food | Greek cuisine | French cuisine | Thai cuisine | Spanish cuisine | Indian cuisine ">  
                                                                 </textarea>
                                                              </div>
                                                           </div>
@@ -66,7 +66,7 @@
                                                           <a href="#" class="button button-big button-red close-popup">Cancel</a>
                                                        </div>
                                                        <div class="col-50">
-                                                          <a href="#" class="button button-big button-green">Save</a>
+                                                          <a href="#" (click)="_updateFoodAndCook()" class="button button-big button-green">Save</a>
                                                        </div>
                                                     </div>
                                                  </div>
@@ -105,7 +105,7 @@
                                                        <div class="item-title">Hobbies</div>
                                                     </div>
                                                     <div class="item-text" style="margin-top: 20px;">
-                                                      <input type="text" name="hobbies" [(ngModel)]='lifeStyle.hobbies'   placeholder="Art | Handicraft | Printing | Gardening | Music Instruments"/>
+                                                      <input (blur)="_updateHobbies()" type="text" name="hobbies" [(ngModel)]='lifeStyle.hobbies'   placeholder="Art | Handicraft | Printing | Gardening | Music Instruments"/>
                                                     </div>
                                                  </div>
                                               
@@ -119,7 +119,7 @@
                                                        <div class="item-title">Interest</div>
                                                     </div>
                                                     <div class="item-text" style="margin-top: 20px;">
-                                                        <input type="text" name="intrest" [(ngModel)]='lifeStyle.interest'    placeholder="Music Listen | Movies | Travel | Sports | Meditation | Yoga"/>
+                                                        <input (blur)="_updateIntrest()" type="text" name="intrest" [(ngModel)]='lifeStyle.interest'    placeholder="Music Listen | Movies | Travel | Sports | Meditation | Yoga"/>
                                                       
                                                     </div>
                                                  </div>

@@ -55,4 +55,6 @@ export class Person {
           interest: String;
           email: String;
           aboutEducation: String;
+		  landlinenumber: String;
+		  address: String;
 }

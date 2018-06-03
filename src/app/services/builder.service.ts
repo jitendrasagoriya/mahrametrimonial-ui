@@ -100,17 +100,15 @@ export class BuilderService {
 
   buildLifeStyle(person: Person): LifeStyle {
      this.lifeStyle.hobbies = person.hobbies;
-     this.lifeStyle.foodAndCook = 'Chinese Food | Mexican Food | Italian Food | Japanese Food ' +
-     '| Greek cuisine | French cuisine | Thai cuisine | Spanish cuisine | Indian cuisine |';
+     this.lifeStyle.foodAndCook =  person.foodAndCook;
      this.lifeStyle.interest = 'Explore new plases';
     return this.lifeStyle;
   }
 
   buildContact(person: Person): Contact {
-    this.contact.address = 'T3 ,Top Floor, Indus Estate multi, Karariya farm,'
-    + ' Karariya, near coach factory, Bhopal, 462010';
+    this.contact.address = person.address ;
     this.contact.email = person.email;
-    this.contact.landline = '';
+    this.contact.landline = person.landlinenumber;
     this.contact.mobileNumber = person.primeryContactNo;
     this.contact.mobileNumber2 = person.secoundryContactNo;
    return this.contact;

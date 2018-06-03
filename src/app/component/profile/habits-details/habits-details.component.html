@@ -22,7 +22,7 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="Do you Smoke" [(ngModel)]='habit.smoke'>
+                                 <select (change)="_updateSomke()" name="Do you Smoke" [(ngModel)]='habit.smoke'>
                                     <option value="YES">Yes</option>
                                     <option value="OCCASIONALLY">Occasionally</option>
                                     <option value="NO" selected>No</option>
@@ -41,7 +41,7 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="Do you Drink" [(ngModel)]='habit.drink'>
+                                 <select (change)="_updateDrink()" name="Do you Drink" [(ngModel)]='habit.drink'>
                                         <option value="YES">Yes</option>
                                         <option value="OCCASIONALLY">Occasionally</option>
                                         <option value="NO" selected>No</option>

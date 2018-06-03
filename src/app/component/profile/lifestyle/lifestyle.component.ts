@@ -1,3 +1,5 @@
+import { ProfileService } from './../../../services/profile.service';
+import { ProfileBase } from './../../profileBase';
 import { BuilderService } from './../../../services/builder.service';
 import { SESSION_STORAGE, StorageService } from 'angular-webstorage-service';
 import { LifeStyle } from './../../../model/profile/lifeStyle';
@@ -11,17 +13,20 @@ import { GlobalService } from '../../../global/global.service';
   templateUrl: './lifestyle.component.html',
   styleUrls: ['./lifestyle.component.css']
 })
-export class LifestyleComponent implements OnInit {
+export class LifestyleComponent extends ProfileBase implements OnInit {
 
   public isMehra: Boolean = false;
   public lifeStyle: LifeStyle;
 
-  constructor(
-     private router: Router,
-     private location: Location,
-     private global: GlobalService,
-     @Inject(SESSION_STORAGE) private storage: StorageService,
-     private builder: BuilderService ) { }
+  constructor(@Inject(SESSION_STORAGE) private storage: StorageService,
+    private profileServiceTemp: ProfileService
+  , private locationTemp: Location , private tempRouter: Router) {
+
+    super();
+    this.setprofileService(profileServiceTemp);
+    this.setLocation(locationTemp);
+    this.setRouter(tempRouter);
+  }
 
   ngOnInit() {
     this.isMehra = this.global.isMehra;
@@ -36,5 +41,18 @@ export class LifestyleComponent implements OnInit {
   goBack() {
     this.location.back();
   }
+
+  _updateFoodAndCook() {
+    this.updateProfile('foodAndCook', this.lifeStyle.foodAndCook, null );
+  }
+
+  _updateHobbies() {
+    this.updateProfile('hobbies', this.lifeStyle.hobbies, null );
+  }
+
+  _updateIntrest() {
+    this.updateProfile('interest', this.lifeStyle.interest, null );
+  }
+
 
 }

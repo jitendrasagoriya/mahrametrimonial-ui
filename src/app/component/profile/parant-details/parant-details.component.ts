@@ -72,7 +72,7 @@ export class ParantDetailsComponent extends ProfileBase implements OnInit {
   }
 
   _updateMotherOccupation() {
-    this.updateProfile('MotherOccupation', this.mother.occupation, this.getMotherId());
+    this.updateProfile('occupation', this.mother.occupation, this.getMotherId());
   }
 
   _updateFatherName() {
@@ -80,7 +80,11 @@ export class ParantDetailsComponent extends ProfileBase implements OnInit {
   }
 
   _updateFatherOccupation() {
-    this.updateProfile('MotherOccupation', this.father.occupation, this.getFatherId());
+    this.updateProfile('occupation', this.father.occupation, this.getFatherId());
+  }
+
+  _updateFamilyIncome() {
+    this.updateProfile('familyIncome', this.income.toString(), null);
   }
 
 }

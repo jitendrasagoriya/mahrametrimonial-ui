@@ -1,3 +1,5 @@
+import { ProfileService } from './../../../services/profile.service';
+import { ProfileBase } from './../../profileBase';
 import { Sibling } from './../../../model/profile/siblings';
 import { FamilyMemberService } from './../../../services/family-member.service';
 import { BuilderService } from './../../../services/builder.service';
@@ -12,15 +14,18 @@ import { Component, OnInit, Inject } from '@angular/core';
   templateUrl: './siblings-details.component.html',
   styleUrls: ['./siblings-details.component.css']
 })
-export class SiblingsDetailsComponent implements OnInit {
+export class SiblingsDetailsComponent  extends ProfileBase implements OnInit {
 
   public sibiling: Sibling;
 
-  constructor(
-    private location: Location,
-     @Inject(SESSION_STORAGE) private storage: StorageService,
-    private builder: BuilderService
-  ) { }
+  constructor(@Inject(SESSION_STORAGE) private storage: StorageService,
+    private profileServiceTemp: ProfileService
+  , private locationTemp: Location, private parants: FamilyMemberService) {
+
+    super();
+    this.setprofileService(profileServiceTemp);
+    this.setLocation(locationTemp);
+  }
 
   ngOnInit() {
     if (this.storage.get('person') != null) {
@@ -30,6 +35,22 @@ export class SiblingsDetailsComponent implements OnInit {
 
   goBack() {
     this.location.back();
+  }
+
+  _updateNumberOfBrother() {
+    this.updateProfile('noOfBrother', this.sibiling.noOfBrothers.toString(), null );
+  }
+
+  _updateNumberOfMarriedBrother() {
+    this.updateProfile('noOfMarriedBrother', this.sibiling.marriedBrothers.toString(), null );
+  }
+
+  _updateNumberOfSister() {
+    this.updateProfile('noOfSisters', this.sibiling.noOfSister.toString(), null );
+  }
+
+  _updateNumberOfMarriedSister() {
+    this.updateProfile('noOfMarriedSisters', this.sibiling.marriedSister.toString(), null );
   }
 
 }

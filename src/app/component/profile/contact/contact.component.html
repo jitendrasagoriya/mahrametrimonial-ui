@@ -39,7 +39,7 @@
                                                               <div class="item-title">Address</div>
                                                            </div>
                                                            <div class="item-input" style="margin-top: 20px;">
-                                                                <textarea  style="height: 100px;" [(ngModel)]='contact.address'> 
+                                                                <textarea (blur)="_updateAddress()" style="height: 100px;" [(ngModel)]='contact.address'> 
 
                                                                 </textarea>
                                                            </div>
@@ -53,7 +53,7 @@
                                                          <div class="item-title">Email ID</div>
                                                       </div>
                                                       <div class="item-text" style="margin-top: 20px;">
-                                                          <input type="text" placeholder="Enter email id" [(ngModel)]='contact.email' />
+                                                          <input (blur)="_updateEmail()" type="text" placeholder="Enter email id" [(ngModel)]='contact.email' />
                                                       </div>
                                                    </div>
                                                 
@@ -67,7 +67,7 @@
                                                          <div class="item-title">Mobile Number</div>
                                                       </div>
                                                       <div class="item-text" style="margin-top: 20px;">
-                                                            <input type="text" placeholder="Enter mobile number" name="mobile" [(ngModel)]='contact.mobileNumber' />
+                                                            <input (blur)="_updateMobile()" type="text" placeholder="Enter mobile number" name="mobile" [(ngModel)]='contact.mobileNumber' />
                                                       </div>
                                                    </div>
                                                  
@@ -79,7 +79,7 @@
                                                           <div class="item-title">Alternate Mobile Number</div>
                                                        </div>
                                                        <div class="item-text" style="margin-top: 20px;">
-                                                             <input type="text" placeholder="Enter mobile number" name="altmobile" [(ngModel)]='contact.mobileNumber2' />
+                                                             <input (blur)="_updateSecoundryContactNo()" type="text" placeholder="Enter mobile number" name="altmobile" [(ngModel)]='contact.mobileNumber2' />
                                                        </div>
                                                     </div>
                                                   
@@ -93,7 +93,7 @@
                                                          <div class="item-title">Landline Number</div>
                                                       </div>
                                                       <div class="item-text" style="margin-top: 20px;">
-                                                            <input type="text" placeholder="Enter landline number" name="landline"  [(ngModel)]='contact.landline'/>
+                                                            <input (blur)="_updateLandLineNumber()" type="text" placeholder="Enter landline number" name="landline"  [(ngModel)]='contact.landline'/>
                                                       </div>
                                                    </div>
                                                 

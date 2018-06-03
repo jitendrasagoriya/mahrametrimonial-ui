@@ -24,7 +24,7 @@
                                             <div class="item-title">Father Name</div>
                                              <!-- Selected value, not required -->
                                              <div class="item-after">
-                                                 <input type="text" name='father' [(ngModel)]='father.name' placeholder="Enter your father name"/>
+                                                 <input (blur)="_updateFatherName()" type="text" name='father' [(ngModel)]='father.name' placeholder="Enter your father name"/>
                                              </div>
                                           </div>
                                         </div>
@@ -33,7 +33,7 @@
                                       <!-- Smart select, will be opened in Popup -->
                                       <a href="#" class="item-link smart-select" data-open-in="popup">
                                          <!-- select -->
-                                         <select name="Father is"  [(ngModel)]='father.occupation'>
+                                         <select (change)="_updateFatherOccupation()" name="Father is"  [(ngModel)]='father.occupation'>
                                             <option value="BUSSINESS" selected>Business Person</option>
                                             <option value="PRIVATE">Service - Private</option>
                                             <option value="GOVERNAMENT">Service - Govt</option>
@@ -103,7 +103,7 @@
                                            <div class="item-title">Family Income</div>
                                                <!-- Selected value, not required -->
                                             <div class="item-after">
-                                                <input type="text" placeholder="Family Income" name="familyincome" [(ngModel)]='income' />
+                                                <input (blur)="_updateFamilyIncome()" type="text" placeholder="Family Income" name="familyincome" [(ngModel)]='income' />
                                             </div>
                                         </div>
                                     </div>

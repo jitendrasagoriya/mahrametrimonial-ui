@@ -21,7 +21,7 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="Brothers" [(ngModel)]='sibiling.noOfBrothers'>
+                                 <select (change)="_updateNumberOfBrother()" name="Brothers" [(ngModel)]='sibiling.noOfBrothers'>
                                     <option value="0">0 Brother</option>
                                     <option value="1">1 Brother</option>
                                     <option value="2">2 Brothers</option>
@@ -48,7 +48,7 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="Sisters" [(ngModel)]='sibiling.noOfSister'>
+                                 <select (change)="_updateNumberOfSister()" name="Sisters" [(ngModel)]='sibiling.noOfSister'>
                                     <option value="0" >0 Sister</option>
                                     <option value="1" >1 Sister</option>
                                     <option value="2">2 Sisters</option>
@@ -75,7 +75,7 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="Married-b" [(ngModel)]='sibiling.marriedBrothers'>
+                                 <select (change)="_updateNumberOfMarriedBrother()" name="Married-b" [(ngModel)]='sibiling.marriedBrothers'>
                                         <option value="0">0 Brother</option>
                                         <option value="1">1 Brother</option>
                                         <option value="2">2 Brothers</option>
@@ -102,7 +102,7 @@
                               <!-- Smart select, will be opened in Popup -->
                               <a href="#" class="item-link smart-select" data-open-in="popup">
                                  <!-- select -->
-                                 <select name="Married-S" [(ngModel)]='sibiling.marriedSister'>
+                                 <select (change)="_updateNumberOfMarriedSister()" name="Married-S" [(ngModel)]='sibiling.marriedSister'>
                                         <option value="0" >0 Sister</option>
                                         <option value="1" >1 Sister</option>
                                         <option value="2">2 Sisters</option>
